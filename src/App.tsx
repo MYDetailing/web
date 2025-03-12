@@ -46,6 +46,8 @@ const App: React.FC = () => {
           autoPlay
           loop
           muted
+          playsInline
+          preload="auto"
           style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover" }}
           src="/video.mp4"
         />
