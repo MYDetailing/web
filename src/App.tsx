@@ -3,12 +3,18 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { useInView } from "react-intersection-observer";
+import ServicesSection from "./ServicesSection";
+import "./assets/fonts/fonts.css";
 
 const sections = ["Services", "Contact"];
 
 const App: React.FC = () => {
+  useEffect(() => {
+    document.title = "MY Detailing"
+  })
+
   const [activeSection, setActiveSection] = useState("");
-  
+
   // Hero section observer
   const { ref: homeRef, inView: homeInView } = useInView({ threshold: 0.3, triggerOnce: false });
 
@@ -17,7 +23,16 @@ const App: React.FC = () => {
       setActiveSection(""); // Unselect services when in home section
     }
   }, [homeInView]);
-  
+
+  // Footer section observer
+  const { ref: footerRef, inView: footerInView } = useInView({ threshold: 0.3, triggerOnce: false })
+
+  useEffect(() => {
+    if (footerInView) {
+      setActiveSection("")
+    }
+  }, [footerInView])
+
   return (
     <div style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}>
       {/* Navbar */}
@@ -39,7 +54,7 @@ const App: React.FC = () => {
           </div>
         </Toolbar>
       </AppBar>
-      
+
       {/* Hero Section with Video */}
       <section ref={homeRef} style={{ position: "relative", width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
         <video
@@ -55,7 +70,7 @@ const App: React.FC = () => {
           <img src="/logotext.png" alt="Detailing Co." style={{ width: "350px" }} />
         </div>
       </section>
-      
+
       {/* Services and Contact Sections */}
       {sections.map((section) => {
         const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
@@ -65,7 +80,20 @@ const App: React.FC = () => {
             setActiveSection(section);
           }
         }, [inView, section]);
-        
+
+        let sectionPart = null;
+
+        if (section == "Services")
+          sectionPart = <ServicesSection />;
+        else
+          sectionPart =  
+          <div>
+          <Typography variant="h3" gutterBottom>{section}</Typography>
+            <Typography variant="body1" style={{ maxWidth: "600px", color: "#fff" }}>
+              {section} content goes here. Add more details as needed.
+            </Typography>
+            </div>
+
         return (
           <motion.section
             key={section}
@@ -74,15 +102,22 @@ const App: React.FC = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
             transition={{ duration: 0.5 }}
-            style={{ minHeight: "65vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "start", padding: "5rem 2rem", textAlign: "center"}}
+            style={{ minHeight: "65vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "start", padding: "5rem 2rem", textAlign: "center" }}
           >
-            <Typography variant="h3" gutterBottom>{section}</Typography>
-            <Typography variant="body1" style={{ maxWidth: "600px", color: "#fff" }}>
-              {section} content goes here. Add more details as needed.
-            </Typography>
+            { sectionPart }
           </motion.section>
         );
       })}
+
+      { /* footer section */ }
+      <motion.section
+        ref={footerRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: footerInView ? 1 : 0, y: footerInView ? 0 : 50 }}
+        transition={{ duration: 0.5 }}
+        style={{ minHeight: "50vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "start", padding: "5rem 2rem", textAlign: "center" }}
+      >
+      </motion.section>
     </div>
   );
 };
