@@ -45,7 +45,7 @@
             "name": "VIP",
             "description": "A two-day transformation for your car, including polishing, multi-layer ceramic, and full interior restoration—our most luxurious and protective package.",
             "prices": "$900/$1000/$1100",
-            "services": [29, 34, 36],
+            "services": [29, 33, 36],
             "colour": "#8e24aa"
         },
         {
