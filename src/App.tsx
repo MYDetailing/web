@@ -4,7 +4,6 @@ import { useState } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import ServicesSection from "./ServicesSection";
-import "./assets/fonts/fonts.css";
 
 const sections = ["Services", "Contact"];
 
