@@ -1,0 +1,60 @@
+{
+    "packages": [
+        {
+            "id": 0,
+            "name": "Basic",
+            "description": "An efficient exterior and light interior detail that restores a clean, fresh look—ideal for routine maintenance at an affordable price.",
+            "prices": "$79/$89/$99",
+            "services": [0, 2, 3, 4, 5, 6, 7],
+            "colour": "#8e24aa"
+        },
+        {
+            "id": 1,
+            "name": "Standard",
+            "description": "A well-rounded package combining exterior shine and interior freshness—perfect for monthly upkeep or after a long trip.",
+            "prices": "$179/$199/$219",
+            "services": [1, 8, 9, 10, 11, 12],
+            "colour": "#8e24aa"
+        },
+        {
+            "id": 2,
+            "name": "Premium",
+            "description": "A full-service detailing experience that revives your car’s exterior and rejuvenates your cabin—great for seasonal deep cleaning.",
+            "prices": "$279/$299/$329",
+            "services": [13, 14, 15, 16, 17, 18, 19],
+            "colour": "#8e24aa"
+        },
+        {
+            "id": 3,
+            "name": "Luxury",
+            "description": "Premium care for your vehicle with advanced protection and complete interior renewal—ideal for cars needing a next-level refresh.",
+            "prices": "$470/$500/$550",
+            "services": [21, 22, 23, 24, 25, 26, 27],
+            "colour": "#8e24aa"
+        },
+        {
+            "id": 4,
+            "name": "Exclusive",
+            "description": "Top-tier detailing with ceramic options, engine cleaning, and complete interior attention—crafted for vehicles that deserve perfection.",
+            "prices": "$650/$700/$750",
+            "services": [20, 28, 30, 31, 32, 33],
+            "colour": "#8e24aa"
+        },
+        {
+            "id": 5,
+            "name": "VIP",
+            "description": "A two-day transformation for your car, including polishing, multi-layer ceramic, and full interior restoration—our most luxurious and protective package.",
+            "prices": "$900/$1000/$1100",
+            "services": [29, 34, 36],
+            "colour": "#8e24aa"
+        },
+        {
+            "id": 6,
+            "name": "Pre-Sale Preparation",
+            "description": "Designed to maximize resale value—this package restores your vehicle’s shine, refreshes the interior, and includes a pro photo shoot to help it sell faster.",
+            "prices": "$399/$449/$499",
+            "services": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 19, 21, 22, 23, 24, 30, 31, 34, 37],
+            "colour": "#8e24aa"
+        }
+    ]
+}
