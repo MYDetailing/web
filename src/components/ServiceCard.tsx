@@ -63,13 +63,9 @@ function ServiceCard({
           return (
             <Tooltip open={open} onOpen={handleOpenTooltip} onClose={handleCloseTooltip} disableFocusListener
             title={hints[index]} key={index} arrow placement="bottom" enterDelay={500} slotProps={{
-              tooltip: {
-                sx: {
-                  fontSize: "1.2rem"
-                },
-              },
+              tooltip: {sx: {fontSize: "1.2rem"}}
             }}>
-            <Stack flexDirection={"row"} key={index}>
+            <Stack flexDirection={"row"} key={index} alignItems={"center"}>
             <Typography variant="body1" key={index}>{service}</Typography>
             <Box flexGrow={1} />
             <img src="/info.png" style={{ height: "1rem" }} key={index} onClick={handleOpenTooltip}/>
