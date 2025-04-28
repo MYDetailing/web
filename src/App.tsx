@@ -1,12 +1,31 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, createTheme, ThemeProvider } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import ServicesSection from "./components/ServicesSection";
 import "./assets/fonts/fonts.css";
 
 const sections = ["Services", "Contact"];
+
+const theme = createTheme({
+  typography:{
+    h4: {
+      fontFamily: "Elemental"
+    },
+    subtitle1: {
+      fontStyle: "italic",
+      fontSize: "1.1rem",
+      lineHeight: "1.3"
+    },
+    subtitle2: {
+      fontSize: "1.2rem"
+    },
+    body1: {
+      fontSize: "1.2rem"
+    }
+  }
+})
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -34,6 +53,7 @@ const App: React.FC = () => {
   }, [footerInView])
 
   return (
+    <ThemeProvider theme={theme}>
     <div style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}>
       {/* Navbar */}
       <AppBar position="fixed" style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}>
@@ -54,6 +74,7 @@ const App: React.FC = () => {
           </div>
         </Toolbar>
       </AppBar>
+
 
       {/* Hero Section with Video */}
       <section ref={homeRef} style={{ position: "relative", width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
@@ -119,6 +140,7 @@ const App: React.FC = () => {
       >
       </motion.section>
     </div>
+    </ThemeProvider>
   );
 };
 

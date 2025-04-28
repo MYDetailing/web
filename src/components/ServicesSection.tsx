@@ -30,9 +30,18 @@ function getServices(packageId: number): string[] {
   return servicesArray;
 }
 
+function getHints(packageId: number): string[] {
+  let hintsArray: string[] = [];
+  packages[packageId].services.forEach((serviceIndex) => {
+    hintsArray.push(services[serviceIndex].description);
+  });
+
+  return hintsArray;
+}
+
 function ServicesSection() {
   return (
-    <div style={{ maxWidth: '100%', margin: '0 auto', padding: '2rem 1rem' }}>
+    <div style={{ maxWidth: '100%', margin: '0 auto'}}>
       <Typography variant="h3" gutterBottom>
         Services
       </Typography>
@@ -47,7 +56,7 @@ function ServicesSection() {
             description={curPackage.description}
             prices={curPackage.prices}
             services={getServices(curPackage.id)}
-            hints={[]}
+            hints={getHints(curPackage.id)}
             previousPackage={curPackage.id > 0 && curPackage.id < (packages.length - 1)? packages[curPackage.id-1].name : ''}
           />
           </Grid2>
