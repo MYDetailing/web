@@ -1,0 +1,14 @@
+@keyframes shineText {
+    0% {
+      background-position: 200% center;
+    }
+    30% {
+      background-position: -200% center;
+    }
+    70% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
