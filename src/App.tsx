@@ -13,6 +13,7 @@ import {
 import { useInView } from "react-intersection-observer";
 import ServicesSection from "./components/ServicesSection";
 import "./assets/fonts/fonts.css";
+import "./global.css";
 
 const sections = ["Services", "Contact"];
 
@@ -21,16 +22,15 @@ const theme = createTheme({
     allVariants: {
       background: `linear-gradient(
           90deg,
-        #b0b0b0 0%,
-        #ffffff 50%,
-        #b0b0b0 100%
+        #ffffff 0%,
+        #cccccc 50%,
+        #ffffff 100%
         )`,
       backgroundSize: "200% auto",
       backgroundClip: "text",
       WebkitBackgroundClip: "text",
       color: "transparent",
       animation: "shineText 8s ease-in-out infinite",
-      animationFillMode: "forwards"
     },
     h4: {
       fontFamily: "Elemental",
@@ -51,26 +51,6 @@ const theme = createTheme({
       fontStyle: "italic",
     },
   },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: `
-        @keyframes shineText {
-          0% {
-            background-position: 200% center;
-          }
-          30% {
-            background-position: -200% center;
-          }
-          70% {
-            background-position: -200% center;
-          }
-          100% {
-            background-position: 200% center;
-          }
-        }
-      `,
-    },
-  }
 });
 
 const App: React.FC = () => {
@@ -203,7 +183,7 @@ const App: React.FC = () => {
               },
             }}
           >
-            At MYDetailing, we believe your vehicle deserves more than just a
+            At MY Detailing, we believe your vehicle deserves more than just a
             wash. Our expert services rejuvenate, protect, and elevate your
             vehicle’s appearance, inside and out. With premium products and
             meticulous care, we deliver results that embody true craftsmanship.
