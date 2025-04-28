@@ -73,7 +73,7 @@ const App: React.FC = () => {
 
       {/* Services and Contact Sections */}
       {sections.map((section) => {
-        const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
+        const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: false });
 
         useEffect(() => {
           if (inView) {
