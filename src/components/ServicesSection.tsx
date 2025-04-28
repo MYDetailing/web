@@ -41,29 +41,31 @@ function getHints(packageId: number): string[] {
 
 function ServicesSection() {
   return (
-    <div style={{ maxWidth: '100%', margin: '0 auto'}}>
+    <div style={{ maxWidth: "100%", margin: "0 auto" }}>
       <Typography variant="h3" gutterBottom>
         Services
       </Typography>
-
-      <Grid2 container rowSpacing={4} columnSpacing={4} justifyContent='center'>
-      {packages.map((curPackage: Package) => {
-        return (
-        <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={curPackage.id}>
-          <ServiceCard
-            heading={curPackage.name}
-            colour={curPackage.colour}
-            description={curPackage.description}
-            prices={curPackage.prices}
-            services={getServices(curPackage.id)}
-            hints={getHints(curPackage.id)}
-            previousPackage={curPackage.id > 0 && curPackage.id < (packages.length - 1)? packages[curPackage.id-1].name : ''}
-          />
-          </Grid2>
-        );
-      })}
+      <Grid2 container rowSpacing={4} columnSpacing={4} justifyContent="center">
+        {packages.map((curPackage: Package) => {
+          return (
+            <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={curPackage.id}>
+              <ServiceCard
+                heading={curPackage.name}
+                colour={curPackage.colour}
+                description={curPackage.description}
+                prices={curPackage.prices}
+                services={getServices(curPackage.id)}
+                hints={getHints(curPackage.id)}
+                previousPackage={
+                  curPackage.id > 0 && curPackage.id < packages.length - 1
+                    ? packages[curPackage.id - 1].name
+                    : ""
+                }
+              />
+            </Grid2>
+          );
+        })}
       </Grid2>
-      
     </div>
   );
 }
