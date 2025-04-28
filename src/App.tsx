@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { useInView } from "react-intersection-observer";
-import ServicesSection from "./ServicesSection";
+import ServicesSection from "./components/ServicesSection";
 import "./assets/fonts/fonts.css";
 
 const sections = ["Services", "Contact"];
@@ -73,7 +73,7 @@ const App: React.FC = () => {
 
       {/* Services and Contact Sections */}
       {sections.map((section) => {
-        const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
+        const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: false });
 
         useEffect(() => {
           if (inView) {

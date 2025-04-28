@@ -1,7 +1,7 @@
 import { Typography, Grid2 } from "@mui/material";
-import ServiceCard from "./components/ServiceCard";
-import serviceData from "./data/services.json";
-import packageData from "./data/packages.json";
+import ServiceCard from "./ServiceCard";
+import serviceData from "../data/services.json";
+import packageData from "../data/packages.json";
 
 interface Service {
   id: number;
