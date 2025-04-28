@@ -1,4 +1,4 @@
-import { Box, Stack, Tooltip, Typography } from "@mui/material";
+import { Box, ClickAwayListener, Stack, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { semanticColors } from "@nextui-org/react";
@@ -25,7 +25,6 @@ function ServiceCard({
   hints,
   previousPackage,
 }: Props) {
-
   return (
     <Card
       variant="outlined"
@@ -39,41 +38,70 @@ function ServiceCard({
     >
       <CardContent>
         <Stack>
-        <Typography variant="h4">{heading}</Typography>
-        <Typography variant="subtitle2">{prices}</Typography>
-        <Typography variant="subtitle1">{description}</Typography>
+          <Typography variant="h4">{heading}</Typography>
+          <Typography variant="subtitle2">{prices}</Typography>
+          <Typography variant="subtitle1">{description}</Typography>
 
-        <Box height=".5rem" />
+          <Box height=".5rem" />
 
-        {previousPackage !== "" && (
-          <Typography fontStyle={"italic"}>Everything included in {previousPackage}, plus</Typography>
-        )}
-        {services.map((service, index) => {
-          
-          const [open, setOpen] = useState(false);
+          {previousPackage !== "" && (
+            <Typography fontStyle={"italic"}>
+              Everything included in {previousPackage}, plus
+            </Typography>
+          )}
+          {services.map((service, index) => {
+            const [open, setOpen] = useState(false);
 
-          function handleOpenTooltip() {
-            setOpen(true);
-          }
+            function handleOpenTooltip() {
+              setOpen(true);
+            }
+            0;
 
-          function handleCloseTooltip() {
-            setOpen(false);
-          }
+            function handleCloseTooltip() {
+              setOpen(false);
+            }
 
-          return (
-            <Tooltip open={open} onOpen={handleOpenTooltip} onClose={handleCloseTooltip} disableFocusListener
-            title={hints[index]} key={index} arrow placement="bottom" enterDelay={500} slotProps={{
-              tooltip: {sx: {fontSize: "1.2rem"}}
-            }}>
-            <Stack flexDirection={"row"} key={index} alignItems={"center"}>
-            <Typography variant="body1" key={index}>{service}</Typography>
-            <Box flexGrow={1} />
-            <img src="/info.png" style={{ height: "1rem" }} key={index} onClick={handleOpenTooltip}/>
-            </Stack>
-            </Tooltip>
-          );
-        })}
-      </Stack>
+            return (
+              <ClickAwayListener onClickAway={handleCloseTooltip}>
+              <Tooltip
+                open={open}
+                onClose={handleCloseTooltip}
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
+                title={service + ": " + hints[index]}
+                key={index}
+                arrow
+                placement="bottom"
+                enterDelay={500}
+                slotProps={{
+                  tooltip: { sx: { fontSize: "1.2rem" } },
+                  popper: {
+                    modifiers: [
+                      { name: "offset", options: { offset: [0, -14] } },
+                    ],
+                  },
+                }}
+              >
+                <Stack flexDirection={"row"} key={index} alignItems={"center"}>
+                  <Typography variant="body1" key={index}>
+                    {service}
+                  </Typography>
+                  <Box flexGrow={1} />
+
+                  <img
+                    src="/info.png"
+                    style={{ height: "1rem" }}
+                    key={index}
+                    onClick={handleOpenTooltip}
+                    
+                  />
+                </Stack>
+              </Tooltip>
+              </ClickAwayListener>
+            );
+          })}
+        </Stack>
       </CardContent>
     </Card>
   );
