@@ -2,3 +2,7 @@
     font-family: 'Elemental';
     src: url('./ElementalEndItalic.woff2') format('woff2');
 }
+@font-face {
+    font-family: 'Futura';
+    src: url('./FuturaMedium.woff2') format('woff2');
+}

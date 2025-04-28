@@ -18,12 +18,17 @@ import "./global.css";
 const sections = ["Services", "Contact"];
 
 const theme = createTheme({
+  palette: {
+    secondary: {
+      main: "#8e24aa"
+    },
+  },
   typography: {
     allVariants: {
       background: `linear-gradient(
           90deg,
         #ffffff 0%,
-        #cccccc 50%,
+        #aaaaaa 50%,
         #ffffff 100%
         )`,
       backgroundSize: "200% auto",
@@ -35,8 +40,18 @@ const theme = createTheme({
     h4: {
       fontFamily: "Elemental",
     },
-    subtitle1: {
+    h5: {
       fontStyle: "italic",
+    },
+    h6: {
+      fontFamily: "Futura",
+      textAlign: "justify",
+      textTransform: "uppercase"
+    },
+    subtitle1: {
+      fontFamily: "Futura",
+      textAlign: "justify",
+      textTransform: "uppercase",
       fontSize: "1.1rem",
       lineHeight: "1.3",
     },
@@ -44,12 +59,11 @@ const theme = createTheme({
       fontSize: "1.2rem",
     },
     body1: {
+      fontStyle: "italic",
       fontSize: "1.2rem",
       textAlign: "start",
     },
-    h5: {
-      fontStyle: "italic",
-    },
+
   },
 });
 
@@ -165,6 +179,9 @@ const App: React.FC = () => {
               style={{ width: "350px" }}
             />
           </div>
+          <Typography variant="h6" style={{position: "relative", marginTop: "auto", marginBottom: "1rem"}}>
+            WE CLEAN YOU SHINE
+          </Typography>
         </section>
 
         <motion.section
@@ -172,10 +189,10 @@ const App: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: visionInView ? 1 : 0, y: visionInView ? 0 : 50 }}
           transition={{ duration: 0.5 }}
+          style={{ margin: "4rem 10% 2rem", textAlign: "center" }}
         >
           <Typography
-            variant="h5"
-            style={{ margin: "2rem 1rem 0rem", textAlign: "center" }}
+            variant="h6"
             sx={{
               fontSize: {
                 xs: "1rem",
@@ -183,12 +200,11 @@ const App: React.FC = () => {
               },
             }}
           >
-            At MY Detailing, we believe your vehicle deserves more than just a
-            wash. Our expert services rejuvenate, protect, and elevate your
-            vehicle’s appearance, inside and out. With premium products and
-            meticulous care, we deliver results that embody true craftsmanship.
-            <br />
-            We clean, you shine.
+           AT MY DETAILING, WE BELIEVE YOUR VEHICLE DESERVES MORE THAN JUST A
+            WASH. OUR EXPERT SERVICES REJUVENATE, PROTECT, AND ELEVATE YOUR
+            VEHICLE’S APPEARANCE, INSIDE AND OUT. WITH PREMIUM PRODUCTS AND
+            METICULOUS CARE, WE DELIVER RESULTS THAT EMBODY TRUE CRAFTSMANSHIP.
+
           </Typography>
         </motion.section>
 
