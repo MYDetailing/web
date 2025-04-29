@@ -26,7 +26,7 @@ const theme = createTheme({
   typography: {
     allVariants: {
       background: `linear-gradient(
-          90deg,
+          120deg,
         #ffffff 0%,
         #aaaaaa 50%,
         #ffffff 100%
@@ -35,7 +35,7 @@ const theme = createTheme({
       backgroundClip: "text",
       WebkitBackgroundClip: "text",
       color: "transparent",
-      animation: "shineText 8s ease-in-out infinite",
+      animation: "shineText 7s ease-in-out infinite",
     },
     h4: {
       fontFamily: "Elemental",

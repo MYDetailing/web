@@ -33,7 +33,6 @@ function ServiceCard({
       variant="outlined"
       sx={{
         backgroundColor: "transparent",
-        border: `5px solid ${colour}`,
         borderRadius: "5px",
         color: "white",
         height: "100%",
