@@ -71,7 +71,7 @@ function ServicesSection() {
       >
         <Tab label="COUPE" />
         <Tab label="SEDAN" />
-        <Tab label="SUV/MINIVAN" />
+        <Tab label="SUV OR MINIVAN" />
         <Tab label="SEMI TRUCK" />
       </Tabs>
 
