@@ -61,8 +61,8 @@ function ServicesSection() {
         onChange={handleVehicleSizeChange}
         style={{ marginBottom: "1.5rem" }}
         sx={{
-          "& .Mui-selected": {
-            color: "#fff",
+          "& .MuiTab-root.Mui-selected": {
+            color: "#fff" ,
           },
           "& .MuiTabs-indicator": {
             backgroundColor: "#fff",
@@ -78,7 +78,7 @@ function ServicesSection() {
       <Grid2 container rowSpacing={4} columnSpacing={4} justifyContent="center">
         {packages.map((curPackage: Package) => {
           return (
-            <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={curPackage.id}>
+            <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={curPackage.id} border="4px solid #8e24aa" borderRadius="5px">
               <ServiceCard
                 heading={curPackage.name}
                 colour={curPackage.colour}
