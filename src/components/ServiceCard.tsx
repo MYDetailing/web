@@ -38,9 +38,13 @@ function ServiceCard({
         height: "100%",
       }}
     >
-      <CardContent style={{ padding: "1rem 2rem" }}>
+      <CardContent
+        sx={{ sm: { padding: "1rem 1rem" }, md: { padding: "1rem 2rem" } }}
+      >
         <Stack spacing={1}>
-          <Typography variant="h4">{heading} ${price}</Typography>
+          <Typography variant="h4">
+            {heading} ${price}
+          </Typography>
           <Typography variant="subtitle1">{description}</Typography>
 
           <Box height=".5rem" />
@@ -84,10 +88,7 @@ function ServiceCard({
                       },
                     }}
                   >
-                    <Stack
-                      flexDirection={"row"}
-                      alignItems={"center"}
-                    >
+                    <Stack flexDirection={"row"} alignItems={"center"}>
                       <Typography variant="body1" key={index}>
                         {service}
                       </Typography>

@@ -39,6 +39,7 @@ const theme = createTheme({
     },
     h4: {
       fontFamily: "Elemental",
+      fontSize: "2rem"
     },
     h5: {
       fontStyle: "italic",
