@@ -6,7 +6,6 @@ import {
   Toolbar,
   Typography,
   Button,
-  createTheme,
   ThemeProvider,
   Box,
 } from "@mui/material";
@@ -14,65 +13,14 @@ import { useInView } from "react-intersection-observer";
 import ServicesSection from "./components/ServicesSection";
 import "./assets/fonts/fonts.css";
 import "./global.css";
+import { VISION, SLOGAN, TITLE, SUBTITLE } from "./constants/strings";
+import theme from "./constants/theme";
+import { Helmet } from "react-helmet-async";
 
 const sections = ["Services", "Contact"];
 
-const theme = createTheme({
-  palette: {
-    secondary: {
-      main: "#8e24aa"
-    },
-  },
-  typography: {
-    allVariants: {
-      background: `linear-gradient(
-          120deg,
-        #ffffff 0%,
-        #aaaaaa 50%,
-        #ffffff 100%
-        )`,
-      backgroundSize: "200% auto",
-      backgroundClip: "text",
-      WebkitBackgroundClip: "text",
-      color: "transparent",
-      animation: "shineText 7s ease-in-out infinite",
-    },
-    h4: {
-      fontFamily: "Elemental",
-      fontSize: "2rem"
-    },
-    h5: {
-      fontStyle: "italic",
-    },
-    h6: {
-      fontFamily: "Futura",
-      textAlign: "justify",
-      textTransform: "uppercase"
-    },
-    subtitle1: {
-      fontFamily: "Futura",
-      textAlign: "justify",
-      textTransform: "uppercase",
-      fontSize: "1.1rem",
-      lineHeight: "1.3",
-    },
-    subtitle2: {
-      fontSize: "1.2rem",
-    },
-    body1: {
-      fontStyle: "italic",
-      fontSize: "1.2rem",
-      textAlign: "start",
-    },
-
-  },
-});
-
 const App: React.FC = () => {
-  useEffect(() => {
-    document.title = "MY Detailing";
-  });
-
+  
   const [activeSection, setActiveSection] = useState("");
 
   // Hero section observer
@@ -104,6 +52,24 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Helmet>
+        <title>{TITLE} - {SUBTITLE}</title>
+        <meta
+          name="description"
+          content={SUBTITLE}
+        />
+        <meta
+          name="keywords"
+          content="car detailing, Winkler wax polish headlight ceramic clean shine"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={SLOGAN} />
+        <meta property="og:image" content="/logofull.png" />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
+
       <Box
         style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}
       >
@@ -113,11 +79,7 @@ const App: React.FC = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
         >
           <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-            <img
-              src="/logofull.png"
-              alt="Detailing Co."
-              style={{ height: "40px" }}
-            />
+            <img src="/logofull.png" alt={TITLE} style={{ height: "40px" }} />
             <div>
               {sections.map((section) => (
                 <Button
@@ -174,14 +136,17 @@ const App: React.FC = () => {
               backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
           >
-            <img
-              src="/logotext.png"
-              alt="MY Detailing"
-              style={{ width: "350px" }}
-            />
+            <img src="/logotext.png" alt={TITLE} style={{ width: "350px" }} />
           </div>
-          <Typography variant="h6" style={{position: "relative", marginTop: "auto", marginBottom: "1rem"}}>
-            WE CLEAN YOU SHINE
+          <Typography
+            variant="h6"
+            style={{
+              position: "relative",
+              marginTop: "auto",
+              marginBottom: "1rem",
+            }}
+          >
+            {SLOGAN}
           </Typography>
         </section>
 
@@ -201,11 +166,7 @@ const App: React.FC = () => {
               },
             }}
           >
-           AT MY DETAILING, WE BELIEVE YOUR VEHICLE DESERVES MORE THAN JUST A
-            WASH. OUR EXPERT SERVICES REJUVENATE, PROTECT, AND ELEVATE YOUR
-            VEHICLE’S APPEARANCE, INSIDE AND OUT. WITH PREMIUM PRODUCTS AND
-            METICULOUS CARE, WE DELIVER RESULTS THAT EMBODY TRUE CRAFTSMANSHIP.
-
+            {VISION}
           </Typography>
         </motion.section>
 
