@@ -122,8 +122,8 @@
         },
         {
             "id": 24,
-            "name": "Underbody Plastic Dust/Oil Repellent",
-            "description": "Apply a protective layer to underbody plastics to resist dirt and oil buildup."
+            "name": "Dust and Oil Repellent for Underhood Plastics",
+            "description": "Applies a specialized coating to underhood plastic components that prevents dust and oil from sticking."
         },
         {
             "id": 25,
@@ -189,6 +189,11 @@
             "id": 37,
             "name": "Professional Photo Shoot for Sale",
             "description": "High-quality photography service to showcase your car for online listings or resale."
+        },
+        {
+            "id": 38,
+            "name": "Hard Wax",
+            "description": "Apply a durable layer of wax by hand or machine to protect the paint and enhance the vehicle’s shine."
         }
     ]
 }
