@@ -60,7 +60,7 @@ const App: React.FC = () => {
         />
         <meta
           name="keywords"
-          content="car detailing, Winkler wax polish headlight ceramic clean shine"
+          content="car detailing, detailing, detailing Winkler, wax, polish, ceramic, clean, shine"
         />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content={TITLE} />
