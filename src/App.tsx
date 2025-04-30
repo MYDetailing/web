@@ -6,7 +6,6 @@ import {
   Toolbar,
   Typography,
   Button,
-  createTheme,
   ThemeProvider,
   Box,
 } from "@mui/material";
@@ -14,50 +13,14 @@ import { useInView } from "react-intersection-observer";
 import ServicesSection from "./components/ServicesSection";
 import "./assets/fonts/fonts.css";
 import "./global.css";
+import { VISION, SLOGAN, TITLE, SUBTITLE } from "./constants/strings";
+import theme from "./constants/theme";
+import { Helmet } from "react-helmet-async";
 
 const sections = ["Services", "Contact"];
 
-const theme = createTheme({
-  typography: {
-    allVariants: {
-      background: `linear-gradient(
-          90deg,
-        #ffffff 0%,
-        #cccccc 50%,
-        #ffffff 100%
-        )`,
-      backgroundSize: "200% auto",
-      backgroundClip: "text",
-      WebkitBackgroundClip: "text",
-      color: "transparent",
-      animation: "shineText 8s ease-in-out infinite",
-    },
-    h4: {
-      fontFamily: "Elemental",
-    },
-    subtitle1: {
-      fontStyle: "italic",
-      fontSize: "1.1rem",
-      lineHeight: "1.3",
-    },
-    subtitle2: {
-      fontSize: "1.2rem",
-    },
-    body1: {
-      fontSize: "1.2rem",
-      textAlign: "start",
-    },
-    h5: {
-      fontStyle: "italic",
-    },
-  },
-});
-
 const App: React.FC = () => {
-  useEffect(() => {
-    document.title = "MY Detailing";
-  });
-
+  
   const [activeSection, setActiveSection] = useState("");
 
   // Hero section observer
@@ -89,6 +52,24 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Helmet>
+        <title>{TITLE} - {SUBTITLE}</title>
+        <meta
+          name="description"
+          content={SUBTITLE}
+        />
+        <meta
+          name="keywords"
+          content="car detailing, detailing, detailing Winkler, wax, polish, ceramic, clean, shine"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={SLOGAN} />
+        <meta property="og:image" content="/logofull.png" />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
+
       <Box
         style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}
       >
@@ -98,11 +79,7 @@ const App: React.FC = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
         >
           <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-            <img
-              src="/logofull.png"
-              alt="Detailing Co."
-              style={{ height: "40px" }}
-            />
+            <img src="/logofull.png" alt={TITLE} style={{ height: "40px" }} />
             <div>
               {sections.map((section) => (
                 <Button
@@ -159,12 +136,18 @@ const App: React.FC = () => {
               backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
           >
-            <img
-              src="/logotext.png"
-              alt="MY Detailing"
-              style={{ width: "350px" }}
-            />
+            <img src="/logotext.png" alt={TITLE} style={{ width: "350px" }} />
           </div>
+          <Typography
+            variant="h6"
+            style={{
+              position: "relative",
+              marginTop: "auto",
+              marginBottom: "1rem",
+            }}
+          >
+            {SLOGAN}
+          </Typography>
         </section>
 
         <motion.section
@@ -172,10 +155,10 @@ const App: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: visionInView ? 1 : 0, y: visionInView ? 0 : 50 }}
           transition={{ duration: 0.5 }}
+          style={{ margin: "4rem 10% 2rem", textAlign: "center" }}
         >
           <Typography
-            variant="h5"
-            style={{ margin: "2rem 1rem 0rem", textAlign: "center" }}
+            variant="h6"
             sx={{
               fontSize: {
                 xs: "1rem",
@@ -183,12 +166,7 @@ const App: React.FC = () => {
               },
             }}
           >
-            At MY Detailing, we believe your vehicle deserves more than just a
-            wash. Our expert services rejuvenate, protect, and elevate your
-            vehicle’s appearance, inside and out. With premium products and
-            meticulous care, we deliver results that embody true craftsmanship.
-            <br />
-            We clean, you shine.
+            {VISION}
           </Typography>
         </motion.section>
 

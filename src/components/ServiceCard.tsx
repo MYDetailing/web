@@ -1,16 +1,19 @@
-import { Box, ClickAwayListener, Stack, Tooltip, Typography } from "@mui/material";
+import {
+  Box,
+  ClickAwayListener,
+  Stack,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { semanticColors } from "@nextui-org/react";
-import { tr } from "framer-motion/client";
 import { useState } from "react";
-import { setupIntersectionMocking } from "react-intersection-observer/test-utils";
 
 interface Props {
   heading: string;
   description: string;
   colour: string;
-  prices: string;
+  price: string;
   services: string[];
   hints: string[];
   previousPackage: string;
@@ -20,7 +23,7 @@ function ServiceCard({
   heading,
   description,
   colour,
-  prices,
+  price,
   services,
   hints,
   previousPackage,
@@ -30,16 +33,18 @@ function ServiceCard({
       variant="outlined"
       sx={{
         backgroundColor: "transparent",
-        border: `5px solid ${colour}`,
-        borderRadius: "12px",
+        borderRadius: "5px",
         color: "white",
         height: "100%",
       }}
     >
-      <CardContent>
-        <Stack>
-          <Typography variant="h4">{heading}</Typography>
-          <Typography variant="subtitle2">{prices}</Typography>
+      <CardContent
+        sx={{ sm: { padding: "1rem 1rem" }, md: { padding: "1rem 2rem" } }}
+      >
+        <Stack spacing={1}>
+          <Typography variant="h4">
+            {heading} ${price}
+          </Typography>
           <Typography variant="subtitle1">{description}</Typography>
 
           <Box height=".5rem" />
@@ -49,58 +54,57 @@ function ServiceCard({
               Everything included in {previousPackage}, plus
             </Typography>
           )}
-          {services.map((service, index) => {
-            const [open, setOpen] = useState(false);
+          <Stack>
+            {services.map((service, index) => {
+              const [open, setOpen] = useState(false);
 
-            function handleOpenTooltip() {
-              setOpen(true);
-            }
-            0;
+              function handleOpenTooltip() {
+                setOpen(true);
+              }
+              0;
 
-            function handleCloseTooltip() {
-              setOpen(false);
-            }
+              function handleCloseTooltip() {
+                setOpen(false);
+              }
 
-            return (
-              <ClickAwayListener onClickAway={handleCloseTooltip}>
-              <Tooltip
-                open={open}
-                onClose={handleCloseTooltip}
-                disableFocusListener
-                disableHoverListener
-                disableTouchListener
-                title={service + ": " + hints[index]}
-                key={index}
-                arrow
-                placement="bottom"
-                enterDelay={500}
-                slotProps={{
-                  tooltip: { sx: { fontSize: "1.2rem" } },
-                  popper: {
-                    modifiers: [
-                      { name: "offset", options: { offset: [0, -14] } },
-                    ],
-                  },
-                }}
-              >
-                <Stack flexDirection={"row"} key={index} alignItems={"center"}>
-                  <Typography variant="body1" key={index}>
-                    {service}
-                  </Typography>
-                  <Box flexGrow={1} />
+              return (
+                <ClickAwayListener onClickAway={handleCloseTooltip} key={index}>
+                  <Tooltip
+                    open={open}
+                    onClose={handleCloseTooltip}
+                    disableFocusListener
+                    disableHoverListener
+                    disableTouchListener
+                    title={service + ": " + hints[index]}
+                    arrow
+                    placement="bottom"
+                    enterDelay={500}
+                    slotProps={{
+                      tooltip: { sx: { fontSize: "1.2rem" } },
+                      popper: {
+                        modifiers: [
+                          { name: "offset", options: { offset: [0, -14] } },
+                        ],
+                      },
+                    }}
+                  >
+                    <Stack flexDirection={"row"} alignItems={"center"}>
+                      <Typography variant="body1" key={index}>
+                        {service}
+                      </Typography>
+                      <Box flexGrow={1} />
 
-                  <img
-                    src="/info.png"
-                    style={{ height: "1rem" }}
-                    key={index}
-                    onClick={handleOpenTooltip}
-                    
-                  />
-                </Stack>
-              </Tooltip>
-              </ClickAwayListener>
-            );
-          })}
+                      <img
+                        src="/info.png"
+                        style={{ height: "1rem" }}
+                        onClick={handleOpenTooltip}
+                      />
+                    </Stack>
+                  </Tooltip>
+                </ClickAwayListener>
+              );
+            })}
+          </Stack>
         </Stack>
       </CardContent>
     </Card>
