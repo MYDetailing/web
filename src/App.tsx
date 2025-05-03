@@ -204,7 +204,8 @@ const App: React.FC = () => {
                 justifyContent: "start",
                 padding: "2rem",
                 textAlign: "center",
-                marginBottom: "10rem"
+                marginBottom: "10rem",
+                scrollMarginTop: "80px"
               }}
             >
               {sectionPart}
