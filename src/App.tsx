@@ -57,17 +57,13 @@ const App: React.FC = () => {
         <title>{TITLE} - {SUBTITLE}</title>
         <meta
           name="description"
-          content={SUBTITLE}
+          content={VISION}
         />
         <meta
           name="keywords"
           content="car detailing, detailing, detailing Winkler, wax, polish, ceramic, clean, shine"
         />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={SLOGAN} />
-        <meta property="og:image" content="/logofull.png" />
-        <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
 
@@ -208,7 +204,8 @@ const App: React.FC = () => {
                 justifyContent: "start",
                 padding: "2rem",
                 textAlign: "center",
-                marginBottom: "10rem"
+                marginBottom: "10rem",
+                scrollMarginTop: "80px"
               }}
             >
               {sectionPart}

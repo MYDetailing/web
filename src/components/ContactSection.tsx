@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import {
-  CONTACT,
+  BOOK,
   ADDRESS,
   PHONE,
   HOURS,
@@ -13,7 +13,7 @@ function ContactSection() {
   return (
     <Box width="100%">
       <Typography variant="h4" marginBottom=".5rem">
-        {CONTACT}
+        {BOOK}
       </Typography>
       <Typography variant="subtitle1" marginBottom="1rem" textAlign="center">{MESSAGE}</Typography>
       <Stack flexDirection="row" spacing={2} width="100%">
