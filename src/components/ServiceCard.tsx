@@ -43,7 +43,7 @@ function ServiceCard({
       >
         <Stack spacing={1}>
           <Typography variant="h4">
-            {heading} ${price}
+            {heading} {price == "" ? "" : "$" + price}
           </Typography>
           <Typography variant="subtitle1">{description}</Typography>
 
