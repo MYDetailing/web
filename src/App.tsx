@@ -16,6 +16,7 @@ import "./global.css";
 import { VISION, SLOGAN, TITLE, SUBTITLE } from "./constants/strings";
 import theme from "./constants/theme";
 import { Helmet } from "react-helmet-async";
+import ContactSection from "./components/ContactSection";
 
 const sections = ["Services", "Contact"];
 
@@ -150,6 +151,7 @@ const App: React.FC = () => {
           </Typography>
         </section>
 
+        {/* Vision Section */}
         <motion.section
           ref={visionRef}
           initial={{ opacity: 0, y: 50 }}
@@ -185,21 +187,10 @@ const App: React.FC = () => {
 
           let sectionPart = null;
 
-          if (section == "Services") sectionPart = <ServicesSection />;
+          if (section == "Services") 
+            sectionPart = <ServicesSection />;
           else
-            sectionPart = (
-              <div>
-                <Typography variant="h3" gutterBottom>
-                  {section}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  style={{ maxWidth: "600px", color: "#fff" }}
-                >
-                  {section} content goes here. Add more details as needed.
-                </Typography>
-              </div>
-            );
+            sectionPart = <ContactSection />;
 
           return (
             <motion.section
@@ -217,6 +208,7 @@ const App: React.FC = () => {
                 justifyContent: "start",
                 padding: "2rem",
                 textAlign: "center",
+                marginBottom: "10rem"
               }}
             >
               {sectionPart}
