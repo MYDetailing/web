@@ -12,8 +12,8 @@ import { useState } from "react";
 interface Props {
   heading: string;
   description: string;
-  colour: string;
   price: string;
+  time: string;
   services: string[];
   hints: string[];
   previousPackage: string;
@@ -22,8 +22,8 @@ interface Props {
 function ServiceCard({
   heading,
   description,
-  colour,
   price,
+  time,
   services,
   hints,
   previousPackage,
@@ -35,7 +35,7 @@ function ServiceCard({
         backgroundColor: "transparent",
         borderRadius: "5px",
         color: "white",
-        height: "100%",
+        width: "100%"
       }}
     >
       <CardContent
@@ -47,10 +47,11 @@ function ServiceCard({
           </Typography>
           <Typography variant="subtitle1">{description}</Typography>
 
-          <Box height=".5rem" />
+          <Box height=".25rem" />
 
+          <Typography variant="subtitle1">{time}</Typography>
           {previousPackage !== "" && (
-            <Typography fontStyle={"italic"}>
+            <Typography variant="body1">
               Everything included in {previousPackage}, plus
             </Typography>
           )}
