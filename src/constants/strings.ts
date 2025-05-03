@@ -9,9 +9,9 @@ export const SUBTITLE = "Premium Car Detailing in Winkler!"
 export const VEHICLE_TYPES = ["COUPE", "SEDAN", "SUV OR MINIVAN", "SEMI TRUCK", "RV OR CAMPER"];
 
 // Contact section
-export const CONTACT = "Contact Us";
+export const BOOK = "Book with us";
 export const EMAIL = "info@mydetailing.ca"
-export const MESSAGE = "You’re welcome to contact us by email, phone, or by visiting us in person."
+export const MESSAGE = "Book your car detailing appointment by email, phone, or by visiting us in person."
 export const ADDRESS = "5-542 Icon Drive, Winkler";
 export const PHONE = "(204) 818-0930"
 export const DAYS = "monday to saturday"
