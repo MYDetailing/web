@@ -8,6 +8,7 @@ import {
   Button,
   ThemeProvider,
   Box,
+  Stack,
 } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import ServicesSection from "./components/ServicesSection";
@@ -17,11 +18,20 @@ import { VISION, SLOGAN, TITLE, SUBTITLE } from "./constants/strings";
 import theme from "./constants/theme";
 import { Helmet } from "react-helmet-async";
 import ContactSection from "./components/ContactSection";
+import adData from "./data/ads.json";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const sections = ["Services", "Contact"];
 
+interface Ad {
+  title: string;
+  description: string;
+}
+
 const App: React.FC = () => {
-  
+  const ads: Ad[] = adData.ads;
   const [activeSection, setActiveSection] = useState("");
 
   // Hero section observer
@@ -51,14 +61,22 @@ const App: React.FC = () => {
     triggerOnce: false,
   });
 
+  const { ref: adsRef, inView: adsInView } = useInView({
+    threshold: 0.25,
+    triggerOnce: false,
+  });
+
+  function scrollToSection(section: string) {
+    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
-        <title>{TITLE} - {SUBTITLE}</title>
-        <meta
-          name="description"
-          content={VISION}
-        />
+        <title>
+          {TITLE} - {SUBTITLE}
+        </title>
+        <meta name="description" content={VISION} />
         <meta
           name="keywords"
           content="car detailing, detailing, detailing Winkler, wax, polish, ceramic, clean, shine"
@@ -82,11 +100,7 @@ const App: React.FC = () => {
                 <Button
                   key={section}
                   color={activeSection === section ? "secondary" : "inherit"}
-                  onClick={() => {
-                    document
-                      .getElementById(section)
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={() => scrollToSection(section)}
                 >
                   {section}
                 </Button>
@@ -166,6 +180,64 @@ const App: React.FC = () => {
           >
             {VISION}
           </Typography>
+
+          <Stack flexDirection="row" justifyContent="center" marginTop="3rem">
+            {sections.map((section) => (
+              <Button
+                variant="outlined"
+                key={section}
+                onClick={() => scrollToSection(section)}
+              >
+                {section}
+              </Button>
+            ))}
+          </Stack>
+        </motion.section>
+
+        {/*Ads Section */}
+        <motion.section
+          ref={adsRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: adsInView ? 1 : 0, y: adsInView ? 0 : 50 }}
+          transition={{ duration: 0.5 }}
+          style={{ margin: "4rem 5% 2rem", textAlign: "center", paddingBottom: "3rem"}}
+        >
+          <Box sx={{
+                "& .slick-dots li button:before": {
+                  color: "#fff"
+                }
+              }}>
+          <Slider
+            infinite
+            slidesToScroll={1}
+            slidesToShow={1}
+            speed={2000}
+            autoplay
+            autoplaySpeed={6000}
+            centerPadding="100px"
+            arrows={false}
+            dots
+          >
+            {ads.map((ad, index) => (
+              <Box key={index} 
+              >
+                <Stack
+                  flexDirection={{ xs: "column", md: "row" }}
+                  justifyContent="space-between"
+                  alignItems="center"
+                  sx={{ minHeight: "200px" }}
+                >
+                  <Typography variant="h2" sx={{ whiteSpace: "pre-line", marginLeft: "5%"}}>
+                    {ad.title}
+                  </Typography>
+                  <Typography variant="h3" sx={{ whiteSpace: "pre-line", marginRight: "5%"}}>
+                    {ad.description}
+                  </Typography>
+                </Stack>
+              </Box>
+            ))}
+          </Slider>
+          </Box>
         </motion.section>
 
         {/* Services and Contact Sections */}
@@ -183,10 +255,8 @@ const App: React.FC = () => {
 
           let sectionPart = null;
 
-          if (section == "Services") 
-            sectionPart = <ServicesSection />;
-          else
-            sectionPart = <ContactSection />;
+          if (section == "Services") sectionPart = <ServicesSection />;
+          else sectionPart = <ContactSection />;
 
           return (
             <motion.section
@@ -205,7 +275,7 @@ const App: React.FC = () => {
                 padding: "2rem",
                 textAlign: "center",
                 marginBottom: "10rem",
-                scrollMarginTop: "80px"
+                scrollMarginTop: "80px",
               }}
             >
               {sectionPart}

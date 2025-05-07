@@ -1,0 +1,53 @@
+{
+    "ads": [
+      {
+        "title": "Glass\nRestoration\nPolishing",
+        "description": "Preserves the original factory glass\nRemoves up to 99% of scratches\nImproves safety while driving\nMuch cheaper than glass replacement"
+      },
+      {
+        "title": "Engine\nCleaning",
+        "description": "Keeps the engine cool\nReduces wear and tear\nMinimizes risk of self-ignition\nImproves appearance under the hood\nHelps with resale\nIncreases chance of passing safety inspections"
+      },
+      {
+        "title": "Pre-Sale\nPreparation",
+        "description": "Increases the car’s value (up to 2x)\nHelps sell the car faster\nReduces questions from potential buyers"
+      },
+      {
+        "title": "Three-Phase\nCar\nWash",
+        "description": "Proper and thorough washing method\nSafe for chrome, rubber, and plastic\nAdds hydrophobic protection\nNo new scratches with professional tools"
+      },
+      {
+        "title": "Rain\nRepellent\nCoating",
+        "description": "Reduces wiper wear\nMinimizes windshield wear\nLowers washer fluid usage\nHelps ice clear instantly in winter\nImproves safety in rain"
+      },
+      {
+        "title": "Leather\n& Fabric\nCleaning",
+        "description": "Extends leather lifespan\nImproves touch and comfort\nKeeps the interior looking new longer"
+      },
+      {
+        "title": "Body\nPolishing",
+        "description": "Enhances the car’s appearance\nAdds deep shine and gloss\nCareful inspection before polishing\nMinimal clear coat removal with maximum results"
+      },
+      {
+        "title": "Interior\nDeep\nCleaning",
+        "description": "Removes all stains and dust\nMakes breathing easier\nEliminates microbes and bacteria\nOzonation removes odors and viruses"
+      },
+      {
+        "title": "Ceramic\nCoating",
+        "description": "Protects against UV and chemicals\nDeepens color and shine\nAdds hydrophobic properties\nReduces scratches during washes"
+      },
+      {
+        "title": "Wax\nProtection",
+        "description": "Adds glossy shine\nShields from UV, dirt, and chemicals\nRepels water and debris\nHelps preserve the paint"
+      },
+      {
+        "title": "Headlight\nRestoration",
+        "description": "Restores full clarity\nImproves night driving visibility\nIncreases safety\nMakes headlights look like new"
+      },
+      {
+        "title": "Interior\nDisinfection\n(Ozonation)",
+        "description": "Removes unpleasant odors\nKills bacteria, fungi, and viruses\nEliminates cigarette and other strong smells"
+      }
+    ]
+  }
+  

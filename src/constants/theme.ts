@@ -1,9 +1,12 @@
-import { createTheme} from "@mui/material";
+import { createTheme } from "@mui/material";
 
 const theme = createTheme({
   palette: {
+    text: {
+      primary: "#C1C1C2",
+    },
     secondary: {
-      main: "#8e24aa"
+      main: "#8e24aa",
     },
   },
   typography: {
@@ -20,9 +23,20 @@ const theme = createTheme({
       color: "transparent",
       animation: "shineText 7s ease-in-out infinite",
     },
+    h2: {
+      fontFamily: "Futura",
+      fontSize: "5rem",
+      textAlign: "left"
+    },
+    h3: {
+      fontFamily: "Futura",
+      fontSize: "2rem",
+      textAlign: "right",
+      lineHeight: "1.3",
+    },
     h4: {
       fontFamily: "Elemental",
-      fontSize: "2rem"
+      fontSize: "2rem",
     },
     h5: {
       fontStyle: "italic",
@@ -30,7 +44,7 @@ const theme = createTheme({
     h6: {
       fontFamily: "Futura",
       textAlign: "justify",
-      textTransform: "uppercase"
+      textTransform: "uppercase",
     },
     subtitle1: {
       fontFamily: "Futura",
@@ -47,7 +61,25 @@ const theme = createTheme({
       fontSize: "1.2rem",
       textAlign: "start",
     },
-
+  },
+  components: {
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: "outlined" },
+          style: ({ theme }) => ({
+            ...theme.typography.h6,
+            border: "none",
+            [theme.breakpoints.up("md")]: {
+              fontSize: "1.5rem",
+            },
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "1rem",
+            },
+          }),
+        },
+      ],
+    },
   },
 });
 
