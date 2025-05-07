@@ -1,22 +1,26 @@
-import React, { CSSProperties, useEffect } from "react";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import { Typography, Button, ThemeProvider, Box, Stack } from "@mui/material";
+
 import { useInView } from "react-intersection-observer";
-import ServicesSection from "./components/ServicesSection";
-import "./assets/fonts/fonts.css";
-import "./global.css";
-import { VISION, TITLE, SUBTITLE } from "./constants/strings";
-import theme from "./constants/theme";
+import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import ContactSection from "./components/ContactSection";
-import adData from "./data/ads.json";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import { VISION, TITLE, SUBTITLE } from "./constants/strings";
+import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
+import { SECTION_APPEAR_THRESHOLD } from "./constants/values";
+import theme from "./constants/theme";
+import adData from "./data/ads.json";
+
+import ContactSection from "./components/ContactSection";
+import ServicesSection from "./components/ServicesSection";
 import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
-import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./assets/fonts/fonts.css";
+import "./global.css";
 
 const sections = ["Services", "Contact"];
 
@@ -53,22 +57,22 @@ const App: React.FC = () => {
 
   // section observers
   const { ref: videoRef, inView: videoInView } = useInView({
-    threshold: 0.3,
+    threshold: SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
   const { ref: footerRef, inView: footerInView } = useInView({
-    threshold: 0.3,
+    threshold: SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
   const { ref: visionRef, inView: visionInView } = useInView({
-    threshold: 0.25,
+    threshold: SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
   const { ref: adsRef, inView: adsInView } = useInView({
-    threshold: 0.25,
+    threshold: SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
