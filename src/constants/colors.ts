@@ -1,0 +1,1 @@
+export const NAV_BAR_COL = "rgba(0, 0, 0, 0.9)";

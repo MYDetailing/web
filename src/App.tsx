@@ -1,15 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  ThemeProvider,
-  Box,
-  Stack,
-} from "@mui/material";
+import { Typography, Button, ThemeProvider, Box, Stack } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import ServicesSection from "./components/ServicesSection";
 import "./assets/fonts/fonts.css";
@@ -22,6 +14,7 @@ import adData from "./data/ads.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import NavBar from "./components/NavBar";
 
 const sections = ["Services", "Contact"];
 
@@ -31,14 +24,21 @@ interface Ad {
 }
 
 const App: React.FC = () => {
-  const ads: Ad[] = adData.ads;
+  // keep track of active section
   const [activeSection, setActiveSection] = useState("");
+
+  function scrollToSection(section: string) {
+    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const ads: Ad[] = adData.ads;
 
   // Hero section observer
   const { ref: homeRef, inView: homeInView } = useInView({
     threshold: 0.3,
     triggerOnce: false,
   });
+
   useEffect(() => {
     if (homeInView) {
       setActiveSection(""); // Unselect services when in home section
@@ -50,6 +50,7 @@ const App: React.FC = () => {
     threshold: 0.3,
     triggerOnce: false,
   });
+
   useEffect(() => {
     if (footerInView) {
       setActiveSection("");
@@ -66,10 +67,6 @@ const App: React.FC = () => {
     triggerOnce: false,
   });
 
-  function scrollToSection(section: string) {
-    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
-  }
-
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
@@ -85,29 +82,13 @@ const App: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
 
-      <Box
-        style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}
-      >
-        {/* Navbar */}
-        <AppBar
-          position="fixed"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
-        >
-          <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-            <img src="/logofull.png" alt={TITLE} style={{ height: "40px" }} />
-            <div>
-              {sections.map((section) => (
-                <Button
-                  key={section}
-                  color={activeSection === section ? "secondary" : "inherit"}
-                  onClick={() => scrollToSection(section)}
-                >
-                  {section}
-                </Button>
-              ))}
-            </div>
-          </Toolbar>
-        </AppBar>
+      <Box style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}>
+        
+        <NavBar
+          sections={sections}
+          onSectionChange={scrollToSection}
+          activeSection={activeSection}
+        />
 
         {/* Hero Section with Video */}
         <section
@@ -183,11 +164,7 @@ const App: React.FC = () => {
 
           <Stack flexDirection="row" justifyContent="center" marginTop="3rem">
             {sections.map((section) => (
-              <Button
-                variant="outlined"
-                key={section}
-                onClick={() => scrollToSection(section)}
-              >
+              <Button variant="outlined" key={section} onClick={() => scrollToSection(section)}>
                 {section}
               </Button>
             ))}
@@ -200,43 +177,48 @@ const App: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: adsInView ? 1 : 0, y: adsInView ? 0 : 50 }}
           transition={{ duration: 0.5 }}
-          style={{ margin: "4rem 5% 2rem", textAlign: "center", paddingBottom: "3rem"}}
+          style={{
+            margin: "4rem 5% 2rem",
+            textAlign: "center",
+            paddingBottom: "3rem",
+          }}
         >
-          <Box sx={{
-                "& .slick-dots li button:before": {
-                  color: "#fff"
-                }
-              }}>
-          <Slider
-            infinite
-            slidesToScroll={1}
-            slidesToShow={1}
-            speed={2000}
-            autoplay
-            autoplaySpeed={6000}
-            centerPadding="100px"
-            arrows={false}
-            dots
+          <Box
+            sx={{
+              "& .slick-dots li button:before": {
+                color: "#fff",
+              },
+            }}
           >
-            {ads.map((ad, index) => (
-              <Box key={index} 
-              >
-                <Stack
-                  flexDirection={{ xs: "column", md: "row" }}
-                  justifyContent="space-between"
-                  alignItems="center"
-                  sx={{ minHeight: "200px" }}
-                >
-                  <Typography variant="h2" sx={{ whiteSpace: "pre-line", marginLeft: "5%"}}>
-                    {ad.title}
-                  </Typography>
-                  <Typography variant="h3" sx={{ whiteSpace: "pre-line", marginRight: "5%"}}>
-                    {ad.description}
-                  </Typography>
-                </Stack>
-              </Box>
-            ))}
-          </Slider>
+            <Slider
+              infinite
+              slidesToScroll={1}
+              slidesToShow={1}
+              speed={2000}
+              autoplay
+              autoplaySpeed={6000}
+              centerPadding="100px"
+              arrows={false}
+              dots
+            >
+              {ads.map((ad, index) => (
+                <Box key={index}>
+                  <Stack
+                    flexDirection={{ xs: "column", md: "row" }}
+                    justifyContent="space-between"
+                    alignItems="center"
+                    sx={{ minHeight: "200px" }}
+                  >
+                    <Typography variant="h2" sx={{ whiteSpace: "pre-line", marginLeft: "5%" }}>
+                      {ad.title}
+                    </Typography>
+                    <Typography variant="h3" sx={{ whiteSpace: "pre-line", marginRight: "5%" }}>
+                      {ad.description}
+                    </Typography>
+                  </Stack>
+                </Box>
+              ))}
+            </Slider>
           </Box>
         </motion.section>
 
