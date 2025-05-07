@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { CSSProperties, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Typography, Button, ThemeProvider, Box, Stack } from "@mui/material";
@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import ServicesSection from "./components/ServicesSection";
 import "./assets/fonts/fonts.css";
 import "./global.css";
-import { VISION, SLOGAN, TITLE, SUBTITLE } from "./constants/strings";
+import { VISION, TITLE, SUBTITLE } from "./constants/strings";
 import theme from "./constants/theme";
 import { Helmet } from "react-helmet-async";
 import ContactSection from "./components/ContactSection";
@@ -15,8 +15,26 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
+import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
 
 const sections = ["Services", "Contact"];
+
+const wrapperBoxStyle: CSSProperties = {
+  backgroundColor: SITE_BG_COL,
+  color: SITE_TXT_COL,
+  minHeight: "100vh",
+};
+
+const heroSectionStyle: CSSProperties = {
+  position: "relative",
+  width: "100%",
+  height: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+};
 
 interface Ad {
   title: string;
@@ -33,29 +51,16 @@ const App: React.FC = () => {
 
   const ads: Ad[] = adData.ads;
 
-  // Hero section observer
-  const { ref: homeRef, inView: homeInView } = useInView({
+  // section observers
+  const { ref: videoRef, inView: videoInView } = useInView({
     threshold: 0.3,
     triggerOnce: false,
   });
 
-  useEffect(() => {
-    if (homeInView) {
-      setActiveSection(""); // Unselect services when in home section
-    }
-  }, [homeInView]);
-
-  // Footer section observer
   const { ref: footerRef, inView: footerInView } = useInView({
     threshold: 0.3,
     triggerOnce: false,
   });
-
-  useEffect(() => {
-    if (footerInView) {
-      setActiveSection("");
-    }
-  }, [footerInView]);
 
   const { ref: visionRef, inView: visionInView } = useInView({
     threshold: 0.25,
@@ -66,6 +71,18 @@ const App: React.FC = () => {
     threshold: 0.25,
     triggerOnce: false,
   });
+
+  useEffect(() => {
+    if (videoInView) {
+      setActiveSection("");
+    }
+  }, [videoInView]);
+
+  useEffect(() => {
+    if (footerInView) {
+      setActiveSection("");
+    }
+  }, [footerInView]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -82,64 +99,15 @@ const App: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
 
-      <Box style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}>
-        
+      <Box style={wrapperBoxStyle}>
         <NavBar
           sections={sections}
           onSectionChange={scrollToSection}
           activeSection={activeSection}
         />
 
-        {/* Hero Section with Video */}
-        <section
-          ref={homeRef}
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
-          }}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-            src="/video.mp4"
-          />
-          <div
-            style={{
-              position: "absolute",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-            }}
-          >
-            <img src="/logotext.png" alt={TITLE} style={{ width: "350px" }} />
-          </div>
-          <Typography
-            variant="h6"
-            style={{
-              position: "relative",
-              marginTop: "auto",
-              marginBottom: "1rem",
-            }}
-          >
-            {SLOGAN}
-          </Typography>
+        <section ref={videoRef} style={heroSectionStyle}>
+          <HeroSection />
         </section>
 
         {/* Vision Section */}
