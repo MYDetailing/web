@@ -3,6 +3,7 @@
 import { AppBar, Button, Toolbar } from "@mui/material";
 import { TITLE } from "../constants/strings";
 import { NAV_BAR_COL } from "../constants/colors";
+import { CSSProperties } from "react";
 
 interface Props {
   sections: string[];
@@ -10,16 +11,16 @@ interface Props {
   activeSection: String;
 }
 
-const appBarStyle = {
+const appBarStyle: CSSProperties = {
   backgroundColor: NAV_BAR_COL,
 };
 
-const toolBarStyle = {
+const toolBarStyle: CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
 };
 
-const logoStyle = {
+const logoStyle: CSSProperties = {
   height: "40px",
 };
 
