@@ -85,7 +85,7 @@ const App: React.FC = () => {
   }
 
   // section observers
-  const { ref: videoRef, inView: videoInView } = useInView({
+  const { ref: videoRef } = useInView({
     threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
@@ -116,9 +116,13 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    if (!(servicesInView || contactInView)) {
+    if (servicesInView)
+      setActiveSection(NAV_BAR_SECTIONS[0]);
+    else if (contactInView)
+      setActiveSection(NAV_BAR_SECTIONS[1]);
+    else
       setActiveSection("");
-    }
+    
   }, [servicesInView, contactInView]);
 
   return (
@@ -172,6 +176,7 @@ const App: React.FC = () => {
         {/* services section */}
         <motion.section
           ref={servicesRef}
+          id={NAV_BAR_SECTIONS[0]}
           {...motionSectionProps}
           animate={{ opacity: servicesInView ? 1 : 0, y: servicesInView ? 0 : 50 }}
           style={servicesAndContactSectionsStyle}
@@ -182,6 +187,7 @@ const App: React.FC = () => {
         {/* contact section */}
         <motion.section
           ref={contactRef}
+          id={NAV_BAR_SECTIONS[1]}
           {...motionSectionProps}
           animate={{ opacity: contactInView ? 1 : 0, y: contactInView ? 0 : 50 }}
           style={servicesAndContactSectionsStyle}
