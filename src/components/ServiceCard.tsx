@@ -1,3 +1,5 @@
+// design of one service card, used in service section
+
 import {
   Box,
   ClickAwayListener,
