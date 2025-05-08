@@ -62,8 +62,18 @@ const servicesAndContactSectionsStyle: CSSProperties = {
   justifyContent: "start",
   padding: "2rem",
   textAlign: "center",
-  marginBottom: "10rem",
+  marginBottom: "8rem",
   scrollMarginTop: "80px",
+};
+
+const footerSectionStyle: CSSProperties = {
+  minHeight: "50vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "start",
+  padding: "5rem 2rem",
+  textAlign: "center",
 };
 
 const App: React.FC = () => {
@@ -182,18 +192,9 @@ const App: React.FC = () => {
         {/* footer section */}
         <motion.section
           ref={footerRef}
-          initial={{ opacity: 0, y: 50 }}
+          {...motionSectionProps}
           animate={{ opacity: footerInView ? 1 : 0, y: footerInView ? 0 : 50 }}
-          transition={{ duration: 0.5 }}
-          style={{
-            minHeight: "50vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "start",
-            padding: "5rem 2rem",
-            textAlign: "center",
-          }}
+          style={footerSectionStyle}
         ></motion.section>
       </Box>
     </ThemeProvider>
