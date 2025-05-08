@@ -8,4 +8,5 @@ export const FIRST_SEMI_PACKAGE = 7;
 export const LAST_SEMI_PACKAGE = 9;
 export const FIRST_RV_PACKAGE = 9;
 
-export const SECTION_APPEAR_THRESHOLD = 0.25;
+export const SM_SECTION_APPEAR_THRESHOLD = 0.25;
+export const LG_SECTION_APPEAR_THRESHOLD = 0.05;

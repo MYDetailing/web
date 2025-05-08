@@ -7,20 +7,20 @@ import { Helmet } from "react-helmet-async";
 
 import { VISION, TITLE, SUBTITLE, NAV_BAR_SECTIONS } from "./constants/strings";
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
-import { SECTION_APPEAR_THRESHOLD } from "./constants/values";
+import { LG_SECTION_APPEAR_THRESHOLD, SM_SECTION_APPEAR_THRESHOLD } from "./constants/values";
 import theme from "./constants/theme";
 
 import ContactSection from "./components/ContactSection";
 import ServicesSection from "./components/ServicesSection";
 import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
+import VisionSection from "./components/VisionSection";
+import ServiceAddSection from "./components/ServiceAddSection ";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/fonts/fonts.css";
 import "./global.css";
-import VisionSection from "./components/VisionSection";
-import ServiceAddSection from "./components/ServiceAddSection ";
 
 const motionSectionProps = {
   initial: { opacity: 0, y: 50 },
@@ -54,6 +54,18 @@ const serviceAdsSectionStyle: CSSProperties = {
   paddingBottom: "3rem",
 };
 
+const servicesAndContactSectionsStyle: CSSProperties = {
+  minHeight: "65vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "start",
+  padding: "2rem",
+  textAlign: "center",
+  marginBottom: "10rem",
+  scrollMarginTop: "80px",
+};
+
 const App: React.FC = () => {
   // keep track of active section
   const [activeSection, setActiveSection] = useState("");
@@ -64,36 +76,40 @@ const App: React.FC = () => {
 
   // section observers
   const { ref: videoRef, inView: videoInView } = useInView({
-    threshold: SECTION_APPEAR_THRESHOLD,
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
   const { ref: footerRef, inView: footerInView } = useInView({
-    threshold: SECTION_APPEAR_THRESHOLD,
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
   const { ref: visionRef, inView: visionInView } = useInView({
-    threshold: SECTION_APPEAR_THRESHOLD,
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
   const { ref: adsRef, inView: adsInView } = useInView({
-    threshold: SECTION_APPEAR_THRESHOLD,
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
+    triggerOnce: false,
+  });
+
+  const { ref: servicesRef, inView: servicesInView } = useInView({
+    threshold: LG_SECTION_APPEAR_THRESHOLD,
+    triggerOnce: false,
+  });
+
+  const { ref: contactRef, inView: contactInView } = useInView({
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
 
   useEffect(() => {
-    if (videoInView) {
+    if (!(servicesInView || contactInView)) {
       setActiveSection("");
     }
-  }, [videoInView]);
-
-  useEffect(() => {
-    if (footerInView) {
-      setActiveSection("");
-    }
-  }, [footerInView]);
+  }, [servicesInView, contactInView]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -143,48 +159,25 @@ const App: React.FC = () => {
           <ServiceAddSection />
         </motion.section>
 
-        {/* Services and Contact Sections */}
-        {NAV_BAR_SECTIONS.map((section) => {
-          const { ref, inView } = useInView({
-            threshold: 0.05,
-            triggerOnce: false,
-          });
+        {/* services section */}
+        <motion.section
+          ref={servicesRef}
+          {...motionSectionProps}
+          animate={{ opacity: servicesInView ? 1 : 0, y: servicesInView ? 0 : 50 }}
+          style={servicesAndContactSectionsStyle}
+        >
+          <ServicesSection />
+        </motion.section>
 
-          useEffect(() => {
-            if (inView) {
-              setActiveSection(section);
-            }
-          }, [inView, section]);
-
-          let sectionPart = null;
-
-          if (section == "Services") sectionPart = <ServicesSection />;
-          else sectionPart = <ContactSection />;
-
-          return (
-            <motion.section
-              key={section}
-              id={section}
-              ref={ref}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
-              transition={{ duration: 0.5 }}
-              style={{
-                minHeight: "65vh",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "start",
-                padding: "2rem",
-                textAlign: "center",
-                marginBottom: "10rem",
-                scrollMarginTop: "80px",
-              }}
-            >
-              {sectionPart}
-            </motion.section>
-          );
-        })}
+        {/* contact section */}
+        <motion.section
+          ref={contactRef}
+          {...motionSectionProps}
+          animate={{ opacity: contactInView ? 1 : 0, y: contactInView ? 0 : 50 }}
+          style={servicesAndContactSectionsStyle}
+        >
+          <ContactSection />
+        </motion.section>
 
         {/* footer section */}
         <motion.section
