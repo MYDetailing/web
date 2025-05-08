@@ -1,8 +1,9 @@
+import { CSSProperties } from "react";
 import { Typography } from "@mui/material";
 import { SLOGAN, TITLE } from "../constants/strings";
-import { CSSProperties } from "react";
 import { LOGO_TEXT_PNG, VIDEO_MP4 } from "../constants/resourceLocations";
 import { VIDEO_OVERLAY_COL } from "../constants/colors";
+import { H6_STYLE } from "../constants/theme";
 
 const videoStyle: CSSProperties = {
   position: "absolute",
@@ -38,7 +39,7 @@ export default function HeroSection() {
       <div style={logoTextContainerStyle}>
         <img src={LOGO_TEXT_PNG} alt={TITLE} style={logoTextStyle} />
       </div>
-      <Typography variant="h6" style={sloganTextStyle}>
+      <Typography variant="h6" style={sloganTextStyle} sx={H6_STYLE}>
         {SLOGAN}
       </Typography>
     </>
