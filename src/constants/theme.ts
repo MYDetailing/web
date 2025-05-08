@@ -5,7 +5,7 @@ import { createTheme } from "@mui/material";
 export const H6_STYLE = {
   fontSize: {
     xs: "1rem",
-    md: "1.5rem",
+    md: "1.3rem",
   },
 };
 
@@ -34,12 +34,12 @@ export default createTheme({
     },
     h2: {
       fontFamily: "Futura",
-      fontSize: "5rem",
+      fontSize: "4.5rem",
       textAlign: "left",
     },
     h3: {
       fontFamily: "Futura",
-      fontSize: "2rem",
+      fontSize: "1.7rem",
       textAlign: "right",
       lineHeight: "1.3",
     },
