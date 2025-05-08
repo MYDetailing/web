@@ -1,3 +1,5 @@
+// section witch contact and address information
+
 import { Box, Stack, Typography } from "@mui/material";
 import {
   BOOK,

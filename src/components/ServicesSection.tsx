@@ -1,3 +1,5 @@
+// section that shows all the services
+
 import { Typography, Grid2, Tabs, Tab, Box } from "@mui/material";
 import ServiceCard from "./ServiceCard";
 import serviceData from "../data/services.json";

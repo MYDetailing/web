@@ -1,3 +1,5 @@
+// hero section with video
+
 import { CSSProperties } from "react";
 import { Typography } from "@mui/material";
 import { SLOGAN, TITLE } from "../constants/strings";

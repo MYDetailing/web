@@ -1,4 +1,4 @@
-// Navigation bar at the top of the site
+// navigation bar at the top of the site
 
 import { AppBar, Button, Toolbar } from "@mui/material";
 import { TITLE } from "../constants/strings";
