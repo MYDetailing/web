@@ -3,9 +3,8 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Slider from "react-slick";
 import adData from "../data/ads.json";
-import { wrap } from "framer-motion";
 import { CSSProperties } from "react";
-import { textarea } from "framer-motion/client";
+import { SITE_TXT_COL } from "../constants/colors";
 
 interface Ad {
   title: string;
@@ -14,7 +13,7 @@ interface Ad {
 
 const wrapperBoxStyle = {
   "& .slick-dots li button:before": {
-    color: "#fff",
+    color: SITE_TXT_COL,
   },
 };
 
