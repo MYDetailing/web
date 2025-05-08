@@ -103,7 +103,7 @@ export default function ServicesSection() {
       <Box display="flex" justifyContent="center">
         <Tabs
           variant="scrollable"
-          scrollButtons
+          allowScrollButtonsMobile
           value={vehicleType}
           onChange={handleVehicleTypeChange}
           sx={tabsStyle}
