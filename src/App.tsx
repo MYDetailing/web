@@ -113,16 +113,19 @@ const App: React.FC = () => {
       </Helmet>
 
       <Box style={wrapperBoxStyle}>
+        {/* navigation bar */}
         <NavBar
           sections={NAV_BAR_SECTIONS}
           onSectionChange={scrollToSection}
           activeSection={activeSection}
         />
 
+        {/* hero section with video*/}
         <section ref={videoRef} style={heroSectionStyle}>
           <HeroSection />
         </section>
 
+        {/* vision section */}
         <motion.section
           ref={visionRef}
           {...motionSectionProps}
@@ -132,7 +135,7 @@ const App: React.FC = () => {
           <VisionSection scrollToSection={scrollToSection} />
         </motion.section>
 
-        {/*Ads Section */}
+        {/* ads Section */}
         <motion.section
           ref={adsRef}
           initial={{ opacity: 0, y: 50 }}
