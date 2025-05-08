@@ -1,6 +1,7 @@
 // theme related constants
 
 import { createTheme } from "@mui/material";
+import { SITE_TXT_COL, SHINE_DARK_COL } from "./colors";
 
 export const H6_STYLE = {
   fontSize: {
@@ -9,10 +10,24 @@ export const H6_STYLE = {
   },
 };
 
+export const H2_STYLE = {
+  fontSize: {
+    xs: "2.3rem",
+    md: "4.5rem",
+  },
+};
+
+export const H3_STYLE = {
+  fontSize: {
+    xs: "1rem",
+    md: "1.7rem",
+  },
+};
+
 export default createTheme({
   palette: {
     text: {
-      primary: "#C1C1C2",
+      primary: SITE_TXT_COL,
     },
     secondary: {
       main: "#8e24aa",
@@ -22,9 +37,9 @@ export default createTheme({
     allVariants: {
       background: `linear-gradient(
           120deg,
-        #ffffff 0%,
-        #aaaaaa 50%,
-        #ffffff 100%
+          ${SITE_TXT_COL} 0%,
+          ${SHINE_DARK_COL} 50%,
+          ${SITE_TXT_COL} 100%
         )`,
       backgroundSize: "200% auto",
       backgroundClip: "text",
