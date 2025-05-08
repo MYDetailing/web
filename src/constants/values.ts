@@ -1,6 +1,6 @@
 // numerical values
 
-export const DEFAULT_VEHICLE_TYPE: number = 1;
+export const DEFAULT_VEHICLE_TYPE: number = 2;
 // first inclusive, last exclusive;
 export const FIRST_CAR_PACKAGE = 0;
 export const LAST_CAR_PACKAGE = 7;
