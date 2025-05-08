@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import Slider from "react-slick";
 
-import { VISION, TITLE, SUBTITLE } from "./constants/strings";
+import { VISION, TITLE, SUBTITLE, NAV_BAR_SECTIONS } from "./constants/strings";
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
 import { SECTION_APPEAR_THRESHOLD } from "./constants/values";
 import theme from "./constants/theme";
@@ -21,8 +21,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/fonts/fonts.css";
 import "./global.css";
+import VisionSection from "./components/VisionSection";
 
-const sections = ["Services", "Contact"];
+const motionSectionProps = {
+  initial: { opacity: 0, y: 50 },
+  transition: { duration: 0.5 },
+};
 
 const wrapperBoxStyle: CSSProperties = {
   backgroundColor: SITE_BG_COL,
@@ -38,6 +42,11 @@ const heroSectionStyle: CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   overflow: "hidden",
+};
+
+const visionSectionStyle: CSSProperties = {
+  margin: "4rem 10% 2rem",
+  textAlign: "center",
 };
 
 interface Ad {
@@ -105,7 +114,7 @@ const App: React.FC = () => {
 
       <Box style={wrapperBoxStyle}>
         <NavBar
-          sections={sections}
+          sections={NAV_BAR_SECTIONS}
           onSectionChange={scrollToSection}
           activeSection={activeSection}
         />
@@ -114,33 +123,13 @@ const App: React.FC = () => {
           <HeroSection />
         </section>
 
-        {/* Vision Section */}
         <motion.section
           ref={visionRef}
-          initial={{ opacity: 0, y: 50 }}
+          {...motionSectionProps}
           animate={{ opacity: visionInView ? 1 : 0, y: visionInView ? 0 : 50 }}
-          transition={{ duration: 0.5 }}
-          style={{ margin: "4rem 10% 2rem", textAlign: "center" }}
+          style={visionSectionStyle}
         >
-          <Typography
-            variant="h6"
-            sx={{
-              fontSize: {
-                xs: "1rem",
-                md: "1.5rem",
-              },
-            }}
-          >
-            {VISION}
-          </Typography>
-
-          <Stack flexDirection="row" justifyContent="center" marginTop="3rem">
-            {sections.map((section) => (
-              <Button variant="outlined" key={section} onClick={() => scrollToSection(section)}>
-                {section}
-              </Button>
-            ))}
-          </Stack>
+          <VisionSection scrollToSection={scrollToSection} />
         </motion.section>
 
         {/*Ads Section */}
@@ -195,7 +184,7 @@ const App: React.FC = () => {
         </motion.section>
 
         {/* Services and Contact Sections */}
-        {sections.map((section) => {
+        {NAV_BAR_SECTIONS.map((section) => {
           const { ref, inView } = useInView({
             threshold: 0.05,
             triggerOnce: false,

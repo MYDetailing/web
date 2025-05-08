@@ -1,6 +1,15 @@
+// theme related constants
+
 import { createTheme } from "@mui/material";
 
-const theme = createTheme({
+export const H6_STYLE = {
+  fontSize: {
+    xs: "1rem",
+    md: "1.5rem",
+  },
+};
+
+export default createTheme({
   palette: {
     text: {
       primary: "#C1C1C2",
@@ -26,7 +35,7 @@ const theme = createTheme({
     h2: {
       fontFamily: "Futura",
       fontSize: "5rem",
-      textAlign: "left"
+      textAlign: "left",
     },
     h3: {
       fontFamily: "Futura",
@@ -82,5 +91,3 @@ const theme = createTheme({
     },
   },
 });
-
-export default theme;
