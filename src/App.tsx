@@ -1,64 +1,137 @@
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  ThemeProvider,
-  Box,
-} from "@mui/material";
+import React, { CSSProperties, useEffect, useState } from "react";
+import { ThemeProvider, Box } from "@mui/material";
+
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
+
+import { VISION, TITLE, SUBTITLE, NAV_BAR_SECTIONS } from "./constants/strings";
+import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
+import { LG_SECTION_APPEAR_THRESHOLD, SM_SECTION_APPEAR_THRESHOLD } from "./constants/values";
+import theme from "./constants/theme";
+
+import ContactSection from "./components/ContactSection";
 import ServicesSection from "./components/ServicesSection";
+import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
+import VisionSection from "./components/VisionSection";
+import ServiceAddSection from "./components/ServiceAddSection ";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./assets/fonts/fonts.css";
 import "./global.css";
-import { VISION, SLOGAN, TITLE, SUBTITLE } from "./constants/strings";
-import theme from "./constants/theme";
-import { Helmet } from "react-helmet-async";
-import ContactSection from "./components/ContactSection";
 
-const sections = ["Services", "Contact"];
+const motionSectionProps = {
+  initial: { opacity: 0, y: 50 },
+  transition: { duration: 0.5 },
+};
+
+const wrapperBoxStyle: CSSProperties = {
+  backgroundColor: SITE_BG_COL,
+  color: SITE_TXT_COL,
+  minHeight: "100vh",
+};
+
+const heroSectionStyle: CSSProperties = {
+  position: "relative",
+  width: "100%",
+  height: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  overflow: "hidden",
+};
+
+const visionSectionStyle: CSSProperties = {
+  margin: "4rem 10% 2rem",
+  textAlign: "center",
+};
+
+const serviceAdsSectionStyle: CSSProperties = {
+  margin: "4rem 5% 2rem",
+  textAlign: "center",
+  paddingBottom: "3rem",
+};
+
+const servicesAndContactSectionsStyle: CSSProperties = {
+  minHeight: "65vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "start",
+  padding: "2rem",
+  textAlign: "center",
+  marginBottom: "8rem",
+  scrollMarginTop: "80px",
+};
+
+const footerSectionStyle: CSSProperties = {
+  minHeight: "30vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "start",
+  padding: "5rem 2rem",
+  textAlign: "center",
+};
 
 const App: React.FC = () => {
-  
+  // keep track of active section
   const [activeSection, setActiveSection] = useState("");
 
-  // Hero section observer
-  const { ref: homeRef, inView: homeInView } = useInView({
-    threshold: 0.3,
-    triggerOnce: false,
-  });
-  useEffect(() => {
-    if (homeInView) {
-      setActiveSection(""); // Unselect services when in home section
-    }
-  }, [homeInView]);
+  function scrollToSection(section: string) {
+    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+  }
 
-  // Footer section observer
-  const { ref: footerRef, inView: footerInView } = useInView({
-    threshold: 0.3,
+  // section observers
+  const { ref: videoRef } = useInView({
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
-  useEffect(() => {
-    if (footerInView) {
-      setActiveSection("");
-    }
-  }, [footerInView]);
+
+  const { ref: footerRef, inView: footerInView } = useInView({
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
+    triggerOnce: false,
+  });
 
   const { ref: visionRef, inView: visionInView } = useInView({
-    threshold: 0.25,
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
+
+  const { ref: adsRef, inView: adsInView } = useInView({
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
+    triggerOnce: false,
+  });
+
+  const { ref: servicesRef, inView: servicesInView } = useInView({
+    threshold: LG_SECTION_APPEAR_THRESHOLD,
+    triggerOnce: false,
+  });
+
+  const { ref: contactRef, inView: contactInView } = useInView({
+    threshold: SM_SECTION_APPEAR_THRESHOLD,
+    triggerOnce: false,
+  });
+
+  useEffect(() => {
+    if (servicesInView)
+      setActiveSection(NAV_BAR_SECTIONS[0]);
+    else if (contactInView)
+      setActiveSection(NAV_BAR_SECTIONS[1]);
+    else
+      setActiveSection("");
+    
+  }, [servicesInView, contactInView]);
 
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
-        <title>{TITLE} - {SUBTITLE}</title>
-        <meta
-          name="description"
-          content={VISION}
-        />
+        <title>
+          {TITLE} - {SUBTITLE}
+        </title>
+        <meta name="description" content={VISION} />
         <meta
           name="keywords"
           content="car detailing, detailing, detailing Winkler, wax, polish, ceramic, clean, shine"
@@ -67,167 +140,67 @@ const App: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
 
-      <Box
-        style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh" }}
-      >
-        {/* Navbar */}
-        <AppBar
-          position="fixed"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
-        >
-          <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-            <img src="/logofull.png" alt={TITLE} style={{ height: "40px" }} />
-            <div>
-              {sections.map((section) => (
-                <Button
-                  key={section}
-                  color={activeSection === section ? "secondary" : "inherit"}
-                  onClick={() => {
-                    document
-                      .getElementById(section)
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  {section}
-                </Button>
-              ))}
-            </div>
-          </Toolbar>
-        </AppBar>
+      <Box style={wrapperBoxStyle}>
+        {/* navigation bar */}
+        <NavBar
+          sections={NAV_BAR_SECTIONS}
+          onSectionChange={scrollToSection}
+          activeSection={activeSection}
+        />
 
-        {/* Hero Section with Video */}
-        <section
-          ref={homeRef}
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
-          }}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-            src="/video.mp4"
-          />
-          <div
-            style={{
-              position: "absolute",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-            }}
-          >
-            <img src="/logotext.png" alt={TITLE} style={{ width: "350px" }} />
-          </div>
-          <Typography
-            variant="h6"
-            style={{
-              position: "relative",
-              marginTop: "auto",
-              marginBottom: "1rem",
-            }}
-          >
-            {SLOGAN}
-          </Typography>
+        {/* hero section with video*/}
+        <section ref={videoRef} style={heroSectionStyle}>
+          <HeroSection />
         </section>
 
-        {/* Vision Section */}
+        {/* vision section */}
         <motion.section
           ref={visionRef}
-          initial={{ opacity: 0, y: 50 }}
+          {...motionSectionProps}
           animate={{ opacity: visionInView ? 1 : 0, y: visionInView ? 0 : 50 }}
-          transition={{ duration: 0.5 }}
-          style={{ margin: "4rem 10% 2rem", textAlign: "center" }}
+          style={visionSectionStyle}
         >
-          <Typography
-            variant="h6"
-            sx={{
-              fontSize: {
-                xs: "1rem",
-                md: "1.5rem",
-              },
-            }}
-          >
-            {VISION}
-          </Typography>
+          <VisionSection scrollToSection={scrollToSection} />
         </motion.section>
 
-        {/* Services and Contact Sections */}
-        {sections.map((section) => {
-          const { ref, inView } = useInView({
-            threshold: 0.05,
-            triggerOnce: false,
-          });
+        {/* service ads section */}
+        <motion.section
+          ref={adsRef}
+          {...motionSectionProps}
+          animate={{ opacity: adsInView ? 1 : 0, y: adsInView ? 0 : 50 }}
+          style={serviceAdsSectionStyle}
+        >
+          <ServiceAddSection />
+        </motion.section>
 
-          useEffect(() => {
-            if (inView) {
-              setActiveSection(section);
-            }
-          }, [inView, section]);
+        {/* services section */}
+        <motion.section
+          ref={servicesRef}
+          id={NAV_BAR_SECTIONS[0]}
+          {...motionSectionProps}
+          animate={{ opacity: servicesInView ? 1 : 0, y: servicesInView ? 0 : 50 }}
+          style={servicesAndContactSectionsStyle}
+        >
+          <ServicesSection />
+        </motion.section>
 
-          let sectionPart = null;
-
-          if (section == "Services") 
-            sectionPart = <ServicesSection />;
-          else
-            sectionPart = <ContactSection />;
-
-          return (
-            <motion.section
-              key={section}
-              id={section}
-              ref={ref}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
-              transition={{ duration: 0.5 }}
-              style={{
-                minHeight: "65vh",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "start",
-                padding: "2rem",
-                textAlign: "center",
-                marginBottom: "10rem",
-                scrollMarginTop: "80px"
-              }}
-            >
-              {sectionPart}
-            </motion.section>
-          );
-        })}
+        {/* contact section */}
+        <motion.section
+          ref={contactRef}
+          id={NAV_BAR_SECTIONS[1]}
+          {...motionSectionProps}
+          animate={{ opacity: contactInView ? 1 : 0, y: contactInView ? 0 : 50 }}
+          style={servicesAndContactSectionsStyle}
+        >
+          <ContactSection />
+        </motion.section>
 
         {/* footer section */}
         <motion.section
           ref={footerRef}
-          initial={{ opacity: 0, y: 50 }}
+          {...motionSectionProps}
           animate={{ opacity: footerInView ? 1 : 0, y: footerInView ? 0 : 50 }}
-          transition={{ duration: 0.5 }}
-          style={{
-            minHeight: "50vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "start",
-            padding: "5rem 2rem",
-            textAlign: "center",
-          }}
+          style={footerSectionStyle}
         ></motion.section>
       </Box>
     </ThemeProvider>

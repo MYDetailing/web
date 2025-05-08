@@ -1,16 +1,10 @@
-import {
-  Typography,
-  Grid2,
-  Button,
-  Tabs,
-  Tab,
-  useMediaQuery,
-  Box,
-} from "@mui/material";
+// section that shows all the services
+
+import { Typography, Grid2, Tabs, Tab, Box } from "@mui/material";
 import ServiceCard from "./ServiceCard";
 import serviceData from "../data/services.json";
 import packageData from "../data/packages.json";
-import { useMemo, useState } from "react";
+import { CSSProperties, useMemo, useState } from "react";
 import { VEHICLE_TYPES } from "../constants/strings";
 import {
   DEFAULT_VEHICLE_TYPE,
@@ -20,6 +14,8 @@ import {
   LAST_SEMI_PACKAGE,
   FIRST_RV_PACKAGE,
 } from "../constants/values";
+import { H6_STYLE } from "../constants/theme";
+import { CARD_BORDER_COL, SITE_TXT_COL, UNSELECTED_COL} from "../constants/colors";
 
 interface Service {
   id: number;
@@ -37,13 +33,35 @@ interface Package {
   services: number[];
 }
 
+const wrapperBoxStyle: CSSProperties = {
+  maxWidth: "100%",
+};
+
+const tabsStyle = {
+  "& .MuiTab-root": {
+    color: UNSELECTED_COL,
+  },
+  "& .MuiTab-root.Mui-selected": {
+    color: SITE_TXT_COL,
+  },
+  "& .MuiTabs-indicator": {
+    backgroundColor: SITE_TXT_COL,
+  },
+  marginBottom: "1.5rem",
+};
+
+const gridStyle: CSSProperties = {
+  border: `4px solid ${CARD_BORDER_COL}`,
+  borderRadius: "5px",
+};
+
 const allServices: Service[] = serviceData.services;
 const allPackages: Package[] = packageData.packages;
 
+// goes through passed package, and gets its services
 function getServices(packageId: number): string[] {
   let servicesArray: string[] = [];
 
-  // go through passed package, and get its services
   allPackages[packageId].services.forEach((serviceIndex) => {
     servicesArray.push(allServices[serviceIndex].name);
   });
@@ -51,6 +69,7 @@ function getServices(packageId: number): string[] {
   return servicesArray;
 }
 
+// goes through passed package, and gets its hints
 function getHints(packageId: number): string[] {
   let hintsArray: string[] = [];
   allPackages[packageId].services.forEach((serviceIndex) => {
@@ -60,7 +79,7 @@ function getHints(packageId: number): string[] {
   return hintsArray;
 }
 
-function ServicesSection() {
+export default function ServicesSection() {
   const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
 
   // the packages displayed now
@@ -74,36 +93,22 @@ function ServicesSection() {
     }
   }, [vehicleType]);
 
-  function handleVehicleTypeChange(
-    event: React.SyntheticEvent,
-    newValue: number
-  ) {
+  function handleVehicleTypeChange(event: React.SyntheticEvent, newValue: number) {
     setVehicleType(newValue);
   }
 
   return (
-    <div style={{ maxWidth: "100%", margin: "0 auto" }}>
-      <Typography variant="h6" textAlign="center">
+    <Box sx={wrapperBoxStyle}>
+      <Typography variant="h6" textAlign="center" sx={H6_STYLE}>
         Vehicle type
       </Typography>
       <Box display="flex" justifyContent="center">
         <Tabs
           variant="scrollable"
-          scrollButtons="auto"
+          allowScrollButtonsMobile
           value={vehicleType}
           onChange={handleVehicleTypeChange}
-          style={{ marginBottom: "1.5rem" }}
-          sx={{
-            "& .MuiTab-root": {
-              color: "#aaa",
-            },
-            "& .MuiTab-root.Mui-selected": {
-              color: "#fff",
-            },
-            "& .MuiTabs-indicator": {
-              backgroundColor: "#fff",
-            },
-          }}
+          sx={tabsStyle}
         >
           {VEHICLE_TYPES.map((tab) => {
             return <Tab label={tab} key={tab} />;
@@ -114,12 +119,7 @@ function ServicesSection() {
       <Grid2 container rowSpacing={4} columnSpacing={4} justifyContent="center">
         {curPackages.map((curPackage: Package) => {
           return (
-            <Grid2
-              size={{ xs: 12, sm: 6, md: 4 }}
-              key={curPackage.id}
-              border="4px solid #8e24aa"
-              borderRadius="5px"
-            >
+            <Grid2 key={curPackage.id} size={{ xs: 12, sm: 6, md: 4 }} sx={gridStyle}>
               <ServiceCard
                 heading={curPackage.name}
                 description={curPackage.description}
@@ -132,17 +132,13 @@ function ServicesSection() {
                 services={getServices(curPackage.id)}
                 hints={getHints(curPackage.id)}
                 previousPackage={
-                  curPackage.previousServiceLabel
-                    ? allPackages[curPackage.id - 1].name
-                    : ""
+                  curPackage.previousServiceLabel ? allPackages[curPackage.id - 1].name : ""
                 }
               />
             </Grid2>
           );
         })}
       </Grid2>
-    </div>
+    </Box>
   );
 }
-
-export default ServicesSection;

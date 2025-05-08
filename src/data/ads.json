@@ -1,0 +1,65 @@
+{
+    "ads": [
+      {
+        "desktopTitle": "Glass\nRestoration\nPolishing",
+        "mobileTitle": "Glass Restoration Polishing",
+        "description": "Preserves the original factory glass\nRemoves up to 99% of scratches\nImproves safety while driving\nMuch cheaper than glass replacement"
+      },
+      {
+        "desktopTitle": "Engine\nCleaning",
+        "mobileTitle": "Engine Cleaning",
+        "description": "Keeps the engine cool\nReduces wear and tear\nMinimizes risk of self-ignition\nImproves appearance under the hood\nHelps with resale\nIncreases chance of passing safety inspections"
+      },
+      {
+        "desktopTitle": "Pre-Sale\nPreparation",
+        "mobileTitle": "Pre-Sale Preparation",
+        "description": "Increases the car’s value (up to 2x)\nHelps sell the car faster\nReduces questions from potential buyers"
+      },
+      {
+        "desktopTitle": "Three-Phase\nCar\nWash",
+        "mobileTitle": "Three-Phase Car Wash",
+        "description": "Proper and thorough washing method\nSafe for chrome, rubber, and plastic\nAdds hydrophobic protection\nNo new scratches with professional tools"
+      },
+      {
+        "desktopTitle": "Rain\nRepellent\nCoating",
+        "mobileTitle": "Rain Repellent Coating",
+        "description": "Reduces wiper wear\nMinimizes windshield wear\nLowers washer fluid usage\nHelps ice clear instantly in winter\nImproves safety in rain"
+      },
+      {
+        "desktopTitle": "Leather\n& Fabric\nCleaning",
+        "mobileTitle": "Leather & Fabric Cleaning",
+        "description": "Extends leather lifespan\nImproves touch and comfort\nKeeps the interior looking new longer"
+      },
+      {
+        "desktopTitle": "Body\nPolishing",
+        "mobileTitle": "Body Polishing",
+        "description": "Enhances the car’s appearance\nAdds deep shine and gloss\nCareful inspection before polishing\nMinimal clear coat removal with maximum results"
+      },
+      {
+        "desktopTitle": "Interior\nDeep\nCleaning",
+        "mobileTitle": "Interior Deep Cleaning",
+        "description": "Removes all stains and dust\nMakes breathing easier\nEliminates microbes and bacteria\nOzonation removes odors and viruses"
+      },
+      {
+        "desktopTitle": "Ceramic\nCoating",
+        "mobileTitle": "Ceramic Coating",
+        "description": "Protects against UV and chemicals\nDeepens color and shine\nAdds hydrophobic properties\nReduces scratches during washes"
+      },
+      {
+        "desktopTitle": "Wax\nProtection",
+        "mobileTitle": "Wax Protection",
+        "description": "Adds glossy shine\nShields from UV, dirt, and chemicals\nRepels water and debris\nHelps preserve the paint"
+      },
+      {
+        "desktopTitle": "Headlight\nRestoration",
+        "mobileTitle": "Headlight Restoration",
+        "description": "Restores full clarity\nImproves night driving visibility\nIncreases safety\nMakes headlights look like new"
+      },
+      {
+        "desktopTitle": "Interior\nDisinfection\n(Ozonation)",
+        "mobileTitle": "Interior Disinfection (Ozonation)",
+        "description": "Removes unpleasant odors\nKills bacteria, fungi, and viruses\nEliminates cigarette and other strong smells"
+      }
+    ]
+  }
+  
