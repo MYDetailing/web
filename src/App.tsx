@@ -1,16 +1,14 @@
 import React, { CSSProperties, useEffect, useState } from "react";
-import { Typography, Button, ThemeProvider, Box, Stack } from "@mui/material";
+import { ThemeProvider, Box } from "@mui/material";
 
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import Slider from "react-slick";
 
 import { VISION, TITLE, SUBTITLE, NAV_BAR_SECTIONS } from "./constants/strings";
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
 import { SECTION_APPEAR_THRESHOLD } from "./constants/values";
 import theme from "./constants/theme";
-import adData from "./data/ads.json";
 
 import ContactSection from "./components/ContactSection";
 import ServicesSection from "./components/ServicesSection";
@@ -22,6 +20,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./assets/fonts/fonts.css";
 import "./global.css";
 import VisionSection from "./components/VisionSection";
+import ServiceAddSection from "./components/ServiceAddSection ";
 
 const motionSectionProps = {
   initial: { opacity: 0, y: 50 },
@@ -49,10 +48,11 @@ const visionSectionStyle: CSSProperties = {
   textAlign: "center",
 };
 
-interface Ad {
-  title: string;
-  description: string;
-}
+const serviceAdsSectionStyle: CSSProperties = {
+  margin: "4rem 5% 2rem",
+  textAlign: "center",
+  paddingBottom: "3rem",
+};
 
 const App: React.FC = () => {
   // keep track of active section
@@ -61,8 +61,6 @@ const App: React.FC = () => {
   function scrollToSection(section: string) {
     document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
   }
-
-  const ads: Ad[] = adData.ads;
 
   // section observers
   const { ref: videoRef, inView: videoInView } = useInView({
@@ -135,55 +133,14 @@ const App: React.FC = () => {
           <VisionSection scrollToSection={scrollToSection} />
         </motion.section>
 
-        {/* ads Section */}
+        {/* service ads section */}
         <motion.section
           ref={adsRef}
-          initial={{ opacity: 0, y: 50 }}
+          {...motionSectionProps}
           animate={{ opacity: adsInView ? 1 : 0, y: adsInView ? 0 : 50 }}
-          transition={{ duration: 0.5 }}
-          style={{
-            margin: "4rem 5% 2rem",
-            textAlign: "center",
-            paddingBottom: "3rem",
-          }}
+          style={serviceAdsSectionStyle}
         >
-          <Box
-            sx={{
-              "& .slick-dots li button:before": {
-                color: "#fff",
-              },
-            }}
-          >
-            <Slider
-              infinite
-              slidesToScroll={1}
-              slidesToShow={1}
-              speed={2000}
-              autoplay
-              autoplaySpeed={6000}
-              centerPadding="100px"
-              arrows={false}
-              dots
-            >
-              {ads.map((ad, index) => (
-                <Box key={index}>
-                  <Stack
-                    flexDirection={{ xs: "column", md: "row" }}
-                    justifyContent="space-between"
-                    alignItems="center"
-                    sx={{ minHeight: "200px" }}
-                  >
-                    <Typography variant="h2" sx={{ whiteSpace: "pre-line", marginLeft: "5%" }}>
-                      {ad.title}
-                    </Typography>
-                    <Typography variant="h3" sx={{ whiteSpace: "pre-line", marginRight: "5%" }}>
-                      {ad.description}
-                    </Typography>
-                  </Stack>
-                </Box>
-              ))}
-            </Slider>
-          </Box>
+          <ServiceAddSection />
         </motion.section>
 
         {/* Services and Contact Sections */}
