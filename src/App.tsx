@@ -67,7 +67,7 @@ const servicesAndContactSectionsStyle: CSSProperties = {
 };
 
 const footerSectionStyle: CSSProperties = {
-  minHeight: "50vh",
+  minHeight: "30vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
