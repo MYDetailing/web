@@ -1,11 +1,11 @@
 // section that shows all the services
 
-import { Typography, Grid2, Tabs, Tab, Box } from "@mui/material";
+import { Typography, Grid2, Tabs, Tab, Box, Stack, CardContent, Card, Button, SnackbarClickAwayListenerSlotPropsOverrides } from "@mui/material";
 import ServiceCard from "./ServiceCard";
 import serviceData from "../data/services.json";
 import packageData from "../data/packages.json";
 import { CSSProperties, useMemo, useState } from "react";
-import { VEHICLE_TYPES } from "../constants/strings";
+import { VEHICLE_TYPES, CUSTOM_PKG_TITLE, CUSTOM_PKG_DESCRIPTION, ALL_SERVICES_BTN_TXT, COMPARE_PKG_BTN_TXT} from "../constants/strings";
 import {
   DEFAULT_VEHICLE_TYPE,
   FIRST_CAR_PACKAGE,
@@ -14,8 +14,8 @@ import {
   LAST_SEMI_PACKAGE,
   FIRST_RV_PACKAGE,
 } from "../constants/values";
-import { H6_STYLE } from "../constants/theme";
-import { CARD_BORDER_COL, SITE_TXT_COL, UNSELECTED_COL} from "../constants/colors";
+import { H6_STYLE, SERVICE_CARD_CONTENT_STYLE, SERVICE_CARD_STYLE } from "../constants/styles";
+import { CARD_BORDER_COL, SITE_TXT_COL, UNSELECTED_COL } from "../constants/colors";
 
 interface Service {
   id: number;
@@ -31,10 +31,16 @@ interface Package {
   time: string;
   previousServiceLabel: boolean;
   services: number[];
-}
+};
 
 const wrapperBoxStyle: CSSProperties = {
   maxWidth: "100%",
+};
+
+const gridSize = {
+  xs: 12,
+  sm: 6,
+  md: 4,
 };
 
 const tabsStyle = {
@@ -53,6 +59,12 @@ const tabsStyle = {
 const gridStyle: CSSProperties = {
   border: `4px solid ${CARD_BORDER_COL}`,
   borderRadius: "5px",
+};
+
+const buttonStyle: CSSProperties = {
+  borderRadius: "0px",
+  borderBottom: `2px solid ${SITE_TXT_COL}`,
+  margin: "0 auto"
 };
 
 const allServices: Service[] = serviceData.services;
@@ -119,7 +131,7 @@ export default function ServicesSection() {
       <Grid2 container rowSpacing={4} columnSpacing={4} justifyContent="center">
         {curPackages.map((curPackage: Package) => {
           return (
-            <Grid2 key={curPackage.id} size={{ xs: 12, sm: 6, md: 4 }} sx={gridStyle}>
+            <Grid2 key={curPackage.id} size={gridSize} sx={gridStyle}>
               <ServiceCard
                 heading={curPackage.name}
                 description={curPackage.description}
@@ -138,6 +150,30 @@ export default function ServicesSection() {
             </Grid2>
           );
         })}
+
+        <Grid2 sx={gridStyle} size={gridSize}>
+          <Card sx={SERVICE_CARD_STYLE}>
+            <CardContent sx={SERVICE_CARD_CONTENT_STYLE}>
+              <Stack spacing={1}>
+                <Typography variant="h4">{CUSTOM_PKG_TITLE}</Typography>
+                <Typography variant="subtitle1">{CUSTOM_PKG_DESCRIPTION}</Typography>
+                <Stack spacing={3}>
+                <Button sx={buttonStyle}>
+                  <Typography variant="h6" sx={H6_STYLE}>
+                    {ALL_SERVICES_BTN_TXT}
+                  </Typography>
+                </Button>
+
+                <Button sx={buttonStyle}>
+                  <Typography variant="h6" sx={H6_STYLE}>
+                    {COMPARE_PKG_BTN_TXT}
+                  </Typography>
+                </Button>
+                </Stack>
+              </Stack>
+            </CardContent>
+          </Card>
+        </Grid2>
       </Grid2>
     </Box>
   );

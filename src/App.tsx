@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { VISION, TITLE, SUBTITLE, NAV_BAR_SECTIONS } from "./constants/strings";
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
 import { LG_SECTION_APPEAR_THRESHOLD, SM_SECTION_APPEAR_THRESHOLD } from "./constants/values";
-import theme from "./constants/theme";
+import theme from "./constants/styles";
 
 import ContactSection from "./components/ContactSection";
 import ServicesSection from "./components/ServicesSection";

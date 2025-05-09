@@ -1,7 +1,18 @@
-// theme related constants
+// theme and style related constants (colours in separate file)
 
 import { createTheme } from "@mui/material";
 import { SITE_TXT_COL, SHINE_DARK_COL } from "./colors";
+import { CSSProperties } from "react";
+
+export const SERVICE_CARD_STYLE: CSSProperties = {
+  backgroundColor: "transparent",
+  width: "100%",
+};
+
+export const SERVICE_CARD_CONTENT_STYLE = {
+  sm: { padding: "1rem 1rem" },
+  md: { padding: "1rem 2rem" },
+};
 
 export const H6_STYLE = {
   fontSize: {

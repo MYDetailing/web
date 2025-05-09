@@ -3,7 +3,8 @@
 import { Box, ClickAwayListener, Stack, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
+import { SERVICE_CARD_STYLE, SERVICE_CARD_CONTENT_STYLE } from "../constants/styles";
 
 interface Props {
   heading: string;
@@ -14,16 +15,6 @@ interface Props {
   hints: string[];
   previousPackage: string;
 }
-
-const cardStyle: CSSProperties = {
-  backgroundColor: "transparent",
-  width: "100%",
-};
-
-const cardContentStyle = {
-  sm: { padding: "1rem 1rem" },
-  md: { padding: "1rem 2rem" },
-};
 
 const infoImageStyle = {
   height: "1rem",
@@ -39,8 +30,8 @@ function ServiceCard({
   previousPackage,
 }: Props) {
   return (
-    <Card variant="outlined" sx={cardStyle}>
-      <CardContent sx={cardContentStyle}>
+    <Card variant="outlined" sx={SERVICE_CARD_STYLE}>
+      <CardContent sx={SERVICE_CARD_CONTENT_STYLE}>
         <Stack spacing={1}>
           <Typography variant="h4">
             {heading} {price == "" ? "" : "$" + price}
