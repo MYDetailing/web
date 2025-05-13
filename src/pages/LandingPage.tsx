@@ -62,7 +62,7 @@ const footerSectionStyle: CSSProperties = {
   textAlign: "center",
 };
 
-export default function LandingPage() {
+export default function LandingPage() {  
   // keep track of active section
   const [activeSection, setActiveSection] = useState("");
 

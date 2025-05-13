@@ -6,12 +6,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
 import { VISION, TITLE, SUBTITLE } from "./constants/strings";
 import theme from "./constants/styles";
+import { ROUTES } from "./constants/values";
 import LandingPage from "./pages/LandingPage";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/fonts/fonts.css";
 import "./global.css";
+import ServicesPage from "./pages/ServicesPage";
 
 const wrapperBoxStyle: CSSProperties = {
   backgroundColor: SITE_BG_COL,
@@ -36,7 +38,8 @@ const App: React.FC = () => {
       <Box style={wrapperBoxStyle}>
         <Router>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path={ROUTES.HOME_ROUTE} element={<LandingPage />} />
+            <Route path={ROUTES.SERVICES_ROUTE} element={<ServicesPage />}/>
           </Routes>
         </Router>
       </Box>

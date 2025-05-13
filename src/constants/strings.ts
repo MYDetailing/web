@@ -1,4 +1,6 @@
-export const NAV_BAR_SECTIONS = ["Services", "Contact"];
+// strings that are displayed somewhere on the site or used in the code
+
+export const NAV_BAR_SECTIONS = ["Packages", "Contact"];
 
 export const VISION = "AT MY DETAILING, WE BELIEVE YOUR VEHICLE DESERVES MORE THAN JUST A WASH. " + 
     "OUR EXPERT SERVICES REJUVENATE, PROTECT, AND ELEVATE YOUR " +
@@ -17,7 +19,7 @@ export const COMPARE_PKG_BTN_TXT = "compare packages";
 // Contact section
 export const BOOK = "Book with us";
 export const EMAIL = "info@mydetailing.ca"
-export const MESSAGE = "Book your car detailing appointment by email, phone, or by visiting us in person."
+export const MESSAGE = "Book your car detailing appointment by email or phone."
 export const ADDRESS = "5-542 Icon Drive, Winkler";
 export const PHONE = "(204) 818-0930"
 export const DAYS = "monday to saturday"
