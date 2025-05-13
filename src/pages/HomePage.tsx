@@ -62,7 +62,7 @@ const footerSectionStyle: CSSProperties = {
   textAlign: "center",
 };
 
-export default function LandingPage() {  
+export default function LandingPage() {
   // keep track of active section
   const [activeSection, setActiveSection] = useState("");
 
@@ -102,9 +102,14 @@ export default function LandingPage() {
   });
 
   useEffect(() => {
-    if (servicesInView) setActiveSection(NAV_BAR_SECTIONS[0]);
-    else if (contactInView) setActiveSection(NAV_BAR_SECTIONS[1]);
-    else setActiveSection("");
+    if (servicesInView) {
+      setActiveSection(NAV_BAR_SECTIONS[0]);
+    } else if (contactInView) {
+      setActiveSection(NAV_BAR_SECTIONS[1]);
+    } else {
+      setActiveSection("");
+    }
+    window.location.hash = "";
   }, [servicesInView, contactInView]);
 
   return (
