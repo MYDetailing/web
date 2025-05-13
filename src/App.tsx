@@ -7,7 +7,7 @@ import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
 import { VISION, TITLE, SUBTITLE } from "./constants/strings";
 import theme from "./constants/styles";
 import { ROUTES } from "./constants/values";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./pages/HomePage";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
