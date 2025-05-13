@@ -1,130 +1,26 @@
-import React, { CSSProperties, useEffect, useState } from "react";
-import { ThemeProvider, Box } from "@mui/material";
-
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
+import React, { CSSProperties } from "react";
+import { Box, ThemeProvider } from "@mui/material";
 import { Helmet } from "react-helmet-async";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { VISION, TITLE, SUBTITLE, NAV_BAR_SECTIONS } from "./constants/strings";
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
-import { LG_SECTION_APPEAR_THRESHOLD, SM_SECTION_APPEAR_THRESHOLD } from "./constants/values";
-import theme from "./constants/theme";
-
-import ContactSection from "./components/ContactSection";
-import ServicesSection from "./components/ServicesSection";
-import NavBar from "./components/NavBar";
-import HeroSection from "./components/HeroSection";
-import VisionSection from "./components/VisionSection";
-import ServiceAddSection from "./components/ServiceAddSection ";
+import { VISION, TITLE, SUBTITLE } from "./constants/strings";
+import theme from "./constants/styles";
+import { ROUTES } from "./constants/values";
+import LandingPage from "./pages/HomePage";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/fonts/fonts.css";
 import "./global.css";
-
-const motionSectionProps = {
-  initial: { opacity: 0, y: 50 },
-  transition: { duration: 0.5 },
-};
+import ServicesPage from "./pages/ServicesPage";
 
 const wrapperBoxStyle: CSSProperties = {
   backgroundColor: SITE_BG_COL,
   color: SITE_TXT_COL,
   minHeight: "100vh",
 };
-
-const heroSectionStyle: CSSProperties = {
-  position: "relative",
-  width: "100%",
-  height: "100vh",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  overflow: "hidden",
-};
-
-const visionSectionStyle: CSSProperties = {
-  margin: "4rem 10% 2rem",
-  textAlign: "center",
-};
-
-const serviceAdsSectionStyle: CSSProperties = {
-  margin: "4rem 5% 2rem",
-  textAlign: "center",
-  paddingBottom: "3rem",
-};
-
-const servicesAndContactSectionsStyle: CSSProperties = {
-  minHeight: "65vh",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "start",
-  padding: "2rem",
-  textAlign: "center",
-  marginBottom: "8rem",
-  scrollMarginTop: "80px",
-};
-
-const footerSectionStyle: CSSProperties = {
-  minHeight: "30vh",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "start",
-  padding: "5rem 2rem",
-  textAlign: "center",
-};
-
 const App: React.FC = () => {
-  // keep track of active section
-  const [activeSection, setActiveSection] = useState("");
-
-  function scrollToSection(section: string) {
-    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
-  }
-
-  // section observers
-  const { ref: videoRef } = useInView({
-    threshold: SM_SECTION_APPEAR_THRESHOLD,
-    triggerOnce: false,
-  });
-
-  const { ref: footerRef, inView: footerInView } = useInView({
-    threshold: SM_SECTION_APPEAR_THRESHOLD,
-    triggerOnce: false,
-  });
-
-  const { ref: visionRef, inView: visionInView } = useInView({
-    threshold: SM_SECTION_APPEAR_THRESHOLD,
-    triggerOnce: false,
-  });
-
-  const { ref: adsRef, inView: adsInView } = useInView({
-    threshold: SM_SECTION_APPEAR_THRESHOLD,
-    triggerOnce: false,
-  });
-
-  const { ref: servicesRef, inView: servicesInView } = useInView({
-    threshold: LG_SECTION_APPEAR_THRESHOLD,
-    triggerOnce: false,
-  });
-
-  const { ref: contactRef, inView: contactInView } = useInView({
-    threshold: SM_SECTION_APPEAR_THRESHOLD,
-    triggerOnce: false,
-  });
-
-  useEffect(() => {
-    if (servicesInView)
-      setActiveSection(NAV_BAR_SECTIONS[0]);
-    else if (contactInView)
-      setActiveSection(NAV_BAR_SECTIONS[1]);
-    else
-      setActiveSection("");
-    
-  }, [servicesInView, contactInView]);
-
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
@@ -139,69 +35,13 @@ const App: React.FC = () => {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
-
       <Box style={wrapperBoxStyle}>
-        {/* navigation bar */}
-        <NavBar
-          sections={NAV_BAR_SECTIONS}
-          onSectionChange={scrollToSection}
-          activeSection={activeSection}
-        />
-
-        {/* hero section with video*/}
-        <section ref={videoRef} style={heroSectionStyle}>
-          <HeroSection />
-        </section>
-
-        {/* vision section */}
-        <motion.section
-          ref={visionRef}
-          {...motionSectionProps}
-          animate={{ opacity: visionInView ? 1 : 0, y: visionInView ? 0 : 50 }}
-          style={visionSectionStyle}
-        >
-          <VisionSection scrollToSection={scrollToSection} />
-        </motion.section>
-
-        {/* service ads section */}
-        <motion.section
-          ref={adsRef}
-          {...motionSectionProps}
-          animate={{ opacity: adsInView ? 1 : 0, y: adsInView ? 0 : 50 }}
-          style={serviceAdsSectionStyle}
-        >
-          <ServiceAddSection />
-        </motion.section>
-
-        {/* services section */}
-        <motion.section
-          ref={servicesRef}
-          id={NAV_BAR_SECTIONS[0]}
-          {...motionSectionProps}
-          animate={{ opacity: servicesInView ? 1 : 0, y: servicesInView ? 0 : 50 }}
-          style={servicesAndContactSectionsStyle}
-        >
-          <ServicesSection />
-        </motion.section>
-
-        {/* contact section */}
-        <motion.section
-          ref={contactRef}
-          id={NAV_BAR_SECTIONS[1]}
-          {...motionSectionProps}
-          animate={{ opacity: contactInView ? 1 : 0, y: contactInView ? 0 : 50 }}
-          style={servicesAndContactSectionsStyle}
-        >
-          <ContactSection />
-        </motion.section>
-
-        {/* footer section */}
-        <motion.section
-          ref={footerRef}
-          {...motionSectionProps}
-          animate={{ opacity: footerInView ? 1 : 0, y: footerInView ? 0 : 50 }}
-          style={footerSectionStyle}
-        ></motion.section>
+        <Router>
+          <Routes>
+            <Route path={ROUTES.HOME_ROUTE} element={<LandingPage />} />
+            <Route path={ROUTES.SERVICES_ROUTE} element={<ServicesPage />}/>
+          </Routes>
+        </Router>
       </Box>
     </ThemeProvider>
   );

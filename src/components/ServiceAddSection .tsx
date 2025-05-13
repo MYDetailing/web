@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import adData from "../data/ads.json";
 import { CSSProperties } from "react";
 import { SITE_TXT_COL } from "../constants/colors";
-import { H2_STYLE, H3_STYLE } from "../constants/theme";
+import { H2_STYLE, H3_STYLE } from "../constants/styles";
 
 interface Ad {
   desktopTitle: string;

@@ -1,4 +1,4 @@
-// numerical values
+// values used in design calculations and logic
 
 export const DEFAULT_VEHICLE_TYPE: number = 1;
 // first inclusive, last exclusive;
@@ -10,3 +10,9 @@ export const FIRST_RV_PACKAGE = 9;
 
 export const SM_SECTION_APPEAR_THRESHOLD = 0.25;
 export const LG_SECTION_APPEAR_THRESHOLD = 0.05;
+
+// routes
+export const ROUTES = {
+    HOME_ROUTE: "/",
+    SERVICES_ROUTE: "/services"
+}

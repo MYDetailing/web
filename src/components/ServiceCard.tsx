@@ -1,15 +1,10 @@
 // design of one service card, used in service section
 
-import {
-  Box,
-  ClickAwayListener,
-  Stack,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Box, ClickAwayListener, Stack, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { useState } from "react";
+import { SERVICE_CARD_STYLE, SERVICE_CARD_CONTENT_STYLE } from "../constants/styles";
 
 interface Props {
   heading: string;
@@ -21,6 +16,10 @@ interface Props {
   previousPackage: string;
 }
 
+const infoImageStyle = {
+  height: "1rem",
+};
+
 function ServiceCard({
   heading,
   description,
@@ -31,18 +30,8 @@ function ServiceCard({
   previousPackage,
 }: Props) {
   return (
-    <Card
-      variant="outlined"
-      sx={{
-        backgroundColor: "transparent",
-        borderRadius: "5px",
-        color: "white",
-        width: "100%"
-      }}
-    >
-      <CardContent
-        sx={{ sm: { padding: "1rem 1rem" }, md: { padding: "1rem 2rem" } }}
-      >
+    <Card variant="outlined" sx={SERVICE_CARD_STYLE}>
+      <CardContent sx={SERVICE_CARD_CONTENT_STYLE}>
         <Stack spacing={1}>
           <Typography variant="h4">
             {heading} {price == "" ? "" : "$" + price}
@@ -53,9 +42,7 @@ function ServiceCard({
 
           <Typography variant="subtitle1">{time}</Typography>
           {previousPackage !== "" && (
-            <Typography variant="body1">
-              Everything included in {previousPackage}, plus
-            </Typography>
+            <Typography variant="body1">Everything included in {previousPackage}, plus</Typography>
           )}
           <Stack>
             {services.map((service, index) => {
@@ -85,9 +72,7 @@ function ServiceCard({
                     slotProps={{
                       tooltip: { sx: { fontSize: "1.2rem" } },
                       popper: {
-                        modifiers: [
-                          { name: "offset", options: { offset: [0, -14] } },
-                        ],
+                        modifiers: [{ name: "offset", options: { offset: [0, -14] } }],
                       },
                     }}
                   >
@@ -97,11 +82,7 @@ function ServiceCard({
                       </Typography>
                       <Box flexGrow={1} />
 
-                      <img
-                        src="/info.png"
-                        style={{ height: "1rem" }}
-                        onClick={handleOpenTooltip}
-                      />
+                      <img src="/info.png" style={infoImageStyle} onClick={handleOpenTooltip} />
                     </Stack>
                   </Tooltip>
                 </ClickAwayListener>
