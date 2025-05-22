@@ -11,7 +11,6 @@ import {
   CardContent,
   Card,
   Button,
-  SnackbarClickAwayListenerSlotPropsOverrides,
 } from "@mui/material";
 import ServiceCard from "./ServiceCard";
 import serviceData from "../data/services.json";
@@ -36,21 +35,7 @@ import {
 import { H6_STYLE, SERVICE_CARD_CONTENT_STYLE, SERVICE_CARD_STYLE } from "../constants/styles";
 import { CARD_BORDER_COL, SITE_TXT_COL, UNSELECTED_COL } from "../constants/colors";
 
-interface Service {
-  id: number;
-  name: string;
-  description: string;
-}
-
-interface Package {
-  id: number;
-  name: string;
-  description: string;
-  prices: string[];
-  time: string;
-  previousServiceLabel: boolean;
-  services: number[];
-}
+import { Service, Package } from "../types.ts";
 
 const wrapperBoxStyle: CSSProperties = {
   maxWidth: "100%",
