@@ -19,11 +19,11 @@ import {
   LAST_CAR_PACKAGE,
   FIRST_SEMI_PACKAGE,
   LAST_SEMI_PACKAGE,
-  FIRST_RV_PACKAGE,
-  ROUTES,
+  FIRST_RV_PACKAGE
 } from "../constants/values";
+import { ROUTES } from "../constants/resourceLocations.ts"
 import { H6_STYLE, SERVICE_CARD_CONTENT_STYLE, SERVICE_CARD_STYLE } from "../constants/styles";
-import { CARD_BORDER_COL, SITE_TXT_COL, UNSELECTED_COL } from "../constants/colors";
+import { CARD_BORDER_COL, SITE_TXT_COL } from "../constants/colors";
 
 import { Service, Package } from "../types.ts";
 

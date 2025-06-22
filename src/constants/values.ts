@@ -10,9 +10,3 @@ export const FIRST_RV_PACKAGE = 9;
 
 export const SM_SECTION_APPEAR_THRESHOLD = 0.25;
 export const LG_SECTION_APPEAR_THRESHOLD = 0.05;
-
-// routes
-export const ROUTES = {
-    HOME_ROUTE: "/",
-    SERVICES_ROUTE: "/services"
-}
