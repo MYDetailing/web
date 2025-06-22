@@ -1,4 +1,4 @@
-// numerical values
+// values used in design calculations and logic
 
 export const DEFAULT_VEHICLE_TYPE: number = 1;
 // first inclusive, last exclusive;

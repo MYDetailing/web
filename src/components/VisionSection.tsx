@@ -2,7 +2,7 @@
 
 import { Button, Stack, Typography } from "@mui/material";
 import { VISION, NAV_BAR_SECTIONS } from "../constants/strings";
-import { H6_STYLE } from "../constants/theme";
+import { H6_STYLE } from "../constants/styles";
 
 interface Props {
   scrollToSection: (section: string) => void;

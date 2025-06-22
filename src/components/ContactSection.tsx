@@ -1,8 +1,20 @@
 // section witch contact and address information
 
+import { Link } from "react-router-dom";
 import { Box, Stack, Typography } from "@mui/material";
-import { BOOK, ADDRESS, PHONE, HOURS, DAYS, MESSAGE, EMAIL } from "../constants/strings";
-import { GOOGLE_MAPS_LINK } from "../constants/resourceLocations";
+
+import {
+  BOOK,
+  ADDRESS,
+  PHONE,
+  HOURS,
+  DAYS,
+  MESSAGE,
+  EMAIL,
+  INSTA,
+  PRIVACY_POLICY,
+} from "../constants/strings";
+import { GOOGLE_MAPS_LINK, INSTA_LINK, ROUTES } from "../constants/resourceLocations";
 
 function ContactSection() {
   return (
@@ -44,8 +56,29 @@ function ContactSection() {
           <Typography variant="subtitle1" marginBottom="1rem">
             {EMAIL}
           </Typography>
+
+          <Box height="2rem" />
+          <Typography
+            variant="subtitle1"
+            marginBottom="1rem"
+            component="a"
+            href={INSTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {INSTA}
+          </Typography>
         </Stack>
       </Stack>
+      <Typography
+        variant="body2"
+        component={Link}
+        to={ROUTES.PRIVACY_POLICY_ROUTE}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {PRIVACY_POLICY}
+      </Typography>
     </Box>
   );
 }
