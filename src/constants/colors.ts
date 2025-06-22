@@ -7,3 +7,4 @@ export const SITE_TXT_COL = "#fff";
 export const CARD_BORDER_COL = "#8e24aa";
 export const UNSELECTED_COL = "#aaa";
 export const SHINE_DARK_COL = "#aaa";
+export const PURE_WHITE = "rgb(255, 255, 255)"
