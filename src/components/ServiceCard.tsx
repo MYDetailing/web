@@ -17,6 +17,10 @@ interface Props {
   previousPackage: string;
 }
 
+const infoImageStyle = {
+  height: "1rem",
+};
+
 function ServiceCard({
   heading,
   description,
@@ -42,9 +46,11 @@ function ServiceCard({
             <Typography variant="body1">Everything included in {previousPackage}, plus</Typography>
           )}
           <Stack>
+
             {services.map((service, index) => (
               <InfoToolTipText tip={service + ": " + hints[index]} text={service} />
             ))}
+
           </Stack>
         </Stack>
       </CardContent>

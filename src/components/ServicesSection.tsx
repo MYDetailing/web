@@ -26,7 +26,9 @@ import { H6_STYLE, SERVICE_CARD_CONTENT_STYLE, SERVICE_CARD_STYLE } from "../con
 import { CARD_BORDER_COL, SITE_TXT_COL, UNSELECTED_COL } from "../constants/colors";
 
 import { Service, Package } from "../types.ts";
+
 import SelectorTabs from "./SelectorTabs.tsx";
+
 
 const wrapperBoxStyle: CSSProperties = {
   maxWidth: "100%",
@@ -36,7 +38,6 @@ const gridSize = {
   xs: 12,
   sm: 6,
   md: 4,
-};
 
 const gridStyle: CSSProperties = {
   border: `4px solid ${CARD_BORDER_COL}`,
@@ -138,12 +139,14 @@ export default function ServicesSection() {
                 <Typography variant="subtitle1">{CUSTOM_PKG_DESCRIPTION}</Typography>
                 <Stack spacing={3}>
                   <Button sx={buttonStyle} onClick={handleViewServicesBtn}>
+
                     <Typography variant="h6" sx={H6_STYLE} textAlign={"center"}>
                       {ALL_SERVICES_BTN_TXT}
                     </Typography>
                   </Button>
                   <Button sx={{ ...buttonStyle, display: "none" }}>
                     <Typography variant="h6" sx={H6_STYLE} textAlign={"center"}>
+
                       {COMPARE_PKG_BTN_TXT}
                     </Typography>
                   </Button>
