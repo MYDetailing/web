@@ -132,7 +132,7 @@ export default function ServicesPage() {
                             <TableCell>Service</TableCell>
                             <TableCell sx={descriptionCellStyleDesktop}>Description</TableCell>
                             <TableCell sx={descriptionCellStyleMobile}></TableCell>
-                            <TableCell align="right">Prices</TableCell>
+                            <TableCell align="right">Price</TableCell>
                           </TableRow>
                         </TableHead>
 
