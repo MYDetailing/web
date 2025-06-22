@@ -38,7 +38,7 @@ const gridSize = {
   xs: 12,
   sm: 6,
   md: 4,
-}
+};
 
 const gridStyle: CSSProperties = {
   border: `4px solid ${CARD_BORDER_COL}`,
