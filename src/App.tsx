@@ -1,7 +1,7 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useEffect } from "react";
 import { Box, ThemeProvider } from "@mui/material";
 import { Helmet } from "react-helmet-async";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
 import { VISION, TITLE, SUBTITLE } from "./constants/strings";
@@ -20,6 +20,17 @@ const wrapperBoxStyle: CSSProperties = {
   color: SITE_TXT_COL,
   minHeight: "100vh",
 };
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -37,6 +48,7 @@ const App: React.FC = () => {
       </Helmet>
       <Box style={wrapperBoxStyle}>
         <Router>
+          <ScrollToTop />
           <Routes>
             <Route path={ROUTES.HOME_ROUTE} element={<LandingPage />} />
             <Route path={ROUTES.SERVICES_ROUTE} element={<ServicesPage />}/>
