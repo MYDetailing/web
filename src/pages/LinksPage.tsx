@@ -27,6 +27,7 @@ const videoOverlayStyle: CSSProperties = {
   position: "absolute",
   backgroundColor: "rgb(0,0,0, 0.65)",
   padding: "1rem",
+  boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
