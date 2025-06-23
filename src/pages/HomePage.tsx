@@ -1,6 +1,6 @@
 // home page
 
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
@@ -71,7 +71,7 @@ export default function LandingPage() {
   }
 
   // section observers
-  const { ref: videoRef } = useInView({
+  const { ref: videoRef, inView: videoInView } = useInView({
     threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
@@ -91,7 +91,7 @@ export default function LandingPage() {
     triggerOnce: false,
   });
 
-  const { ref: servicesRef, inView: servicesInView } = useInView({
+  const { ref: packagesRef, inView: packagesInView } = useInView({
     threshold: LG_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
@@ -101,16 +101,40 @@ export default function LandingPage() {
     triggerOnce: false,
   });
 
+  // use useRef since it's state persists between renders, and regular variables might not
+  const hasRunOnce = useRef(false);
+
+  // sets the active section variable and the URl according to hash based navigation
   useEffect(() => {
-    if (servicesInView) {
-      setActiveSection(NAV_BAR_SECTIONS[0]);
-    } else if (contactInView) {
-      setActiveSection(NAV_BAR_SECTIONS[1]);
+    // Skip the first run to let the browser scroll to the anchor naturally
+    if (!hasRunOnce.current) {
+      hasRunOnce.current = true;
     } else {
-      setActiveSection("");
+      if (packagesInView) {
+        setActiveSection(NAV_BAR_SECTIONS[0]);
+      } else if (contactInView) {
+        setActiveSection(NAV_BAR_SECTIONS[1]);
+      } else {
+        setActiveSection("");
+      }
+      history.replaceState(null, "", "#");
+
     }
-    window.location.hash = "";
-  }, [servicesInView, contactInView]);
+  }, [packagesInView, contactInView]);
+
+  // Scroll to anchor on first mount (once DOM is painted)
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Wait for layout + DOM nodes to be ready
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 0); // Delay to let rendering finish
+    }
+  }, []);
 
   return (
     <>
@@ -148,10 +172,10 @@ export default function LandingPage() {
 
       {/* services section */}
       <motion.section
-        ref={servicesRef}
+        ref={packagesRef}
         id={NAV_BAR_SECTIONS[0]}
         {...motionSectionProps}
-        animate={{ opacity: servicesInView ? 1 : 0, y: servicesInView ? 0 : 50 }}
+        animate={{ opacity: packagesInView ? 1 : 0, y: packagesInView ? 0 : 50 }}
         style={servicesAndContactSectionsStyle}
       >
         <ServicesSection />
