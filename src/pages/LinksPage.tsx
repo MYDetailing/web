@@ -16,16 +16,14 @@ import { H6_STYLE } from "../constants/styles";
 
 const videoStyle: CSSProperties = {
   width: "100%",
-  height: "100%",
-  overflow: "hidden",
+  height: "100svh",
   position: "absolute",
   objectFit: "cover",
 };
 
 const videoOverlayStyle: CSSProperties = {
   width: "100%",
-  height: "100%",
-  overflow: "hidden",
+  height: "100svh",
   position: "absolute",
   backgroundColor: "rgb(0,0,0, 0.65)",
   padding: "1rem",
