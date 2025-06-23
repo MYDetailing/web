@@ -17,6 +17,7 @@ import { H6_STYLE } from "../constants/styles";
 const videoStyle: CSSProperties = {
   width: "100%",
   height: "100%",
+  overflow: "hidden",
   position: "absolute",
   objectFit: "cover",
 };
@@ -24,6 +25,7 @@ const videoStyle: CSSProperties = {
 const videoOverlayStyle: CSSProperties = {
   width: "100%",
   height: "100%",
+  overflow: "hidden",
   position: "absolute",
   backgroundColor: "rgb(0,0,0, 0.65)",
   padding: "1rem",
