@@ -24,10 +24,11 @@ export const COMPARE_PKG_BTN_TXT = "compare packages";
 // Contact section
 export const BOOK = "Book with us";
 export const EMAIL = "info@mydetailing.ca";
-export const MESSAGE = "Book your car detailing appointment by email or phone.";
+export const MESSAGE = "Book your car detailing appointment online, by phone or email.";
 export const ADDRESS = "5-542 Icon Drive, Winkler";
 export const PHONE = "(204) 818-0930";
 export const DAYS = "monday to saturday";
 export const HOURS = "8am to 5pm";
 export const INSTA = "view gallery on instagram";
 export const PRIVACY_POLICY = "view privacy policy";
+export const BOOK_BTN = "Book Online";

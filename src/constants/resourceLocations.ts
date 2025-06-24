@@ -13,5 +13,6 @@ export const ROUTES = {
     HOME_ROUTE: "/",
     SERVICES_ROUTE: "/services",
     PRIVACY_POLICY_ROUTE: "/privacy_policy",
-    LINKS_ROUTE: "/links"
+    LINKS_ROUTE: "/links",
+    BOOKING_ROUTE: "/book"
 };

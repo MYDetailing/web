@@ -1,7 +1,7 @@
 // section witch contact and address information
 
 import { Link } from "react-router-dom";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 
 import {
   BOOK,
@@ -13,10 +13,24 @@ import {
   EMAIL,
   INSTA,
   PRIVACY_POLICY,
+  BOOK_BTN,
 } from "../constants/strings";
 import { GOOGLE_MAPS_LINK, INSTA_LINK, ROUTES } from "../constants/resourceLocations";
+import { SITE_TXT_COL } from "../constants/colors";
+import { CSSProperties } from "react";
 
-function ContactSection() {
+const bookNowBtnStyle: CSSProperties = {
+  textAlign: "left",
+  marginTop: "0.5rem",
+  padding: ".5rem",
+  border: `2px solid ${SITE_TXT_COL}`,
+  borderRadius: "10px",
+  width: "auto",
+  display: "inline",
+  cursor: "pointer"
+};
+
+export default function ContactSection() {
   return (
     <Box width="100%">
       <Typography variant="h4" marginBottom=".5rem">
@@ -35,7 +49,7 @@ function ContactSection() {
             style={{ minHeight: 400 }}
           />
         </Box>
-        <Stack flex={1} p={2}>
+        <Stack flex={1} p={2} alignItems="flex-start">
           <Typography variant="subtitle1">{DAYS}</Typography>
           <Typography variant="subtitle1" marginBottom="1rem">
             {HOURS}
@@ -68,6 +82,13 @@ function ContactSection() {
           >
             {INSTA}
           </Typography>
+
+          <Box sx= {bookNowBtnStyle } component="a" href={ROUTES.BOOKING_ROUTE}>
+            <Typography variant="h4"  >
+              {BOOK_BTN}
+            </Typography>
+          </Box>
+
         </Stack>
       </Stack>
       <Typography
@@ -82,5 +103,3 @@ function ContactSection() {
     </Box>
   );
 }
-
-export default ContactSection;
