@@ -1,1 +1,3 @@
+# MYDetailing
+Website for MYDetailing - a local car detailing. Development starting soon...
 The website can be viewed at [MYDetailing.ca](https://mydetailing.ca)
