@@ -250,7 +250,7 @@
             "name": "Engine Bay Cleaning",
             "description": "Safely clean the engine compartment to remove dust, oil, and grease buildup.",
             "category": "Exterior",
-            "prices": [180, 180, 180]
+            "prices": [120, 120, 120]
 
         },
         {
