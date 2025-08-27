@@ -16,19 +16,7 @@ import {
   BOOK_BTN,
 } from "../constants/strings";
 import { GOOGLE_MAPS_LINK, INSTA_LINK, ROUTES } from "../constants/resourceLocations";
-import { SITE_TXT_COL } from "../constants/colors";
-import { CSSProperties } from "react";
-
-const bookNowBtnStyle: CSSProperties = {
-  textAlign: "left",
-  marginTop: "0.5rem",
-  padding: ".5rem",
-  border: `2px solid ${SITE_TXT_COL}`,
-  borderRadius: "10px",
-  width: "auto",
-  display: "inline",
-  cursor: "pointer"
-};
+import { BIG_BUTTON_STYLE } from "../constants/styles";
 
 export default function ContactSection() {
   return (
@@ -83,7 +71,7 @@ export default function ContactSection() {
             {INSTA}
           </Typography>
 
-          <Box sx= {bookNowBtnStyle } component="a" href={ROUTES.BOOKING_ROUTE}>
+          <Box sx= {BIG_BUTTON_STYLE } component="a" href={ROUTES.BOOKING_ROUTE}>
             <Typography variant="h4"  >
               {BOOK_BTN}
             </Typography>

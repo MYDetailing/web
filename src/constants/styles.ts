@@ -4,6 +4,17 @@ import { createTheme } from "@mui/material";
 import { SITE_TXT_COL, SHINE_DARK_COL } from "./colors";
 import { CSSProperties } from "react";
 
+export const BIG_BUTTON_STYLE: CSSProperties = {
+  textAlign: "left",
+  marginTop: "0.5rem",
+  padding: ".5rem",
+  border: `2px solid ${SITE_TXT_COL}`,
+  borderRadius: "10px",
+  width: "auto",
+  display: "inline",
+  cursor: "pointer"
+}
+
 export const SERVICE_CARD_STYLE: CSSProperties = {
   backgroundColor: "transparent",
   width: "100%",

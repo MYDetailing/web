@@ -6,7 +6,7 @@ import { Box, ClickAwayListener, Stack, Tooltip, Typography } from "@mui/materia
 interface Props {
   tip: string;
   text?: string;
-}
+};
 
 const infoImageStyle = {
   height: "1rem",
