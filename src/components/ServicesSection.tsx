@@ -81,7 +81,7 @@ export default function ServicesSection() {
   const navigate = useNavigate();
 
   // get vehicle type query string and set vehicle type
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const vehicleTypeQueryString = searchParams.get(QUERY_STRINGS.VEHICLE_TYPE);
 
   const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
@@ -107,6 +107,7 @@ export default function ServicesSection() {
 
   function handleVehicleTypeChange(event: React.SyntheticEvent, newValue: number) {
     setVehicleType(newValue);
+    setSearchParams({ [QUERY_STRINGS.VEHICLE_TYPE]: VEHICLE_TYPE_QUERY_STRINGS[newValue]})
   }
 
   function handleViewServicesBtn() {
