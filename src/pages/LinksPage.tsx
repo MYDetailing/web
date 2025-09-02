@@ -1,6 +1,7 @@
 // page that contains various links to socials.
 
-import { CSSProperties } from "react";
+import { CSSProperties, useEffect, useState } from "react";
+
 import {
   CONTACT_SECTION,
   GOOGLE_MAPS_LINK,
@@ -53,6 +54,13 @@ const buttonsWrapperStyle: CSSProperties = {
 };
 
 export default function LinksPage() {
+
+  // the query string is passed on to the website
+  const [queryString, setQueryString] = useState("");
+  useEffect(() => {
+    setQueryString(window.location.search);
+  }, [])
+
   return (
     <>
       <video autoPlay loop muted playsInline preload="auto" style={videoStyle} src={VIDEO_MP4} />
@@ -62,7 +70,7 @@ export default function LinksPage() {
           {SLOGAN}
         </Typography>
         <div style={buttonsWrapperStyle}>
-          <Button variant="outlined" style={buttonStyle} href={WEBSITE_LINK}>
+          <Button variant="outlined" style={buttonStyle} href={WEBSITE_LINK + queryString}>
             website
           </Button>
           <Button variant="outlined" style={buttonStyle} href={INSTA_LINK}>
