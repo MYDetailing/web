@@ -13,7 +13,7 @@ export const TITLE = "MY Detailing";
 export const SUBTITLE = "Premium Car Detailing in Winkler!"
 
 
-export const ALL_VEHICLE_TYPES = ["SEDAN", "SUV OR PICKUP", "MINIVAN", "SEMI TRUCK", "RV OR CAMPER"];
+export const ALL_VEHICLE_TYPES = ["SEDAN", "SUV", "MINIVAN OR PICKUP", "SEMI TRUCK", "RV OR CAMPER"];
 export const VEHICLE_TYPE_QUERY_STRINGS = ["sedan", "suv", "minivan", "semi", "rv"];
 export const CAR_TYPES = ["SEDAN", "SUV OR PICKUP", "MINIVAN"];
 export const QUERY_STRINGS = {
