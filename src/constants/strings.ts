@@ -14,7 +14,11 @@ export const SUBTITLE = "Premium Car Detailing in Winkler!"
 
 
 export const ALL_VEHICLE_TYPES = ["SEDAN", "SUV OR PICKUP", "MINIVAN", "SEMI TRUCK", "RV OR CAMPER"];
+export const VEHICLE_TYPE_QUERY_STRINGS = ["sedan", "suv", "minivan", "semi", "rv"];
 export const CAR_TYPES = ["SEDAN", "SUV OR PICKUP", "MINIVAN"];
+export const QUERY_STRINGS = {
+    VEHICLE_TYPE: "vehicletype"
+};
 
 export const CUSTOM_PKG_TITLE = "CUSTOM";
 export const CUSTOM_PKG_DESCRIPTION = "Looking for a custom package? Start with any of our existing packages and customize it by adding or removing services—or explore all services and add-ons to build your own. Then just reach out to finalize your personalized detailing package.";

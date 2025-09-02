@@ -1,6 +1,6 @@
 // section that shows all the services
-import { CSSProperties, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { CSSProperties, useEffect, useMemo, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Typography, Grid2, Box, Stack, CardContent, Card, Button } from "@mui/material";
 
 import ServiceCard from "./ServiceCard";
@@ -12,6 +12,8 @@ import {
   CUSTOM_PKG_DESCRIPTION,
   ALL_SERVICES_BTN_TXT,
   COMPARE_PKG_BTN_TXT,
+  QUERY_STRINGS, 
+  VEHICLE_TYPE_QUERY_STRINGS
 } from "../constants/strings";
 import {
   DEFAULT_VEHICLE_TYPE,
@@ -78,7 +80,19 @@ function getHints(packageId: number): string[] {
 export default function ServicesSection() {
   const navigate = useNavigate();
 
+  // get vehicle type query string and set vehicle type
+  const [searchParams] = useSearchParams();
+  const vehicleTypeQueryString = searchParams.get(QUERY_STRINGS.VEHICLE_TYPE);
+
   const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
+
+  useEffect(() => {
+    if (vehicleTypeQueryString) {
+      const queryStringVehicleTypeNumber = VEHICLE_TYPE_QUERY_STRINGS.indexOf(vehicleTypeQueryString);
+      if (queryStringVehicleTypeNumber !== -1) 
+       setVehicleType(queryStringVehicleTypeNumber);
+      }
+  }, [vehicleTypeQueryString]);
 
   // the packages displayed now
   const curPackages = useMemo(() => {
