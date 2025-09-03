@@ -1,13 +1,18 @@
 {
     "ads": [
       {
+        "desktopTitle": "RV Cleaning\nand Detailing",
+        "mobileTitle": "RV Cleaning and Detailing",
+        "description": "Prepares your RV for the season\nCleans and sanitizes interior surfaces\nRemoves dirt, bugs, and road grime from exterior\nHelps protect and preserve your investment"
+      },
+      {
         "desktopTitle": "Glass\nRestoration\nPolishing",
         "mobileTitle": "Glass Restoration Polishing",
         "description": "Preserves the original factory glass\nRemoves up to 99% of scratches\nImproves safety while driving\nMuch cheaper than glass replacement"
       },
       {
-        "desktopTitle": "Engine\nCleaning",
-        "mobileTitle": "Engine Cleaning",
+        "desktopTitle": "Engine Bay\nCleaning",
+        "mobileTitle": "Engine Bay Cleaning",
         "description": "Keeps the engine cool\nReduces wear and tear\nMinimizes risk of self-ignition\nImproves appearance under the hood\nHelps with resale\nIncreases chance of passing safety inspections"
       },
       {
