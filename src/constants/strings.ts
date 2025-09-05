@@ -1,7 +1,7 @@
 // strings that are displayed somewhere on the site or used in the code
 
 export const NAV_BAR_SECTIONS = ["Packages", "Contact"];
-export const SERVICE_CATEGORIES = ["Interior", "Exterior", "Restoration"]
+export const SERVICE_CATEGORIES = ["Interior", "Exterior", "Restoration", "Add Ons"]
 
 
 export const VISION = "AT MY DETAILING, WE BELIEVE YOUR VEHICLE DESERVES MORE THAN JUST A WASH. " + 

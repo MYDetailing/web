@@ -62,13 +62,15 @@ const descriptionCellStyleMobile = {
 };
 
 export default function ServicesPage() {
-  // create a 2D array of services, where the services are split into interior, exterior and restoration
   const servicesToShow: Service[][] = [];
+  const numberOfCategories = SERVICE_CATEGORIES.length;
+
+  // create a 2D array of services, where the services are split into interior, exterior and restoration
   SERVICE_CATEGORIES.forEach((serviceCategory) => {
     servicesToShow.push(allServices.filter((service) => service.category == serviceCategory));
   });
 
-  const [visibleCategories, setVisibleCategories] = useState<boolean[]>(Array(3).fill(false));
+  const [visibleCategories, setVisibleCategories] = useState<boolean[]>(Array(numberOfCategories).fill(false));
 
   const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
 
