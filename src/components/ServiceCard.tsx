@@ -17,10 +17,6 @@ interface Props {
   previousPackage: string;
 }
 
-const infoImageStyle = {
-  height: "1rem",
-};
-
 function ServiceCard({
   heading,
   description,
