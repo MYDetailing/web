@@ -1,7 +1,7 @@
 // detailing card on the home page
 
 import { CSSProperties } from "react";
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 
 import { DETAILINGBG_JPG } from "../constants/resourceLocations";
 import { VIDEO_OVERLAY_COL } from "../constants/colors";
@@ -17,13 +17,18 @@ const containerStyle: CSSProperties = {
   height: "100%",
 };
 
-const imgStyle: CSSProperties = {
+const imgStyle = {
   position: "absolute",
   objectFit: "cover",
   width: "100%",
   height: "100%",
   borderRadius: "15px",
-  objectPosition: "0 -55px",
+  objectPosition: {
+    xs: "-100px",
+    sm: "-50px",
+    md: "0px",
+    lg:"0px -55px"
+  },
 };
 
 const darkOverlay: CSSProperties = {
@@ -37,22 +42,31 @@ const darkOverlay: CSSProperties = {
 
 const stackStyle = {
   padding: {
-    xs: "2rem",
+    xs: "1rem",
     md: "3rem",
+    lg: "3rem",
   },
   height: "100%",
+  width: "100%",
   boxSizing: "border-box",
   alignItems: "stretch",
   flexDirection: {
     xs: "column",
     md: "row",
   },
+  gap: {
+    xs: 0,
+    md: 4
+  }
 };
 
 const headingStyle = {
   ...H2_STYLE,
   textTransform: "uppercase",
-  whiteSpace: "nowrap",
+  whiteSpace: {
+    xs: "wrap",
+    md: "nowrap"
+  }
 };
 
 const titleStyle: CSSProperties = {
@@ -68,9 +82,9 @@ const descriptionStyle: CSSProperties = {
 export default function DetailingServiceSection() {
   return (
     <div style={containerStyle}>
-      <img src={DETAILINGBG_JPG} style={imgStyle} />
+      <Box component={"img"} src={DETAILINGBG_JPG} sx={imgStyle} />
       <div style={darkOverlay}>
-        <Stack sx={stackStyle} spacing={4} direction={"row"}>
+        <Stack sx={stackStyle}>
           <div style={titleStyle}>
             <Typography variant="h2" sx={{ ...headingStyle }}>
               {DETAILING_TITLE[0]}
