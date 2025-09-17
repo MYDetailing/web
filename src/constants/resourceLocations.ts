@@ -2,6 +2,7 @@
 
 export const LOGO_TEXT_PNG = "/logotext.png";
 export const VIDEO_MP4 = "/video.mp4";
+export const DETAILINGBG_JPG = "/detailingbg.jpg";
 export const PRIVACY_POLICY_TXT = "/privacypolicy.txt";
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/wULyaj4xL5Cpwtpt5";
 export const INSTA_LINK = "https://www.instagram.com/mydetailingca/#";

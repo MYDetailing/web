@@ -25,6 +25,10 @@ export const CUSTOM_PKG_DESCRIPTION = "Looking for a custom package? Start with 
 export const ALL_SERVICES_BTN_TXT = "view services and add-ons";
 export const COMPARE_PKG_BTN_TXT = "compare packages";
 
+export const DETAILING_TITLE = ["premium", "auto detailing"];
+export const DETAILING_DESCRIPTION = "AT MY DETAILING, WE BELIEVE YOUR VEHICLE DESERVES MORE THA JUST A WASH. OUR EXPERT SERVICES REJUVENATE, PROTECT AND ELEVATE YOUR VEHICLE'S APPEARANCE, INSIDE AND OUT. WITH PREMIUM PRODUCTS AND METICULOUS CARE, WE DELIVER RESULTS THAT EMBODY TRUE DRAFTSMANSHIP.";
+export const DETAILING_BTN_TXT = "view packages";
+
 // Contact section
 export const BOOK = "Book with us";
 export const EMAIL = "info@mydetailing.ca";

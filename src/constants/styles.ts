@@ -17,14 +17,16 @@ export const SERVICE_CARD_CONTENT_STYLE = {
 export const H6_STYLE = {
   fontSize: {
     xs: "1rem",
-    md: "1.3rem",
+    md: "1.1rem",
+    lg: "1.3rem",
   },
 };
 
 export const H2_STYLE = {
   fontSize: {
     xs: "2.3rem",
-    md: "4.5rem",
+    md: "3.0rem",
+    lg: "4.1rem",
   },
 };
 
