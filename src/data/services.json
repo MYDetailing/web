@@ -261,10 +261,10 @@
 
         {
             "id": 37,
-            "name": "Ceramic Coating 3 Layers",
-            "description": "Offers triple-layer ceramic protection for maximum gloss and resistance to environmental damage.",
+            "name": "Ceramic Coating",
+            "description": "Offers triple-layer ceramic protection for maximum gloss, resistance to environmental damage and water resistance.",
             "category": "Add Ons",
-            "prices": [199, 220, 240]
+            "prices": [250, 300, 350]
         },
         {
             "id": 38,
@@ -275,10 +275,10 @@
         },
         {
             "id": 39,
-            "name": "Rain-Repellent Treatment on All Glass",
-            "description": "A hydrophobic layer to all glass for improved visibility during rain.",
+            "name": "Rain-Repellent Treatment on Windshield and Front Windows",
+            "description": "A hydrophobic layer to glass and windows for improved visibility during rain.",
             "category": "Add Ons",
-            "prices": [49, 49, 49]
+            "prices": [200, 200, 200]
 
         },
         {
@@ -338,7 +338,6 @@
             "description": "Deep cleans curtains to remove dust, stains, and odors, leaving them fresh and revitalized."
         },
 
-        
         {
             "id": 49,
             "name": "2 Phase Hand Wash",
@@ -399,20 +398,6 @@
         },
         {
             "id": 57,
-            "name": "Ceramic Coating 1 Layer",
-            "description": "Applies ceramic protection for gloss and resistance to environmental damage.",
-            "category": "Add Ons",
-            "prices": [150, 170, 190]
-        },
-        {
-            "id": 58,
-            "name": "Ceramic Coating 2 Layers",
-            "description": "Offers double-layer ceramic protection for maximum gloss and resistance to environmental damage.",
-            "category": "Add Ons",
-            "prices": [150, 170, 190]
-        },
-        {
-            "id": 59,
             "name": "Liquid Wax",
             "description": "Apply a layer of liquid wax to protect the paint and make your the vehicle shine.",
             "category": "Add Ons",
