@@ -31,7 +31,7 @@ const textStyle: CSSProperties = {
   whiteSpace: "pre-line",
 };
 
-export default function ServiceAddSection() {
+export default function ServiceAdSection() {
   const ads: Ad[] = adData.ads;
   const theme = useTheme();
   const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));

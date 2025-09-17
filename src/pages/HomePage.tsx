@@ -9,7 +9,7 @@ import ServicesSection from "../components/ServicesSection";
 import NavBar from "../components/NavBar";
 import HeroSection from "../components/HeroSection";
 import VisionSection from "../components/VisionSection";
-import ServiceAddSection from "../components/ServiceAddSection ";
+import ServiceAdSection from "../components/ServiceAdSection ";
 
 import { LG_SECTION_APPEAR_THRESHOLD, SM_SECTION_APPEAR_THRESHOLD } from "../constants/values";
 import { NAV_BAR_SECTIONS } from "../constants/strings";
@@ -147,7 +147,7 @@ export default function LandingPage() {
         animate={{ opacity: adsInView ? 1 : 0, y: adsInView ? 0 : 50 }}
         style={serviceAdsSectionStyle}
       >
-        <ServiceAddSection />
+        <ServiceAdSection />
       </motion.section>
 
       {/* services section */}
