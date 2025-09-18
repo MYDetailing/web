@@ -25,9 +25,8 @@ const imgStyle = {
   borderRadius: "15px",
   objectPosition: {
     xs: "-100px",
-    sm: "-50px",
-    md: "0px",
-    lg:"0px -55px"
+    sm: "0px",
+    lg: "0px -55px",
   },
 };
 
@@ -52,12 +51,12 @@ const stackStyle = {
   alignItems: "stretch",
   flexDirection: {
     xs: "column",
-    md: "row",
+    lg: "row",
   },
   gap: {
     xs: 0,
-    md: 4
-  }
+    md: 4,
+  },
 };
 
 const headingStyle = {
@@ -65,12 +64,12 @@ const headingStyle = {
   textTransform: "uppercase",
   whiteSpace: {
     xs: "wrap",
-    md: "nowrap"
-  }
+    md: "nowrap",
+  },
 };
 
 const titleStyle: CSSProperties = {
-  margin: "auto",
+  margin: "auto 0",
 };
 
 const descriptionStyle: CSSProperties = {

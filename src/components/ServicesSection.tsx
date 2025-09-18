@@ -14,11 +14,19 @@ const gridBoxStyle: CSSProperties = {
   borderRadius: "15px",
 };
 
+const detailingBoxStyle = {
+  height: {
+    xs: "425px",
+    sm: "350px",
+    md: "450px",
+  },
+};
+
 export default function ServicesSection() {
   return (
     <>
       <Grid2 container spacing={5} sx={gridContainerStyle}>
-        <Grid2 sx={{ background: "red", ...gridBoxStyle }} size={12} height={"450px"}>
+        <Grid2 sx={{ background: "red", ...gridBoxStyle, ...detailingBoxStyle }} size={12}>
           <DetailingServiceSection />
         </Grid2>
         <Grid2 sx={{ background: "blue", ...gridBoxStyle }} size={6} height={"350px"}></Grid2>

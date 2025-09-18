@@ -21,7 +21,7 @@ const wrapperBoxStyle = {
 
 const slideStackStyle = {
   minHeight: "200px",
-  padding: "0 5%",
+  padding: "0 5px",
   flexDirection: { xs: "column", md: "row" },
   justifyContent: { xs: "start", md: "space-between" },
   alignItems: { xs: "start", md: "center" },

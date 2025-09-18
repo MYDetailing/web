@@ -13,6 +13,7 @@ import ServiceAdSection from "../components/ServiceAdSection ";
 
 import { LG_SECTION_APPEAR_THRESHOLD, SM_SECTION_APPEAR_THRESHOLD } from "../constants/values";
 import { NAV_BAR_SECTIONS } from "../constants/strings";
+import { SIDE_MARGIN } from "../constants/styles";
 
 const motionSectionProps = {
   initial: { opacity: 0, y: 50 },
@@ -30,27 +31,27 @@ const heroSectionStyle: CSSProperties = {
 };
 
 const visionSectionStyle: CSSProperties = {
-  margin: "4rem 10% 2rem",
+  margin: `4rem ${SIDE_MARGIN} 2rem`,
   textAlign: "center",
 };
 
 const servicesSectionStyle: CSSProperties = {
-  padding: "0% 10%",
+  padding: `0% ${SIDE_MARGIN}`,
 };
 
 const serviceAdsSectionStyle: CSSProperties = {
-  margin: "4rem 5% 2rem",
+  margin: `4rem ${SIDE_MARGIN} 2rem`,
   textAlign: "center",
   paddingBottom: "3rem",
 };
 
-const servicesAndContactSectionsStyle: CSSProperties = {
+const contactSectionStyle: CSSProperties = {
   minHeight: "65vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "start",
-  padding: "2rem",
+  margin: `${SIDE_MARGIN}`,
   textAlign: "center",
   marginBottom: "8rem",
   scrollMarginTop: "80px",
@@ -167,7 +168,7 @@ export default function LandingPage() {
         id={NAV_BAR_SECTIONS[1]}
         {...motionSectionProps}
         animate={{ opacity: contactInView ? 1 : 0, y: contactInView ? 0 : 50 }}
-        style={servicesAndContactSectionsStyle}
+        style={contactSectionStyle}
       >
         <ContactSection />
       </motion.section>
