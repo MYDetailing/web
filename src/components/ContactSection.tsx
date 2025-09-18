@@ -1,9 +1,21 @@
-// section witch contact and address information
+// section witch contact, hours and address information
 
+import { CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 
-import { AdvancedMarker, APIProvider, InfoWindow, Map, Pin, useAdvancedMarkerRef } from "@vis.gl/react-google-maps";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import LocationPinIcon from "@mui/icons-material/LocationPin";
+
+import {
+  AdvancedMarker,
+  APIProvider,
+  InfoWindow,
+  Map,
+  Pin,
+  useAdvancedMarkerRef,
+} from "@vis.gl/react-google-maps";
 
 import {
   BOOK,
@@ -15,79 +27,101 @@ import {
   EMAIL,
   INSTA,
   PRIVACY_POLICY,
+  TITLE,
 } from "../constants/strings";
 import { GOOGLE_MAPS_LINK, INSTA_LINK, ROUTES } from "../constants/resourceLocations";
+import { MAP_CENTER_COORDS, MAP_PIN_COORDS, MAP_ZOOM, MAP_KEYS } from "../constants/values";
+import { PURE_BLACK, PIN_COL } from "../constants/colors";
 
-const contactStackStyle = {
+import LinkField from "./LinkFiled";
+import { SIDE_MARGIN } from "../constants/styles";
+
+const textContainer: CSSProperties = {
   display: "flex",
-  alignItems: "center"
+  flexDirection: "column",
+  alignItems: "center",
+  padding: `0 ${SIDE_MARGIN}`,
+  width: "100%",
+  boxSizing: "border-box",
 }
 
-function ContactSection() {
+const instaLinkStyle = {
+  margin: "1rem 0",
+};
 
+const contactInfoStack = {
+  width: "100%",
+  display: "flex",
+  flexDirection: {
+    xs: "column",
+    md: "row",
+  },
+  justifyContent: "space-around",
+  alignItems: "center",
+  marginBottom: "1rem",
+};
+
+const iconTextContainer: CSSProperties = {
+  display: "flex",
+  flexDirection: "row",
+};
+
+const mapStyle = {
+  height: "65vh",
+  width: "100%",
+};
+
+const infoWindowStyle = {
+  color: PURE_BLACK,
+};
+
+export default function ContactSection() {
   const [markerRef, marker] = useAdvancedMarkerRef();
 
   return (
-    <Box width="100%" marginTop={"2rem"}>
-      <Typography variant="h4" marginBottom=".5rem">
-        {BOOK}
+    <>
+    <div style={textContainer}>
+      <Typography variant="h4">{BOOK}</Typography>
+      <Typography variant="subtitle1" textAlign={"center"}>{MESSAGE}</Typography>
+      <Typography variant="subtitle1">
+        {DAYS} {HOURS}
       </Typography>
-      <Typography variant="subtitle1" textAlign="center">
-        {MESSAGE}
-      </Typography>
-      <Stack flexDirection={{ xs: "column-reverse"}} spacing={2} width="100%">
-          <APIProvider apiKey={"AIzaSyAaFzp0qrdoir2g4UCGzmILkbg2h9WR4Tk"}>
-            <Map
-              style={{ width: "100%", height: "65vh" }}
-              defaultCenter={{ lat: 49.18658013916143, lng: -97.90660958222898 }}
-              defaultZoom={14.5}
-              gestureHandling="cooperative"
-              disableDoubleClickZoom
-              mapId={"889ee0e8bb28145df95e7afd"}
-              colorScheme="DARK"
-            >
-                <AdvancedMarker position={{lat: 49.18641181597199, lng: -97.90053704988956}} title={"MYDetailing"} ref={markerRef}>
-                      <Pin background={'#545454ff'} glyphColor={'#000'} borderColor={'#000'} />
-                            <InfoWindow anchor={marker} style={{color: "#000"}} headerDisabled>MY Detailing <br/>5-542 Icon Dr. Winkler</InfoWindow>
-                </AdvancedMarker>
-
-            </Map>
-          </APIProvider>
-        <Stack sx={contactStackStyle}>
-          <Typography variant="subtitle1">{DAYS}</Typography>
-          <Typography variant="subtitle1" marginBottom="1rem">
-            {HOURS}
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            marginBottom="1rem"
-            component="a"
-            href={GOOGLE_MAPS_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {ADDRESS}
-          </Typography>
-          <Typography variant="subtitle1" marginBottom="1rem">
-            {PHONE}
-          </Typography>
-          <Typography variant="subtitle1" marginBottom="1rem">
-            {EMAIL}
-          </Typography>
-
-          <Box height="2rem" />
-          <Typography
-            variant="subtitle1"
-            marginBottom="1rem"
-            component="a"
-            href={INSTA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {INSTA}
-          </Typography>
-        </Stack>
+      <LinkField sx={instaLinkStyle} href={INSTA_LINK}>
+        {INSTA}
+      </LinkField>
+      <Stack sx={contactInfoStack}>
+        <div style={iconTextContainer}>
+          <LocationPinIcon />
+          <LinkField href={GOOGLE_MAPS_LINK}>{ADDRESS}</LinkField>
+        </div>
+        <div style={iconTextContainer}>
+          <PhoneIcon />
+          <Typography variant="subtitle1">{PHONE}</Typography>
+        </div>
+        <div style={iconTextContainer}>
+          <EmailIcon />
+          <Typography variant="subtitle1">{EMAIL}</Typography>
+        </div>
       </Stack>
+    </div>
+      <APIProvider apiKey={MAP_KEYS.apiKey}>
+        <Map
+          style={mapStyle}
+          defaultCenter={MAP_CENTER_COORDS}
+          defaultZoom={MAP_ZOOM}
+          gestureHandling="cooperative"
+          disableDoubleClickZoom
+          mapId={MAP_KEYS.mapId}
+          colorScheme="DARK"
+        >
+          <AdvancedMarker position={MAP_PIN_COORDS} ref={markerRef}>
+            <Pin background={PIN_COL} glyphColor={PURE_BLACK} borderColor={PURE_BLACK} />
+            <InfoWindow anchor={marker} style={infoWindowStyle} headerDisabled>
+              {TITLE} <br /> {ADDRESS}
+            </InfoWindow>
+          </AdvancedMarker>
+        </Map>
+      </APIProvider>
       <Typography
         variant="body2"
         component={Link}
@@ -97,8 +131,6 @@ function ContactSection() {
       >
         {PRIVACY_POLICY}
       </Typography>
-    </Box>
+    </>
   );
 }
-
-export default ContactSection;

@@ -35,14 +35,15 @@ const visionSectionStyle: CSSProperties = {
   textAlign: "center",
 };
 
-const servicesSectionStyle: CSSProperties = {
-  padding: `0% ${SIDE_MARGIN}`,
-};
-
 const serviceAdsSectionStyle: CSSProperties = {
   margin: `4rem ${SIDE_MARGIN} 2rem`,
   textAlign: "center",
   paddingBottom: "3rem",
+};
+
+const servicesSectionStyle: CSSProperties = {
+  padding: `0% ${SIDE_MARGIN}`,
+  marginBottom: "2rem"
 };
 
 const contactSectionStyle: CSSProperties = {
