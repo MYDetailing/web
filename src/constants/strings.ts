@@ -37,5 +37,5 @@ export const ADDRESS = "5-542 Icon Drive, Winkler";
 export const PHONE = "(204) 818-0930";
 export const DAYS = "monday to friday";
 export const HOURS = "8am to 5pm";
-export const INSTA = "view gallery on instagram";
+export const INSTA = "instagram";
 export const PRIVACY_POLICY = "view privacy policy";

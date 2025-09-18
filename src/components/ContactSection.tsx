@@ -7,6 +7,7 @@ import { Stack, Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationPinIcon from "@mui/icons-material/LocationPin";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 import {
   AdvancedMarker,
@@ -23,7 +24,6 @@ import {
   PHONE,
   HOURS,
   DAYS,
-  MESSAGE,
   EMAIL,
   INSTA,
   PRIVACY_POLICY,
@@ -43,10 +43,6 @@ const textContainer: CSSProperties = {
   padding: `0 ${SIDE_MARGIN}`,
   width: "100%",
   boxSizing: "border-box",
-}
-
-const instaLinkStyle = {
-  margin: "1rem 0",
 };
 
 const contactInfoStack = {
@@ -58,12 +54,13 @@ const contactInfoStack = {
   },
   justifyContent: "space-around",
   alignItems: "center",
-  marginBottom: "1rem",
+  marginBottom: ".5rem",
 };
 
 const iconTextContainer: CSSProperties = {
   display: "flex",
   flexDirection: "row",
+  marginTop: "1rem",
 };
 
 const mapStyle = {
@@ -80,30 +77,30 @@ export default function ContactSection() {
 
   return (
     <>
-    <div style={textContainer}>
-      <Typography variant="h4">{BOOK}</Typography>
-      <Typography variant="subtitle1" textAlign={"center"}>{MESSAGE}</Typography>
-      <Typography variant="subtitle1">
-        {DAYS} {HOURS}
-      </Typography>
-      <LinkField sx={instaLinkStyle} href={INSTA_LINK}>
-        {INSTA}
-      </LinkField>
-      <Stack sx={contactInfoStack}>
-        <div style={iconTextContainer}>
-          <LocationPinIcon />
-          <LinkField href={GOOGLE_MAPS_LINK}>{ADDRESS}</LinkField>
-        </div>
-        <div style={iconTextContainer}>
-          <PhoneIcon />
-          <Typography variant="subtitle1">{PHONE}</Typography>
-        </div>
-        <div style={iconTextContainer}>
-          <EmailIcon />
-          <Typography variant="subtitle1">{EMAIL}</Typography>
-        </div>
-      </Stack>
-    </div>
+      <div style={textContainer}>
+        <Typography variant="h4">{BOOK}</Typography>
+        <Typography variant="subtitle1">
+          {DAYS} {HOURS}
+        </Typography>
+        <Stack sx={contactInfoStack}>
+          <div style={iconTextContainer}>
+            <LocationPinIcon />
+            <LinkField href={GOOGLE_MAPS_LINK}>{ADDRESS}</LinkField>
+          </div>
+          <div style={iconTextContainer}>
+            <PhoneIcon />
+            <Typography variant="subtitle1">{PHONE}</Typography>
+          </div>
+          <div style={iconTextContainer}>
+            <EmailIcon />
+            <Typography variant="subtitle1">{EMAIL}</Typography>
+          </div>
+          <div style={iconTextContainer}>
+            <InstagramIcon />
+            <LinkField href={INSTA_LINK}>{INSTA}</LinkField>
+          </div>
+        </Stack>
+      </div>
       <APIProvider apiKey={MAP_KEYS.apiKey}>
         <Map
           style={mapStyle}
