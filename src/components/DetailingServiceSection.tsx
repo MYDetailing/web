@@ -75,7 +75,7 @@ const titleStyle: CSSProperties = {
 const descriptionStyle: CSSProperties = {
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
+  justifyContent: "space-evenly",
 };
 
 export default function DetailingServiceSection() {
