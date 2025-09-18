@@ -3,6 +3,8 @@
 import { Link } from "react-router-dom";
 import { Box, Stack, Typography } from "@mui/material";
 
+import { AdvancedMarker, APIProvider, InfoWindow, Map, Pin, useAdvancedMarkerRef } from "@vis.gl/react-google-maps";
+
 import {
   BOOK,
   ADDRESS,
@@ -16,26 +18,42 @@ import {
 } from "../constants/strings";
 import { GOOGLE_MAPS_LINK, INSTA_LINK, ROUTES } from "../constants/resourceLocations";
 
+const contactStackStyle = {
+  display: "flex",
+  alignItems: "center"
+}
+
 function ContactSection() {
+
+  const [markerRef, marker] = useAdvancedMarkerRef();
+
   return (
-    <Box width="100%">
+    <Box width="100%" marginTop={"2rem"}>
       <Typography variant="h4" marginBottom=".5rem">
         {BOOK}
       </Typography>
       <Typography variant="subtitle1" textAlign="center">
         {MESSAGE}
       </Typography>
-      <Stack flexDirection={{ xs: "column-reverse", md: "row" }} spacing={2} width="100%">
-        <Box flex={1} p={2}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.753651216636!2d-97.9030905247761!3d49.186261077578955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52c249cd6b5bc65d%3A0xd9768f2302995765!2sMY%20Detailing!5e0!3m2!1sen!2sca!4v1746057180949!5m2!1sen!2sca"
-            width="100%"
-            height="100%"
-            loading="lazy"
-            style={{ minHeight: 400 }}
-          />
-        </Box>
-        <Stack flex={1} p={2}>
+      <Stack flexDirection={{ xs: "column-reverse"}} spacing={2} width="100%">
+          <APIProvider apiKey={"AIzaSyAaFzp0qrdoir2g4UCGzmILkbg2h9WR4Tk"}>
+            <Map
+              style={{ width: "100%", height: "65vh" }}
+              defaultCenter={{ lat: 49.18658013916143, lng: -97.90660958222898 }}
+              defaultZoom={14.5}
+              gestureHandling="cooperative"
+              disableDoubleClickZoom
+              mapId={"889ee0e8bb28145df95e7afd"}
+              colorScheme="DARK"
+            >
+                <AdvancedMarker position={{lat: 49.18641181597199, lng: -97.90053704988956}} title={"MYDetailing"} ref={markerRef}>
+                      <Pin background={'#545454ff'} glyphColor={'#000'} borderColor={'#000'} />
+                            <InfoWindow anchor={marker} style={{color: "#000"}} headerDisabled>MY Detailing <br/>5-542 Icon Dr. Winkler</InfoWindow>
+                </AdvancedMarker>
+
+            </Map>
+          </APIProvider>
+        <Stack sx={contactStackStyle}>
           <Typography variant="subtitle1">{DAYS}</Typography>
           <Typography variant="subtitle1" marginBottom="1rem">
             {HOURS}

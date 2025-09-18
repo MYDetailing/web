@@ -51,20 +51,8 @@ const contactSectionStyle: CSSProperties = {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "start",
-  margin: `${SIDE_MARGIN}`,
   textAlign: "center",
-  marginBottom: "8rem",
   scrollMarginTop: "80px",
-};
-
-const footerSectionStyle: CSSProperties = {
-  minHeight: "30vh",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "start",
-  padding: "5rem 2rem",
-  textAlign: "center",
 };
 
 export default function LandingPage() {
@@ -77,11 +65,6 @@ export default function LandingPage() {
 
   // section observers
   const { ref: videoRef } = useInView({
-    threshold: SM_SECTION_APPEAR_THRESHOLD,
-    triggerOnce: false,
-  });
-
-  const { ref: footerRef, inView: footerInView } = useInView({
     threshold: SM_SECTION_APPEAR_THRESHOLD,
     triggerOnce: false,
   });
@@ -172,14 +155,6 @@ export default function LandingPage() {
       >
         <ContactSection />
       </motion.section>
-
-      {/* footer section */}
-      <motion.section
-        ref={footerRef}
-        {...motionSectionProps}
-        animate={{ opacity: footerInView ? 1 : 0, y: footerInView ? 0 : 50 }}
-        style={footerSectionStyle}
-      />
     </>
   );
 }
