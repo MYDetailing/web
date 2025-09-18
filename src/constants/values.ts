@@ -25,3 +25,5 @@ export const MAP_KEYS = {
     apiKey: "AIzaSyAaFzp0qrdoir2g4UCGzmILkbg2h9WR4Tk",
     mapId: "889ee0e8bb28145df95e7afd"
 };
+
+export const SCROLL_MARGIN_TOP = "10rem";

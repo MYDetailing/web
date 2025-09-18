@@ -1,6 +1,6 @@
 // home page
 
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
@@ -11,7 +11,11 @@ import HeroSection from "../components/HeroSection";
 import VisionSection from "../components/VisionSection";
 import ServiceAdSection from "../components/ServiceAdSection ";
 
-import { LG_SECTION_APPEAR_THRESHOLD, SM_SECTION_APPEAR_THRESHOLD } from "../constants/values";
+import {
+  LG_SECTION_APPEAR_THRESHOLD,
+  SM_SECTION_APPEAR_THRESHOLD,
+  SCROLL_MARGIN_TOP,
+} from "../constants/values";
 import { NAV_BAR_SECTIONS } from "../constants/strings";
 import { SIDE_MARGIN } from "../constants/styles";
 
@@ -43,7 +47,8 @@ const serviceAdsSectionStyle: CSSProperties = {
 
 const servicesSectionStyle: CSSProperties = {
   padding: `0% ${SIDE_MARGIN}`,
-  marginBottom: "2rem"
+  marginBottom: "2rem",
+  scrollMarginTop: SCROLL_MARGIN_TOP,
 };
 
 const contactSectionStyle: CSSProperties = {
@@ -53,13 +58,10 @@ const contactSectionStyle: CSSProperties = {
   alignItems: "center",
   justifyContent: "start",
   textAlign: "center",
-  scrollMarginTop: "80px",
+  scrollMarginTop: SCROLL_MARGIN_TOP,
 };
 
 export default function LandingPage() {
-  // keep track of active section
-  const [activeSection, setActiveSection] = useState("");
-
   function scrollToSection(section: string) {
     document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
   }
@@ -90,25 +92,10 @@ export default function LandingPage() {
     triggerOnce: false,
   });
 
-  // sets the active section variable for Navigation Bar
-  useEffect(() => {
-    if (servicesInView) {
-      setActiveSection(NAV_BAR_SECTIONS[0]);
-    } else if (contactInView) {
-      setActiveSection(NAV_BAR_SECTIONS[1]);
-    } else {
-      setActiveSection("");
-    }
-  }, [servicesInView, contactInView]);
-
   return (
     <>
       {/* navigation bar */}
-      <NavBar
-        sections={NAV_BAR_SECTIONS}
-        onSectionChange={scrollToSection}
-        activeSection={activeSection}
-      />
+      <NavBar sections={NAV_BAR_SECTIONS} onSectionChange={scrollToSection} />
 
       {/* hero section with video*/}
       <section ref={videoRef} style={heroSectionStyle}>

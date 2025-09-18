@@ -8,7 +8,6 @@ import { CSSProperties } from "react";
 interface Props {
   sections: string[];
   onSectionChange: (section: string) => void;
-  activeSection: String;
 }
 
 const appBarStyle: CSSProperties = {
@@ -27,7 +26,6 @@ const logoStyle: CSSProperties = {
 export default function NavBar({
   sections,
   onSectionChange,
-  activeSection,
 }: Props) {
   return (
     <AppBar position="fixed" sx={appBarStyle}>
@@ -37,7 +35,7 @@ export default function NavBar({
           {sections.map((section) => (
             <Button
               key={section}
-              color={activeSection === section ? "secondary" : "inherit"}
+              color={"inherit"}
               onClick={() => onSectionChange(section)}
             >
               {section}
