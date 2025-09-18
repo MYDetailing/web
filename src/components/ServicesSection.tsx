@@ -22,6 +22,14 @@ const detailingBoxStyle = {
   },
 };
 
+const otherBoxStyle = {
+  height: {
+    xs: "200px",
+    sm: "200px",
+    md: "200px",
+  },
+};
+
 export default function ServicesSection() {
   return (
     <>
@@ -29,8 +37,8 @@ export default function ServicesSection() {
         <Grid sx={{ background: "red", ...gridBoxStyle, ...detailingBoxStyle }} size={12}>
           <DetailingServiceSection />
         </Grid>
-        <Grid sx={{ background: "blue", ...gridBoxStyle }} size={6} height={"350px"}></Grid>
-        <Grid sx={{ background: "yellow", ...gridBoxStyle }} size={6} height={"350px"}></Grid>
+        <Grid sx={{ background: "blue", ...gridBoxStyle, ...otherBoxStyle }} size={{xs:12, md: 6}}></Grid>
+        <Grid sx={{ background: "yellow", ...gridBoxStyle, ...otherBoxStyle }} size={{xs:12, md: 6}}></Grid>
       </Grid>
     </>
   );
