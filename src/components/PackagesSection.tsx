@@ -1,7 +1,7 @@
 // section that shows all the packages
 import { CSSProperties, useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Typography, Grid2, Box, Stack, CardContent, Card } from "@mui/material";
+import { Typography, Grid, Box, Stack, CardContent, Card } from "@mui/material";
 
 import ServiceCard from "./ServiceCard.tsx";
 import serviceData from "../data/services.json";
@@ -117,10 +117,10 @@ export default function PackagesSection() {
         allOptions={ALL_VEHICLE_TYPES}
       />
 
-      <Grid2 container spacing={4} justifyContent="center">
+      <Grid container spacing={4} justifyContent="center">
         {curPackages.map((curPackage: Package) => {
           return (
-            <Grid2 key={curPackage.id} size={gridSize} sx={gridStyle}>
+            <Grid key={curPackage.id} size={gridSize} sx={gridStyle}>
               <ServiceCard
                 heading={curPackage.name}
                 description={curPackage.description}
@@ -136,12 +136,12 @@ export default function PackagesSection() {
                   curPackage.previousServiceLabel ? allPackages[curPackage.id - 1].name : ""
                 }
               />
-            </Grid2>
+            </Grid>
           );
         })}
 
         {/* custom packages*/}
-        <Grid2 sx={gridStyle} size={gridSize}>
+        <Grid sx={gridStyle} size={gridSize}>
           <Card sx={SERVICE_CARD_STYLE}>
             <CardContent sx={SERVICE_CARD_CONTENT_STYLE}>
               <Stack spacing={1}>
@@ -153,8 +153,8 @@ export default function PackagesSection() {
               </Stack>
             </CardContent>
           </Card>
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
     </Box>
   );
 }

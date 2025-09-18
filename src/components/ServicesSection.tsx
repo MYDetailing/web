@@ -1,6 +1,6 @@
 // section that shows the service categories that we offer
 
-import { Grid2 } from "@mui/material";
+import { Grid } from "@mui/material";
 import { CSSProperties } from "react";
 
 import DetailingServiceSection from "./DetailingServiceSection";
@@ -25,13 +25,13 @@ const detailingBoxStyle = {
 export default function ServicesSection() {
   return (
     <>
-      <Grid2 container spacing={5} sx={gridContainerStyle}>
-        <Grid2 sx={{ background: "red", ...gridBoxStyle, ...detailingBoxStyle }} size={12}>
+      <Grid container spacing={5} sx={gridContainerStyle}>
+        <Grid sx={{ background: "red", ...gridBoxStyle, ...detailingBoxStyle }} size={12}>
           <DetailingServiceSection />
-        </Grid2>
-        <Grid2 sx={{ background: "blue", ...gridBoxStyle }} size={6} height={"350px"}></Grid2>
-        <Grid2 sx={{ background: "yellow", ...gridBoxStyle }} size={6} height={"350px"}></Grid2>
-      </Grid2>
+        </Grid>
+        <Grid sx={{ background: "blue", ...gridBoxStyle }} size={6} height={"350px"}></Grid>
+        <Grid sx={{ background: "yellow", ...gridBoxStyle }} size={6} height={"350px"}></Grid>
+      </Grid>
     </>
   );
 }
