@@ -17,7 +17,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 import { SERVICE_CATEGORIES } from "../constants/strings.ts";
-import { CAR_TYPES } from "../constants/strings.ts";
+import { CARS_AND_TRUCKS_SIZES, CARS_AND_TRUCKS_SELECTOR_LABEL } from "../constants/strings.ts";
 import { H6_STYLE } from "../constants/styles.ts";
 import { DEFAULT_VEHICLE_TYPE } from "../constants/values.ts";
 
@@ -92,10 +92,10 @@ export default function ServicesPage() {
       <Box height={"2rem"} />
 
       <SelectorTabs
-        title={"Vehicle Type"}
+        title={CARS_AND_TRUCKS_SELECTOR_LABEL}
         selectedOption={vehicleType}
         onChange={handleVehicleTypeChange}
-        allOptions={CAR_TYPES}
+        allOptions={CARS_AND_TRUCKS_SIZES}
       />
 
       <Table>
