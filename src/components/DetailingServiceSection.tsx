@@ -2,8 +2,9 @@
 
 import { CSSProperties } from "react";
 import { Box, Stack, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-import { DETAILINGBG_JPG } from "../constants/resourceLocations";
+import { DETAILINGBG_JPG, ROUTES } from "../constants/resourceLocations";
 import { VIDEO_OVERLAY_COL } from "../constants/colors";
 import { H2_STYLE, H6_STYLE } from "../constants/styles";
 
@@ -79,10 +80,16 @@ const descriptionStyle: CSSProperties = {
 };
 
 export default function DetailingServiceSection() {
+  const navigate = useNavigate();
+
+  const handleSectionClick = () => {
+    navigate(ROUTES.DETAILING);
+  };
+
   return (
     <div style={containerStyle}>
       <Box component={"img"} src={DETAILINGBG_JPG} sx={imgStyle} />
-      <div style={darkOverlay}>
+      <div style={darkOverlay} onClick={handleSectionClick}>
         <Stack sx={stackStyle}>
           <div style={titleStyle}>
             <Typography variant="h2" sx={{ ...headingStyle }}>

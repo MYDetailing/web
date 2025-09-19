@@ -1,9 +1,9 @@
-// section that shows all the packages
+// page that has all the info about detailing
 import { CSSProperties, useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Typography, Grid, Box, Stack, CardContent, Card } from "@mui/material";
 
-import ServiceCard from "./ServiceCard.tsx";
+import ServiceCard from "../components/ServiceCard.tsx";
 import serviceData from "../data/services.json";
 import packageData from "../data/packages.json";
 import {
@@ -28,8 +28,8 @@ import { CARD_BORDER_COL } from "../constants/colors.ts";
 
 import { Service, Package } from "../types.ts";
 
-import SelectorTabs from "./SelectorTabs.tsx";
-import MyButton from "./MyButton.tsx";
+import SelectorTabs from "../components/SelectorTabs.tsx";
+import MyButton from "../components/MyButton.tsx";
 
 const wrapperBoxStyle: CSSProperties = {
   maxWidth: "100%",
@@ -70,7 +70,7 @@ function getHints(packageId: number): string[] {
   return hintsArray;
 }
 
-export default function PackagesSection() {
+export default function DetailingPage() {
   const navigate = useNavigate();
 
   // get vehicle type query string and set vehicle type
@@ -105,7 +105,7 @@ export default function PackagesSection() {
   }
 
   function handleViewServicesBtn() {
-    navigate(ROUTES.SERVICES_ROUTE);
+    navigate(ROUTES.SERVICES);
   }
 
   return (

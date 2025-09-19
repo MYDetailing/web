@@ -15,6 +15,7 @@ import "./global.css";
 import ServicesPage from "./pages/ServicesPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import LinksPage from "./pages/LinksPage";
+import DetailingPage from "./pages/DetailingPage";
 
 const wrapperBoxStyle: CSSProperties = {
   backgroundColor: SITE_BG_COL,
@@ -49,10 +50,11 @@ const App: React.FC = () => {
         <Router>
           <ScrollToTop />
           <Routes>
-            <Route path={ROUTES.HOME_ROUTE} element={<LandingPage />} />
-            <Route path={ROUTES.SERVICES_ROUTE} element={<ServicesPage />} />
-            <Route path={ROUTES.PRIVACY_POLICY_ROUTE} element={<PrivacyPolicyPage />} />
-            <Route path={ROUTES.LINKS_ROUTE} element={<LinksPage />} />
+            <Route path={ROUTES.HOME} element={<LandingPage />} />
+            <Route path={ROUTES.SERVICES} element={<ServicesPage />} />
+            <Route path={ROUTES.DETAILING} element={<DetailingPage />} />
+            <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicyPage />} />
+            <Route path={ROUTES.LINKS} element={<LinksPage />} />
           </Routes>
         </Router>
       </Box>

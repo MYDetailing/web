@@ -11,8 +11,9 @@ export const CONTACT_SECTION = "/#Contact"
 
 // routes
 export const ROUTES = {
-    HOME_ROUTE: "/",
-    SERVICES_ROUTE: "/services",
-    PRIVACY_POLICY_ROUTE: "/privacy_policy",
-    LINKS_ROUTE: "/links"
+    HOME: "/",
+    SERVICES: "/services",
+    DETAILING: "/detailing",
+    PRIVACY_POLICY: "/privacy_policy",
+    LINKS: "/links"
 };

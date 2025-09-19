@@ -122,7 +122,7 @@ export default function ContactSection() {
       <Typography
         variant="body2"
         component={Link}
-        to={ROUTES.PRIVACY_POLICY_ROUTE}
+        to={ROUTES.PRIVACY_POLICY}
         target="_blank"
         rel="noopener noreferrer"
       >
