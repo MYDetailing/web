@@ -12,8 +12,8 @@ export const SLOGAN = "We Clean You Shine";
 export const TITLE = "MY Detailing";
 export const SUBTITLE = "Premium Car Detailing in Winkler!"
 
-
-export const ALL_VEHICLE_TYPES = ["SEDAN", "SUV", "MINIVAN OR PICKUP", "SEMI TRUCK", "RV OR CAMPER"];
+export const CARS_AND_TRUCKS_SELECTOR_LABEL = "vehicle size"
+export const CARS_AND_TRUCKS_SIZES = ["SEDAN", "SUV", "MINIVAN OR PICKUP"];
 export const VEHICLE_TYPE_QUERY_STRINGS = ["sedan", "suv", "minivan", "semi", "rv"];
 export const CAR_TYPES = ["SEDAN", "SUV OR PICKUP", "MINIVAN"];
 export const QUERY_STRINGS = {

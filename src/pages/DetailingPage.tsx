@@ -1,5 +1,5 @@
 // page that has all the info about detailing
-import { CSSProperties, useEffect, useMemo, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Typography, Grid, Box, Stack, CardContent, Card } from "@mui/material";
 
@@ -7,21 +7,15 @@ import ServiceCard from "../components/ServiceCard.tsx";
 import serviceData from "../data/services.json";
 import packageData from "../data/packages.json";
 import {
-  ALL_VEHICLE_TYPES,
+  CARS_AND_TRUCKS_SIZES,
   CUSTOM_PKG_TITLE,
   CUSTOM_PKG_DESCRIPTION,
   ALL_SERVICES_BTN_TXT,
   QUERY_STRINGS,
   VEHICLE_TYPE_QUERY_STRINGS,
+  CARS_AND_TRUCKS_SELECTOR_LABEL,
 } from "../constants/strings.ts";
-import {
-  DEFAULT_VEHICLE_TYPE,
-  FIRST_CAR_PACKAGE,
-  LAST_CAR_PACKAGE,
-  FIRST_SEMI_PACKAGE,
-  LAST_SEMI_PACKAGE,
-  FIRST_RV_PACKAGE,
-} from "../constants/values.ts";
+import { DEFAULT_VEHICLE_TYPE, FIRST_CAR_PACKAGE, LAST_CAR_PACKAGE } from "../constants/values.ts";
 import { ROUTES } from "../constants/resourceLocations.ts";
 import { SERVICE_CARD_CONTENT_STYLE, SERVICE_CARD_STYLE } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
@@ -31,8 +25,12 @@ import { Service, Package } from "../types.ts";
 import SelectorTabs from "../components/SelectorTabs.tsx";
 import MyButton from "../components/MyButton.tsx";
 
-const wrapperBoxStyle: CSSProperties = {
+const containerBoxStyle: CSSProperties = {
   maxWidth: "100%",
+};
+
+const containerGridStyle = {
+  justifyContent: "center",
 };
 
 const gridSize = {
@@ -79,6 +77,8 @@ export default function DetailingPage() {
 
   const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
 
+  const carsAndTrucksPackages = allPackages.slice(FIRST_CAR_PACKAGE, LAST_CAR_PACKAGE);
+
   useEffect(() => {
     if (vehicleTypeQueryString) {
       const queryStringVehicleTypeNumber =
@@ -86,17 +86,6 @@ export default function DetailingPage() {
       if (queryStringVehicleTypeNumber !== -1) setVehicleType(queryStringVehicleTypeNumber);
     }
   }, [vehicleTypeQueryString]);
-
-  // the packages displayed now
-  const curPackages = useMemo(() => {
-    if (vehicleType >= 0 && vehicleType <= 2) {
-      return allPackages.slice(FIRST_CAR_PACKAGE, LAST_CAR_PACKAGE);
-    } else if (vehicleType === 3) {
-      return allPackages.slice(FIRST_SEMI_PACKAGE, LAST_SEMI_PACKAGE);
-    } else {
-      return allPackages.slice(FIRST_RV_PACKAGE);
-    }
-  }, [vehicleType]);
 
   // event handlers
   function handleVehicleTypeChange(event: React.SyntheticEvent, newValue: number) {
@@ -109,16 +98,16 @@ export default function DetailingPage() {
   }
 
   return (
-    <Box sx={wrapperBoxStyle}>
+    <Box sx={containerBoxStyle}>
       <SelectorTabs
-        title={"Vehicle Type"}
+        title={CARS_AND_TRUCKS_SELECTOR_LABEL}
         selectedOption={vehicleType}
         onChange={handleVehicleTypeChange}
-        allOptions={ALL_VEHICLE_TYPES}
+        allOptions={CARS_AND_TRUCKS_SIZES}
       />
 
-      <Grid container spacing={4} justifyContent="center">
-        {curPackages.map((curPackage: Package) => {
+      <Grid container spacing={4} sx={containerGridStyle}>
+        {carsAndTrucksPackages.map((curPackage: Package) => {
           return (
             <Grid key={curPackage.id} size={gridSize} sx={gridStyle}>
               <ServiceCard
