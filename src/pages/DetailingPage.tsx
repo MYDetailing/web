@@ -90,7 +90,7 @@ export default function DetailingPage() {
   // event handlers
   function handleVehicleTypeChange(event: React.SyntheticEvent, newValue: number) {
     setVehicleType(newValue);
-    setSearchParams({ [QUERY_STRINGS.VEHICLE_TYPE]: VEHICLE_TYPE_QUERY_STRINGS[newValue] });
+    setSearchParams({ [QUERY_STRINGS.VEHICLE_TYPE]: VEHICLE_TYPE_QUERY_STRINGS[newValue] }, {replace: true});
   }
 
   function handleViewServicesBtn() {
