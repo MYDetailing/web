@@ -27,16 +27,6 @@ a {
   text-decoration: inherit;
 }
 
-a:hover {
-  color: #535bf2;
-}
-
-/* Heading adjustments */
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 /* Ensure buttons match Tailwind styles */
 button {
   all: unset; /* Remove default browser styling */

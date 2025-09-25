@@ -62,6 +62,11 @@ export default createTheme({
       color: "transparent",
       animation: "shineText 7s ease-in-out infinite",
     },
+    h1: {
+      fontFamily: "FuturaBold",
+      fontSize: "4.5rem",
+      textAlign: "left",
+    },
     h2: {
       fontFamily: "Futura",
       fontSize: "4.5rem",
@@ -76,6 +81,8 @@ export default createTheme({
     h4: {
       fontFamily: "Elemental",
       fontSize: "2rem",
+      textAlign: "center",
+      padding: "0 .5rem"
     },
     h5: {
       fontStyle: "italic",
