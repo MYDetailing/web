@@ -16,8 +16,8 @@ import {
   SM_SECTION_APPEAR_THRESHOLD,
   SCROLL_MARGIN_TOP,
 } from "../constants/values";
-import { NAV_BAR_SECTIONS } from "../constants/strings";
 import { SIDE_MARGIN } from "../constants/styles";
+import { NAV_BAR_SECTIONS } from "../constants/strings";
 
 const motionSectionProps = {
   initial: { opacity: 0, y: 50 },
@@ -95,7 +95,7 @@ export default function LandingPage() {
   return (
     <>
       {/* navigation bar */}
-      <NavBar sections={NAV_BAR_SECTIONS} onSectionChange={scrollToSection} />
+      <NavBar onSectionChange={scrollToSection} />
 
       {/* hero section with video*/}
       <section ref={videoRef} style={heroSectionStyle}>

@@ -1,12 +1,13 @@
 // navigation bar at the top of the site
-
+import { CSSProperties } from "react";
 import { AppBar, Button, Toolbar } from "@mui/material";
+
 import { TITLE } from "../constants/strings";
 import { NAV_BAR_COL } from "../constants/colors";
-import { CSSProperties } from "react";
+import { NAV_BAR_SECTIONS } from "../constants/strings";
+import { LOGO_FULL_PNG } from "../constants/resourceLocations"
 
 interface Props {
-  sections: string[];
   onSectionChange: (section: string) => void;
 }
 
@@ -24,15 +25,14 @@ const logoStyle: CSSProperties = {
 };
 
 export default function NavBar({
-  sections,
   onSectionChange,
 }: Props) {
   return (
     <AppBar position="fixed" sx={appBarStyle}>
       <Toolbar sx={toolBarStyle}>
-        <img src="/logofull.png" alt={TITLE} style={logoStyle} />
+        <img src={LOGO_FULL_PNG} alt={TITLE} style={logoStyle} />
         <div>
-          {sections.map((section) => (
+          {NAV_BAR_SECTIONS.map((section) => (
             <Button
               key={section}
               color={"inherit"}
