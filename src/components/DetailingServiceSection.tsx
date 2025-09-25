@@ -92,10 +92,10 @@ export default function DetailingServiceSection() {
       <div style={darkOverlay} onClick={handleSectionClick}>
         <Stack sx={stackStyle}>
           <div style={titleStyle}>
-            <Typography variant="h2" sx={{ ...headingStyle }}>
+            <Typography variant="h2" sx={headingStyle}>
               {DETAILING_TITLE[0]}
             </Typography>
-            <Typography variant="h2" sx={{ ...headingStyle, fontFamily: "FuturaBold" }}>
+            <Typography variant="h1" sx={headingStyle}>
               {DETAILING_TITLE[1]}
             </Typography>
           </div>

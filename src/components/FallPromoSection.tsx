@@ -2,6 +2,8 @@
 
 import { Typography, Box } from "@mui/material";
 import ImgBackgroundSection from "./ImgBackgroundSection";
+
+import { FALL_PROMO_JPG } from "../constants/resourceLocations";
 import { FALL_PROMO } from "../constants/strings";
 
 const priceContainerStyle = {
@@ -18,7 +20,7 @@ const descriptionStyle = {
 
 export default function FallPromoSection() {
   return (
-    <ImgBackgroundSection imgSrc="./FALL_PROMO_BG.jpg">
+    <ImgBackgroundSection imgSrc={FALL_PROMO_JPG}>
       <Typography variant="h2">{FALL_PROMO.HEADING[0]}</Typography>
       <Typography variant="h1">{FALL_PROMO.HEADING[1]}</Typography>
       <Box sx={priceContainerStyle}>

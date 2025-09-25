@@ -13,7 +13,7 @@ interface Ad {
   description: string;
 }
 
-const wrapperBoxStyle = {
+const containerBox = {
   "& .slick-dots li button:before": {
     color: SITE_TXT_COL,
   },
@@ -57,7 +57,7 @@ export default function ServiceAdSection() {
   };
 
   return (
-    <Box sx={wrapperBoxStyle}>
+    <Box sx={containerBox}>
       <Slider
         infinite
         slidesToScroll={1}
