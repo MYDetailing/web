@@ -13,7 +13,7 @@ import {
   CARS_AND_TRUCKS_SELECTOR_LABEL,
 } from "../constants/strings.ts";
 import { DEFAULT_VEHICLE_TYPE, FIRST_DETAILING_PACKAGE } from "../constants/values.ts";
-import { SIDE_MARGIN } from "../constants/styles.ts";
+import { SIDE_MARGIN, TOP_MARGIN } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
 
 import { Service, Package } from "../types.ts";
@@ -28,7 +28,7 @@ const detailingPackagesHeadingStyle = {
 };
 
 const contentBox: CSSProperties = {
-  padding: SIDE_MARGIN,
+  padding: `${TOP_MARGIN} ${SIDE_MARGIN}`,
 };
 
 const containerGridStyle = {

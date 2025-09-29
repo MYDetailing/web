@@ -5,6 +5,7 @@ import { SITE_TXT_COL, SHINE_DARK_COL } from "./colors";
 import { CSSProperties } from "react";
 
 export const SIDE_MARGIN = "7%";
+export const TOP_MARGIN = "7%";
 
 export const SERVICE_CARD_STYLE: CSSProperties = {
   backgroundColor: "transparent",
