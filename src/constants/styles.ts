@@ -25,7 +25,7 @@ export const H6_STYLE = {
   },
 };
 
-export const H2_STYLE = {
+export const H1_H2_STYLE = {
   fontSize: {
     xs: "2.3rem",
     md: "3.0rem",
@@ -42,9 +42,6 @@ export const H3_STYLE = {
 
 export default createTheme({
   palette: {
-    text: {
-      primary: SITE_TXT_COL,
-    },
     secondary: {
       main: "#8e24aa",
     },
@@ -83,7 +80,7 @@ export default createTheme({
       fontFamily: "Elemental",
       fontSize: "2rem",
       textAlign: "center",
-      padding: "0 .5rem"
+      padding: "0 .5rem",
     },
     h5: {
       fontStyle: "italic",

@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import adData from "../data/ads.json";
 import { CSSProperties } from "react";
 import { SITE_TXT_COL } from "../constants/colors";
-import { H2_STYLE, H3_STYLE } from "../constants/styles";
+import { H1_H2_STYLE, H3_STYLE } from "../constants/styles";
 
 interface Ad {
   desktopTitle: string;
@@ -72,7 +72,7 @@ export default function ServiceAdSection() {
         {ads.map((ad, index) => (
           <Box key={index}>
             <Stack sx={slideStackStyle}>
-              <Typography variant="h2" sx={{ ...textStyle, ...H2_STYLE, ...h2_size_dep_style }}>
+              <Typography variant="h2" sx={{ ...textStyle, ...H1_H2_STYLE, ...h2_size_dep_style }}>
                 {getAdTitle(index)}
               </Typography>
               <Typography variant="h3" sx={{ ...textStyle, ...H3_STYLE, ...h3_size_dep_style }}>

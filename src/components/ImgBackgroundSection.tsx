@@ -6,6 +6,7 @@ import { VIDEO_OVERLAY_COL } from "../constants/colors";
 const defaultSectionContainerStyle = {
   position: "relative",
   width: "100%",
+  height: "100%"
 };
 
 const defaultImgStyle = {
@@ -19,6 +20,7 @@ const defaultImgStyle = {
 const defaultContentContainerStyle = {
   position: "relative",
   width: "100%",
+  height: "100%",
   background: VIDEO_OVERLAY_COL,
   padding: {
     xs: "1rem",
