@@ -32,6 +32,7 @@ interface props {
   imgStyle?: object;
   contentContainerStyle?: object;
   imgSrc: string;
+  onClick?: () => void;
   children?: React.ReactNode;
 }
 
@@ -40,10 +41,18 @@ export default function ImgBackgroundSection({
   imgStyle,
   contentContainerStyle,
   imgSrc,
+  onClick,
   children,
 }: props) {
+  const cursorStyle = {
+    cursor: onClick == null ? "default" : "pointer",
+  };
+
   return (
-    <Box sx={{ ...defaultSectionContainerStyle, ...containerStyle }}>
+    <Box
+      sx={{ ...defaultSectionContainerStyle, ...cursorStyle, ...containerStyle }}
+      onClick={onClick}
+    >
       <Box sx={{ ...defaultImgStyle, ...imgStyle }} component={"img"} src={imgSrc} />
       <Box sx={{ ...defaultContentContainerStyle, ...contentContainerStyle }}>{children}</Box>
     </Box>
