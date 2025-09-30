@@ -1,8 +1,9 @@
 // home page
 
-import { CSSProperties } from "react";
+import { CSSProperties, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 import ContactSection from "../components/ContactSection";
 import ServicesSection from "../components/ServicesSection";
@@ -15,6 +16,7 @@ import {
   LG_SECTION_APPEAR_THRESHOLD,
   SM_SECTION_APPEAR_THRESHOLD,
   SCROLL_MARGIN_TOP,
+  CONTACT_SECTION_ID,
 } from "../constants/values";
 import { SIDE_MARGIN } from "../constants/styles";
 import { NAV_BAR_SECTIONS } from "../constants/strings";
@@ -62,6 +64,19 @@ const contactSectionStyle: CSSProperties = {
 };
 
 export default function LandingPage() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        console.log(`no element ${element}`);
+      }
+    }
+  }, [pathname, hash]);
+
   function scrollToSection(section: string) {
     document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
   }
@@ -95,7 +110,7 @@ export default function LandingPage() {
   return (
     <>
       {/* navigation bar */}
-      <NavBar onSectionChange={scrollToSection} />
+      <NavBar />
 
       {/* hero section with video*/}
       <section ref={videoRef} style={heroSectionStyle}>
@@ -136,7 +151,7 @@ export default function LandingPage() {
       {/* contact section */}
       <motion.section
         ref={contactRef}
-        id={NAV_BAR_SECTIONS[1]}
+        id={NAV_BAR_SECTIONS[CONTACT_SECTION_ID]}
         {...motionSectionProps}
         animate={{ opacity: contactInView ? 1 : 0, y: contactInView ? 0 : 50 }}
         style={contactSectionStyle}

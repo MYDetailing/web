@@ -1,6 +1,6 @@
 // strings that are displayed somewhere on the site or used in the code
 
-export const NAV_BAR_SECTIONS = ["Services", "Contact"];
+export const NAV_BAR_SECTIONS = ["detailing", "contact"];
 export const SERVICE_CATEGORIES = ["Interior", "Exterior", "Restoration", "Add Ons"];
 
 export const VISION =

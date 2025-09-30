@@ -102,7 +102,7 @@ export default function DetailingPage() {
 
   return (
     <Box>
-      <NavBar onSectionChange={() => {}} />
+      <NavBar />
       <Box sx={contentBox}>
         <Box sx={fallPromoStyle}>
           <FallPromoSection />
