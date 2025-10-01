@@ -13,7 +13,7 @@ import {
   CARS_AND_TRUCKS_SELECTOR_LABEL,
 } from "../constants/strings.ts";
 import { DEFAULT_VEHICLE_TYPE, FIRST_DETAILING_PACKAGE } from "../constants/values.ts";
-import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN } from "../constants/styles.ts";
+import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
 
 import { Service, Package } from "../types.ts";
@@ -37,6 +37,7 @@ const contentBox = {
 
 const containerGridStyle = {
   justifyContent: "center",
+  marginBottom: SECTION_PADDING,
 };
 
 const gridSize = {
@@ -51,7 +52,7 @@ const gridStyle: CSSProperties = {
 };
 
 const fallPromoStyle = {
-  marginBottom: "2rem",
+  marginBottom: SECTION_PADDING,
 };
 
 const allServices: Service[] = serviceData.services;

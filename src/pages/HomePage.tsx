@@ -18,7 +18,7 @@ import {
   SCROLL_MARGIN_TOP,
   CONTACT_SECTION_ID,
 } from "../constants/values";
-import { SIDE_MARGIN } from "../constants/styles";
+import { SECTION_PADDING, SIDE_MARGIN } from "../constants/styles";
 import { NAV_BAR_SECTIONS } from "../constants/strings";
 
 const motionSectionProps = {
@@ -37,19 +37,18 @@ const heroSectionStyle: CSSProperties = {
 };
 
 const visionSectionStyle: CSSProperties = {
-  margin: `4rem ${SIDE_MARGIN} 2rem`,
+  margin: `4rem ${SIDE_MARGIN} ${SECTION_PADDING}`,
   textAlign: "center",
 };
 
 const serviceAdsSectionStyle: CSSProperties = {
-  margin: `4rem ${SIDE_MARGIN} 2rem`,
+  margin: `${SECTION_PADDING} ${SIDE_MARGIN}`,
   textAlign: "center",
   paddingBottom: "3rem",
 };
 
 const servicesSectionStyle: CSSProperties = {
-  padding: `0% ${SIDE_MARGIN}`,
-  marginBottom: "2rem",
+  padding: `${SECTION_PADDING} ${SIDE_MARGIN}`,
   scrollMarginTop: SCROLL_MARGIN_TOP,
 };
 

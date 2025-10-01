@@ -10,6 +10,7 @@ export const TOP_MARGIN = {
   sm: "10%",
   md: "7%",
 };
+export const SECTION_PADDING = "2rem";
 
 export const SERVICE_CARD_STYLE: CSSProperties = {
   backgroundColor: "transparent",
