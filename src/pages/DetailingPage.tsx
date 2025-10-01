@@ -12,7 +12,7 @@ import {
   VEHICLE_TYPE_QUERY_STRINGS,
   CARS_AND_TRUCKS_SELECTOR_LABEL,
 } from "../constants/strings.ts";
-import { DEFAULT_VEHICLE_TYPE, FIRST_DETAILING_PACKAGE } from "../constants/values.ts";
+import { DEFAULT_VEHICLE_TYPE, FIRST_DETAILING_PACKAGE, LAST_DETAILING_PACKAGE } from "../constants/values.ts";
 import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
 
@@ -87,7 +87,7 @@ export default function DetailingPage() {
 
   const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
 
-  const carsAndTrucksPackages = allPackages.slice(FIRST_DETAILING_PACKAGE, 6);
+  const carsAndTrucksPackages = allPackages.slice(FIRST_DETAILING_PACKAGE, LAST_DETAILING_PACKAGE);
 
   useEffect(() => {
     if (vehicleTypeQueryString) {
