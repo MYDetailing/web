@@ -8,7 +8,7 @@ export const SIDE_MARGIN = "7%";
 export const TOP_MARGIN = {
   xs: "15%",
   sm: "10%",
-  md: "7%"
+  md: "7%",
 };
 
 export const SERVICE_CARD_STYLE: CSSProperties = {
@@ -19,14 +19,6 @@ export const SERVICE_CARD_STYLE: CSSProperties = {
 export const SERVICE_CARD_CONTENT_STYLE = {
   sm: { padding: "1rem 1rem" },
   md: { padding: "1rem 2rem" },
-};
-
-export const H6_STYLE = {
-  fontSize: {
-    xs: "1rem",
-    md: "1.1rem",
-    lg: "1.3rem",
-  },
 };
 
 export const H1_H2_STYLE = {
@@ -41,6 +33,14 @@ export const H3_STYLE = {
   fontSize: {
     xs: "1rem",
     md: "1.7rem",
+  },
+};
+
+export const H6_STYLE = {
+  fontSize: {
+    xs: "1rem",
+    md: "1.1rem",
+    lg: "1.3rem",
   },
 };
 
