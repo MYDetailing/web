@@ -13,7 +13,7 @@ import {
   CARS_AND_TRUCKS_SELECTOR_LABEL,
 } from "../constants/strings.ts";
 import { DEFAULT_VEHICLE_TYPE, FIRST_DETAILING_PACKAGE } from "../constants/values.ts";
-import { SIDE_MARGIN, TOP_MARGIN } from "../constants/styles.ts";
+import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
 
 import { Service, Package } from "../types.ts";
@@ -23,6 +23,7 @@ import NavBar from "../components/NavBar.tsx";
 import FallPromoSection from "../components/FallPromoSection.tsx";
 
 const detailingPackagesHeadingStyle = {
+  ...H1_H2_STYLE,
   textAlign: "center",
   marginBottom: "3rem",
 };
@@ -41,7 +42,7 @@ const containerGridStyle = {
 const gridSize = {
   xs: 12,
   sm: 6,
-  md: 4,
+  lg: 4
 };
 
 const gridStyle: CSSProperties = {
