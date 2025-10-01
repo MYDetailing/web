@@ -72,6 +72,7 @@ function getServices(packageId: number): string[] {
 // returns an array of hints for the services of a passed package
 function getHints(packageId: number): string[] {
   const hintsArray: string[] = [];
+  
   allPackages[packageId].services.forEach((serviceIndex) => {
     hintsArray.push(allServices[serviceIndex].description);
   });
