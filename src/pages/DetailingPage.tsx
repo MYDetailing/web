@@ -27,8 +27,11 @@ const detailingPackagesHeadingStyle = {
   marginBottom: "3rem",
 };
 
-const contentBox: CSSProperties = {
-  padding: `${TOP_MARGIN} ${SIDE_MARGIN}`,
+const contentBox = {
+  paddingTop: TOP_MARGIN,
+  paddingBottom: TOP_MARGIN,
+  paddingLeft: SIDE_MARGIN,
+  paddingRight: SIDE_MARGIN
 };
 
 const containerGridStyle = {
