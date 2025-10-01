@@ -58,7 +58,7 @@ const fallPromoStyle = {
 const allServices: Service[] = serviceData.services;
 const allPackages: Package[] = packageData.packages;
 
-// goes through passed package, and gets its services
+// returns an array of services for a passed package
 function getServices(packageId: number): string[] {
   const servicesArray: string[] = [];
 
