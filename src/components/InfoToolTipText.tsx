@@ -1,4 +1,4 @@
-// text field followed by an info icon with hint. Can use as just info icon nad hint by not passing text
+// text field followed by an info icon with hint. Can use as just info icon and hint by not passing text
 
 import { CSSProperties, useState } from "react";
 import { Box, ClickAwayListener, Stack, Tooltip, Typography } from "@mui/material";
