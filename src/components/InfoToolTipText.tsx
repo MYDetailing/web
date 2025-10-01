@@ -36,7 +36,7 @@ export default function InfoToolTipText({ tip, text }: Props) {
         disableFocusListener
         disableHoverListener
         disableTouchListener
-        title={tip}
+        title={text + ": " + tip}
         arrow
         placement="bottom"
         enterDelay={500}

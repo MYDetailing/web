@@ -43,7 +43,7 @@ function ServiceCard({
           )}
           <Stack>
             {services.map((service, index) => (
-              <InfoToolTipText tip={service + ": " + hints[index]} text={service} />
+              <InfoToolTipText tip={hints[index]} text={service} />
             ))}
           </Stack>
         </Stack>
