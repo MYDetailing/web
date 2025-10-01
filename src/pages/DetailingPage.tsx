@@ -69,7 +69,7 @@ function getServices(packageId: number): string[] {
   return servicesArray;
 }
 
-// goes through passed package, and gets its hints
+// returns an array of hints for the services of a passed package
 function getHints(packageId: number): string[] {
   const hintsArray: string[] = [];
   allPackages[packageId].services.forEach((serviceIndex) => {
