@@ -24,6 +24,7 @@ export const SERVICE_CARD_CONTENT_STYLE = {
 export const H1_H2_STYLE = {
   fontSize: {
     xs: "2.3rem",
+    sm: "2.6rem",
     md: "3.0rem",
     lg: "4.1rem",
   },
@@ -33,6 +34,13 @@ export const H3_STYLE = {
   fontSize: {
     xs: "1rem",
     md: "1.7rem",
+  },
+};
+
+export const H4_STYLE = {
+  fontSize: {
+    xs: "1.7rem",
+    md: "2rem",
   },
 };
 
