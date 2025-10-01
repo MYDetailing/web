@@ -5,7 +5,7 @@ import ImgBackgroundSection from "./ImgBackgroundSection";
 
 import { FALL_PROMO_JPG } from "../constants/resourceLocations";
 import { FALL_PROMO } from "../constants/strings";
-import { H1_H2_STYLE } from "../constants/styles";
+import { H1_H2_STYLE, H4_STYLE } from "../constants/styles";
 import { SITE_TXT_COL } from "../constants/colors";
 
 const priceContainerStyle = {
@@ -13,6 +13,7 @@ const priceContainerStyle = {
 };
 
 const oldPriceStyle = {
+  ...H4_STYLE,
   textDecorationLine: "line-through",
   textDecorationColor: SITE_TXT_COL,
 };
@@ -34,7 +35,9 @@ export default function FallPromoSection() {
         <Typography variant="h4" sx={oldPriceStyle}>
           {FALL_PROMO.COST_OG}
         </Typography>
-        <Typography variant="h4">{FALL_PROMO.COST_SALE}</Typography>
+        <Typography variant="h4" sx={H4_STYLE}>
+          {FALL_PROMO.COST_SALE}
+        </Typography>
       </Box>
       <Typography variant="subtitle1" sx={descriptionStyle}>
         {FALL_PROMO.DESCRIPTION[0]}

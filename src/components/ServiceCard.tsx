@@ -4,7 +4,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
-import { SERVICE_CARD_STYLE, SERVICE_CARD_CONTENT_STYLE } from "../constants/styles";
+import { SERVICE_CARD_STYLE, SERVICE_CARD_CONTENT_STYLE, H4_STYLE } from "../constants/styles";
 import InfoToolTipText from "./InfoToolTipText";
 
 interface Props {
@@ -30,7 +30,7 @@ function ServiceCard({
     <Card variant="outlined" sx={SERVICE_CARD_STYLE}>
       <CardContent sx={SERVICE_CARD_CONTENT_STYLE}>
         <Stack spacing={1}>
-          <Typography variant="h4">
+          <Typography variant="h4" sx={H4_STYLE}>
             {heading} {price == "" ? "" : "$" + price}
           </Typography>
           <Typography variant="subtitle1">{description}</Typography>
@@ -42,11 +42,9 @@ function ServiceCard({
             <Typography variant="body1">Everything included in {previousPackage}, plus</Typography>
           )}
           <Stack>
-
             {services.map((service, index) => (
               <InfoToolTipText tip={service + ": " + hints[index]} text={service} />
             ))}
-
           </Stack>
         </Stack>
       </CardContent>

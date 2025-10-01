@@ -18,7 +18,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 import { SERVICE_CATEGORIES } from "../constants/strings.ts";
 import { CARS_AND_TRUCKS_SIZES, CARS_AND_TRUCKS_SELECTOR_LABEL } from "../constants/strings.ts";
-import { H6_STYLE } from "../constants/styles.ts";
+import { H4_STYLE, H6_STYLE } from "../constants/styles.ts";
 import { DEFAULT_VEHICLE_TYPE } from "../constants/values.ts";
 
 import SelectorTabs from "../components/SelectorTabs.tsx";
@@ -70,7 +70,9 @@ export default function ServicesPage() {
     servicesToShow.push(allServices.filter((service) => service.category == serviceCategory));
   });
 
-  const [visibleCategories, setVisibleCategories] = useState<boolean[]>(Array(numberOfCategories).fill(false));
+  const [visibleCategories, setVisibleCategories] = useState<boolean[]>(
+    Array(numberOfCategories).fill(false)
+  );
 
   const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
 
@@ -84,7 +86,9 @@ export default function ServicesPage() {
 
   return (
     <Box sx={wrapperBoxStyle}>
-      <Typography variant="h4">Add-Ons</Typography>
+      <Typography variant="h4" sx={H4_STYLE}>
+        Add-Ons
+      </Typography>
       <Typography variant="h6" sx={H6_STYLE}>
         Add these options to any package—or combine them to build your own.
       </Typography>
