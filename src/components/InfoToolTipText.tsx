@@ -15,6 +15,11 @@ const infoImageStyle = {
 const stackStyle: CSSProperties = {
   flexDirection: "row",
   alignItems: "center",
+  justifyContent: "space-between",
+};
+
+const textStyle = {
+  paddingRight: "5px",
 };
 
 export default function InfoToolTipText({ tip, text }: Props) {
@@ -48,9 +53,10 @@ export default function InfoToolTipText({ tip, text }: Props) {
         }}
       >
         <Stack sx={stackStyle}>
-          <Typography variant="body1">{text}</Typography>
-          <Box flexGrow={1} />
-
+          <Typography variant="body1" sx={textStyle}>
+            {text}
+          </Typography>
+          <Box />
           <img src="/info.png" style={infoImageStyle} onClick={handleOpenTooltip} />
         </Stack>
       </Tooltip>
