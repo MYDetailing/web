@@ -11,6 +11,7 @@ const containerBoxStyle = {
   ...H1_H2_STYLE,
   display: "flex",
   justifyContent: "center",
+  textAlign: "center",
 };
 
 const servicesGridStyle = {
