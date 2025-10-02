@@ -42,9 +42,14 @@ const iconStyle: CSSProperties = {
   color: PURE_WHITE,
 };
 
+const tableCellStyle = {
+  color: "transparent"
+};
+
 const collapsableCellStyle: CSSProperties = { borderBottom: 0 };
 
 const descriptionCellStyleDesktop = {
+  ...tableCellStyle,
   display: {
     xs: "none",
     sm: "table-cell",
@@ -52,6 +57,7 @@ const descriptionCellStyleDesktop = {
 };
 
 const descriptionCellStyleMobile = {
+  ...tableCellStyle,
   display: {
     xs: "table-cell",
     sm: "none",
@@ -123,24 +129,24 @@ export default function ServicesPage({ vehicleType }: Props) {
                       <Table>
                         <TableHead>
                           <TableRow>
-                            <TableCell>Service</TableCell>
+                            <TableCell sx={tableCellStyle}>Service</TableCell>
                             <TableCell sx={descriptionCellStyleDesktop}>Description</TableCell>
                             <TableCell sx={descriptionCellStyleMobile}></TableCell>
-                            <TableCell align="right">Price</TableCell>
+                            <TableCell sx={tableCellStyle} align="right">Price</TableCell>
                           </TableRow>
                         </TableHead>
 
                         <TableBody>
                           {services.map((service) => (
                             <TableRow key={service.id}>
-                              <TableCell>{service.name}</TableCell>
+                              <TableCell sx={tableCellStyle}>{service.name}</TableCell>
                               <TableCell sx={descriptionCellStyleDesktop}>
                                 {service.description}
                               </TableCell>
                               <TableCell sx={descriptionCellStyleMobile}>
                                 <InfoToolTip tip={service.name + ": " + service.description} />
                               </TableCell>
-                              <TableCell align="right">
+                              <TableCell sx={tableCellStyle} align="right">
                                 {service.prices?.[vehicleType] ?? ""}
                               </TableCell>
                             </TableRow>
