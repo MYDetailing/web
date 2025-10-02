@@ -27,7 +27,7 @@ export const COMPARE_PKG_BTN_TXT = "compare packages";
 
 export const DETAILING_TITLE = ["premium", "auto detailing"];
 export const DETAILING_DESCRIPTION =
-  "AT MY DETAILING, WE BELIEVE YOUR VEHICLE DESERVES MORE THA JUST A WASH. OUR EXPERT SERVICES REJUVENATE, PROTECT AND ELEVATE YOUR VEHICLE'S APPEARANCE, INSIDE AND OUT. WITH PREMIUM PRODUCTS AND METICULOUS CARE, WE DELIVER RESULTS THAT EMBODY TRUE DRAFTSMANSHIP.";
+  "Our professional detailing not only enhances your car’s shine but also adds a protective layer against dirt, UV rays, and daily wear. By keeping your interior and exterior in top condition, we help your vehicle feel like new while preserving its resale value for years to come.";
 export const DETAILING_BTN_TXT = "view packages";
 
 export const FALL_PROMO = {
