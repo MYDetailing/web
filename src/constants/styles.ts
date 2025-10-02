@@ -6,9 +6,8 @@ import { CSSProperties } from "react";
 
 export const SIDE_MARGIN = "7%";
 export const TOP_MARGIN = {
-  xs: "15%",
-  sm: "10%",
-  md: "7%",
+  xs: "15vh",
+  sm: "10vh",
 };
 export const SECTION_PADDING = "2rem";
 
