@@ -13,7 +13,11 @@ import {
   CARS_AND_TRUCKS_SELECTOR_LABEL,
   DETAILING_PACKAGES_HEADING,
 } from "../constants/strings.ts";
-import { DEFAULT_VEHICLE_TYPE, FIRST_DETAILING_PACKAGE, LAST_DETAILING_PACKAGE } from "../constants/values.ts";
+import {
+  DEFAULT_VEHICLE_TYPE,
+  FIRST_DETAILING_PACKAGE,
+  LAST_DETAILING_PACKAGE,
+} from "../constants/values.ts";
 import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
 
@@ -23,6 +27,7 @@ import SelectorTabs from "../components/SelectorTabs.tsx";
 import NavBar from "../components/NavBar.tsx";
 import FallPromoSection from "../components/FallPromoSection.tsx";
 import PreSalePreparationSection from "../components/PreSalePreparationSection.tsx";
+import ServicesPage from "../components/AddOnsSection.tsx";
 
 const detailingPackagesHeadingStyle = {
   ...H1_H2_STYLE,
@@ -34,7 +39,7 @@ const contentBox = {
   paddingTop: TOP_MARGIN,
   paddingBottom: TOP_MARGIN,
   paddingLeft: SIDE_MARGIN,
-  paddingRight: SIDE_MARGIN
+  paddingRight: SIDE_MARGIN,
 };
 
 const containerGridStyle = {
@@ -45,7 +50,7 @@ const containerGridStyle = {
 const gridSize = {
   xs: 12,
   sm: 6,
-  lg: 4
+  lg: 4,
 };
 
 const gridStyle: CSSProperties = {
@@ -121,7 +126,9 @@ export default function DetailingPage() {
           onChange={handleVehicleTypeChange}
           allOptions={CARS_AND_TRUCKS_SIZES}
         />
-        <Typography variant="h2" sx={detailingPackagesHeadingStyle}>{DETAILING_PACKAGES_HEADING}</Typography>
+        <Typography variant="h2" sx={detailingPackagesHeadingStyle}>
+          {DETAILING_PACKAGES_HEADING}
+        </Typography>
 
         <Grid container spacing={4} sx={containerGridStyle}>
           {carsAndTrucksPackages.map((curPackage: Package) => {
@@ -147,6 +154,7 @@ export default function DetailingPage() {
           })}
         </Grid>
         <PreSalePreparationSection vehicleType={vehicleType} />
+        <ServicesPage vehicleType={vehicleType} />
       </Box>
     </Box>
   );

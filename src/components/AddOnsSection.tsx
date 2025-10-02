@@ -1,4 +1,4 @@
-// page that shows all services and add-ons
+// sections that shows all the services and add-ons
 
 import { CSSProperties, useState } from "react";
 import {
@@ -17,12 +17,9 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 import { SERVICE_CATEGORIES } from "../constants/strings.ts";
-import { CARS_AND_TRUCKS_SIZES, CARS_AND_TRUCKS_SELECTOR_LABEL } from "../constants/strings.ts";
-import { H4_STYLE, H6_STYLE } from "../constants/styles.ts";
-import { DEFAULT_VEHICLE_TYPE } from "../constants/values.ts";
+import { H4_STYLE, H6_STYLE, SECTION_PADDING } from "../constants/styles.ts";
 
-import SelectorTabs from "../components/SelectorTabs.tsx";
-import InfoToolTip from "../components/InfoToolTipText.tsx";
+import InfoToolTip from "./InfoToolTipText.tsx";
 
 import serviceData from "../data/services.json";
 import { Service } from "../types.ts";
@@ -30,8 +27,8 @@ import { PURE_WHITE } from "../constants/colors.ts";
 
 const allServices: Service[] = serviceData.services;
 
-const wrapperBoxStyle: CSSProperties = {
-  padding: "20px 10px",
+const containerBoxStyle: CSSProperties = {
+  marginTop: SECTION_PADDING,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -61,7 +58,11 @@ const descriptionCellStyleMobile = {
   },
 };
 
-export default function ServicesPage() {
+interface Props {
+  vehicleType: number;
+}
+
+export default function ServicesPage({ vehicleType }: Props) {
   const servicesToShow: Service[][] = [];
   const numberOfCategories = SERVICE_CATEGORIES.length;
 
@@ -74,18 +75,12 @@ export default function ServicesPage() {
     Array(numberOfCategories).fill(false)
   );
 
-  const [vehicleType, setVehicleType] = useState(DEFAULT_VEHICLE_TYPE);
-
-  function handleVehicleTypeChange(event: React.SyntheticEvent, newValue: number) {
-    setVehicleType(newValue);
-  }
-
   function toggleSectionExpansion(index: number) {
     setVisibleCategories((prev) => prev.map((val, i) => (i === index ? !val : val)));
   }
 
   return (
-    <Box sx={wrapperBoxStyle}>
+    <Box sx={containerBoxStyle}>
       <Typography variant="h4" sx={H4_STYLE}>
         Add-Ons
       </Typography>
@@ -94,13 +89,6 @@ export default function ServicesPage() {
       </Typography>
 
       <Box height={"2rem"} />
-
-      <SelectorTabs
-        title={CARS_AND_TRUCKS_SELECTOR_LABEL}
-        selectedOption={vehicleType}
-        onChange={handleVehicleTypeChange}
-        allOptions={CARS_AND_TRUCKS_SIZES}
-      />
 
       <Table>
         <TableBody>
