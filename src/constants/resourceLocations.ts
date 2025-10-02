@@ -14,7 +14,6 @@ export const CONTACT_SECTION = "/#Contact"
 // routes
 export const ROUTES = {
     HOME: "/",
-    SERVICES: "/services",
     DETAILING: "/detailing",
     PRIVACY_POLICY: "/privacy_policy",
     LINKS: "/links"
