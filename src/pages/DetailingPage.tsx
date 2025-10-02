@@ -21,6 +21,7 @@ import { Service, Package } from "../types.ts";
 import SelectorTabs from "../components/SelectorTabs.tsx";
 import NavBar from "../components/NavBar.tsx";
 import FallPromoSection from "../components/FallPromoSection.tsx";
+import PreSalePreparationSection from "../components/PresalePreparationSection.tsx";
 
 const detailingPackagesHeadingStyle = {
   ...H1_H2_STYLE,
@@ -72,7 +73,7 @@ function getServices(packageId: number): string[] {
 // returns an array of hints for the services of a passed package
 function getHints(packageId: number): string[] {
   const hintsArray: string[] = [];
-  
+
   allPackages[packageId].services.forEach((serviceIndex) => {
     hintsArray.push(allServices[serviceIndex].description);
   });
@@ -146,6 +147,7 @@ export default function DetailingPage() {
             );
           })}
         </Grid>
+        <PreSalePreparationSection />
       </Box>
     </Box>
   );
