@@ -39,6 +39,8 @@ export const FALL_PROMO = {
   ],
 };
 
+export const DETAILING_PACKAGES_HEADING = "Full Detailing Packages";
+
 // Contact section
 export const BOOK = "Book with us";
 export const EMAIL = "info@mydetailing.ca";

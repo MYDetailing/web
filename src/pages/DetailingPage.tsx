@@ -11,6 +11,7 @@ import {
   QUERY_STRINGS,
   VEHICLE_TYPE_QUERY_STRINGS,
   CARS_AND_TRUCKS_SELECTOR_LABEL,
+  DETAILING_PACKAGES_HEADING,
 } from "../constants/strings.ts";
 import { DEFAULT_VEHICLE_TYPE, FIRST_DETAILING_PACKAGE, LAST_DETAILING_PACKAGE } from "../constants/values.ts";
 import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
@@ -120,9 +121,7 @@ export default function DetailingPage() {
           onChange={handleVehicleTypeChange}
           allOptions={CARS_AND_TRUCKS_SIZES}
         />
-        <Typography variant="h2" sx={detailingPackagesHeadingStyle}>
-          Full Detailing Packages
-        </Typography>
+        <Typography variant="h2" sx={detailingPackagesHeadingStyle}>{DETAILING_PACKAGES_HEADING}</Typography>
 
         <Grid container spacing={4} sx={containerGridStyle}>
           {carsAndTrucksPackages.map((curPackage: Package) => {
