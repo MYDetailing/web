@@ -21,7 +21,7 @@ import { Service, Package } from "../types.ts";
 import SelectorTabs from "../components/SelectorTabs.tsx";
 import NavBar from "../components/NavBar.tsx";
 import FallPromoSection from "../components/FallPromoSection.tsx";
-import PreSalePreparationSection from "../components/PresalePreparationSection.tsx";
+import PreSalePreparationSection from "../components/PreSalePreparationSection.tsx";
 
 const detailingPackagesHeadingStyle = {
   ...H1_H2_STYLE,
