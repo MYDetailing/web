@@ -29,7 +29,11 @@ const gridSize = {
 const allServices: Service[] = serviceData.services;
 const preSalePrepPackage: Package = packageData.packages[PRESALE_PREP_PACKAGE];
 
-export default function PreSalePreparationSection() {
+ interface Props {
+  vehicleType: number
+};
+
+export default function PreSalePreparationSection({ vehicleType }: Props) {
   // build an array of preSalePrep Services
   const preSalePrepServices: Service[] = [];
   preSalePrepPackage.services.forEach((serviceId) => {
@@ -46,7 +50,7 @@ export default function PreSalePreparationSection() {
         {preSalePrepPackage.name}
       </Typography>
       <Typography variant="h4" sx={H4_STYLE}>
-        ${preSalePrepPackage.prices[0]}
+        ${preSalePrepPackage.prices[vehicleType]}
       </Typography>
       <Typography variant="subtitle1">{preSalePrepPackage.description}</Typography>
       <Grid container sx={servicesGridStyle} columnSpacing={4}>

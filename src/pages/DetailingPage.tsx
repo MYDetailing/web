@@ -146,7 +146,7 @@ export default function DetailingPage() {
             );
           })}
         </Grid>
-        <PreSalePreparationSection />
+        <PreSalePreparationSection vehicleType={vehicleType} />
       </Box>
     </Box>
   );
