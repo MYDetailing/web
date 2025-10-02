@@ -12,7 +12,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/fonts/fonts.css";
 import "./global.css";
-import ServicesPage from "./pages/ServicesPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import LinksPage from "./pages/LinksPage";
 import DetailingPage from "./pages/DetailingPage";
@@ -51,7 +50,6 @@ const App: React.FC = () => {
           <ScrollToTop />
           <Routes>
             <Route path={ROUTES.HOME} element={<LandingPage />} />
-            <Route path={ROUTES.SERVICES} element={<ServicesPage />} />
             <Route path={ROUTES.DETAILING} element={<DetailingPage />} />
             <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicyPage />} />
             <Route path={ROUTES.LINKS} element={<LinksPage />} />
