@@ -5,7 +5,6 @@ import { Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import { DETAILINGBG_JPG, ROUTES } from "../constants/resourceLocations";
-import { H1_H2_STYLE, H6_STYLE } from "../constants/styles";
 
 import { DETAILING_TITLE, DETAILING_DESCRIPTION, DETAILING_BTN_TXT } from "../constants/strings";
 
@@ -26,7 +25,6 @@ const stackStyle = {
 };
 
 const headingStyle = {
-  ...H1_H2_STYLE,
   textTransform: "uppercase",
   whiteSpace: {
     xs: "wrap",
@@ -62,9 +60,7 @@ export default function DetailingServiceSection() {
           </Typography>
         </div>
         <Stack style={descriptionStyle}>
-          <Typography variant="h6" sx={H6_STYLE}>
-            {DETAILING_DESCRIPTION}
-          </Typography>
+          <Typography variant="h6">{DETAILING_DESCRIPTION}</Typography>
           <MyButton buttonText={DETAILING_BTN_TXT} />
         </Stack>
       </Stack>

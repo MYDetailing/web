@@ -1,6 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
 
-import { H1_H2_STYLE, H4_STYLE } from "../constants/styles";
 import { Package, Service } from "../types";
 import serviceData from "../data/services.json";
 import packageData from "../data/packages.json";
@@ -8,7 +7,6 @@ import { PRESALE_PREP_PACKAGE } from "../constants/values";
 import InfoToolTipText from "./InfoToolTipText";
 
 const containerBoxStyle = {
-  ...H1_H2_STYLE,
   display: "flex",
   justifyContent: "center",
   textAlign: "center",
@@ -30,9 +28,9 @@ const gridSize = {
 const allServices: Service[] = serviceData.services;
 const preSalePrepPackage: Package = packageData.packages[PRESALE_PREP_PACKAGE];
 
- interface Props {
-  vehicleType: number
-};
+interface Props {
+  vehicleType: number;
+}
 
 export default function PreSalePreparationSection({ vehicleType }: Props) {
   // build an array of preSalePrep Services
@@ -50,9 +48,7 @@ export default function PreSalePreparationSection({ vehicleType }: Props) {
       <Typography variant="h2" sx={containerBoxStyle}>
         {preSalePrepPackage.name}
       </Typography>
-      <Typography variant="h4" sx={H4_STYLE}>
-        ${preSalePrepPackage.prices[vehicleType]}
-      </Typography>
+      <Typography variant="h4">${preSalePrepPackage.prices[vehicleType]}</Typography>
       <Typography variant="subtitle1">{preSalePrepPackage.description}</Typography>
       <Grid container sx={servicesGridStyle} columnSpacing={4}>
         {

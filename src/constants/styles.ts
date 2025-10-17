@@ -21,36 +21,7 @@ export const SERVICE_CARD_CONTENT_STYLE = {
   md: { padding: "1rem 2rem" },
 };
 
-export const H1_H2_STYLE = {
-  fontSize: {
-    xs: "2.3rem",
-    sm: "2.6rem",
-    md: "3.0rem",
-    lg: "4.1rem",
-  },
-};
-
-export const H3_STYLE = {
-  fontSize: {
-    xs: "1rem",
-    md: "1.7rem",
-  },
-};
-
-export const H4_STYLE = {
-  fontSize: {
-    xs: "1.7rem",
-    md: "2rem",
-  },
-};
-
-export const H6_STYLE = {
-  fontSize: {
-    xs: "1rem",
-    md: "1.1rem",
-    lg: "1.3rem",
-  },
-};
+const baseTheme = createTheme();
 
 export default createTheme({
   palette: {
@@ -76,6 +47,18 @@ export default createTheme({
       fontFamily: "FuturaBold",
       fontSize: "4.5rem",
       textAlign: "left",
+      [baseTheme.breakpoints.between("xs", "sm")]: {
+        fontSize: "2.3rem",
+      },
+      [baseTheme.breakpoints.between("sm", "md")]: {
+        fontSize: "2.6rem",
+      },
+      [baseTheme.breakpoints.between("md", "lg")]: {
+        fontSize: "3.0rem",
+      },
+      [baseTheme.breakpoints.up("lg")]: {
+        fontSize: "4.1rem",
+      },
     },
     h1_sm: {
       fontFamily: "FuturaBold",
@@ -86,6 +69,18 @@ export default createTheme({
       fontFamily: "Futura",
       fontSize: "4.5rem",
       textAlign: "left",
+      [baseTheme.breakpoints.between("xs", "sm")]: {
+        fontSize: "2.3rem",
+      },
+      [baseTheme.breakpoints.between("sm", "md")]: {
+        fontSize: "2.6rem",
+      },
+      [baseTheme.breakpoints.between("md", "lg")]: {
+        fontSize: "3.0rem",
+      },
+      [baseTheme.breakpoints.up("lg")]: {
+        fontSize: "4.1rem",
+      },
     },
      h2_sm: {
       fontFamily: "Futura",
@@ -97,12 +92,24 @@ export default createTheme({
       fontSize: "1.7rem",
       textAlign: "right",
       lineHeight: "1.3",
+      [baseTheme.breakpoints.between("xs", "md")]: {
+        fontSize: "1rem",
+      },
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: "1.7rem",
+      },
     },
     h4: {
       fontFamily: "Elemental",
       fontSize: "2rem",
       textAlign: "center",
       padding: "0 .5rem",
+      [baseTheme.breakpoints.between("xs", "md")]: {
+        fontSize: "1.7rem",
+      },
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: "2rem",
+      },
     },
     h5: {
       fontStyle: "italic",
@@ -111,6 +118,15 @@ export default createTheme({
       fontFamily: "Futura",
       textAlign: "justify",
       textTransform: "uppercase",
+      [baseTheme.breakpoints.between("xs", "md")]: {
+        fontSize: "1rem",
+      },
+      [baseTheme.breakpoints.between("md", "lg")]: {
+        fontSize: "1.1rem",
+      },
+      [baseTheme.breakpoints.up("lg")]: {
+        fontSize: "1.3em",
+      },
     },
     h6_sm: {
       fontFamily: "Futura",

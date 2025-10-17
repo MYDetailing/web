@@ -3,7 +3,6 @@
 import { CSSProperties } from "react";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 
-import { H6_STYLE } from "../constants/styles";
 import { SITE_TXT_COL, UNSELECTED_COL } from "../constants/colors";
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
   selectedOption: number;
   onChange: (event: React.SyntheticEvent, newValue: number) => void;
   allOptions: string[];
-};
+}
 
 const tabsStyle = {
   "& .MuiTab-root": {
@@ -34,7 +33,7 @@ const boxStyle: CSSProperties = {
 export default function SelectorTabs({ title, selectedOption, onChange, allOptions }: Props) {
   return (
     <>
-      <Typography variant="h6" textAlign="center" sx={H6_STYLE}>
+      <Typography variant="h6" textAlign="center">
         {title}
       </Typography>
 

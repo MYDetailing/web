@@ -34,7 +34,7 @@ import { MAP_CENTER_COORDS, MAP_PIN_COORDS, MAP_ZOOM, MAP_KEYS } from "../consta
 import { PURE_BLACK, PIN_COL } from "../constants/colors";
 
 import LinkField from "./LinkFiled";
-import { H4_STYLE, SIDE_MARGIN } from "../constants/styles";
+import { SIDE_MARGIN } from "../constants/styles";
 
 const textContainer: CSSProperties = {
   display: "flex",
@@ -78,9 +78,7 @@ export default function ContactSection() {
   return (
     <>
       <div style={textContainer}>
-        <Typography variant="h4" sx={H4_STYLE}>
-          {BOOK}
-        </Typography>
+        <Typography variant="h4">{BOOK}</Typography>
         <Typography variant="subtitle1">
           {DAYS} {HOURS}
         </Typography>

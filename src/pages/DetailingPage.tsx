@@ -18,7 +18,7 @@ import {
   FIRST_DETAILING_PACKAGE,
   LAST_DETAILING_PACKAGE,
 } from "../constants/values.ts";
-import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
+import { SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
 
 import { Service, Package } from "../types.ts";
@@ -30,7 +30,6 @@ import PreSalePreparationSection from "../components/PreSalePreparationSection.t
 import ServicesPage from "../components/AddOnsSection.tsx";
 
 const detailingPackagesHeadingStyle = {
-  ...H1_H2_STYLE,
   textAlign: "center",
   marginBottom: "3rem",
 };

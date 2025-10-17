@@ -3,7 +3,6 @@
 import { CSSProperties } from "react";
 import { Button, Typography } from "@mui/material";
 
-import { H6_STYLE } from "../constants/styles";
 import { SITE_TXT_COL } from "../constants/colors";
 
 interface Props {
@@ -20,7 +19,7 @@ const buttonStyle: CSSProperties = {
 export default function MyButton({ buttonText, onClick }: Props) {
   return (
     <Button sx={buttonStyle} onClick={onClick}>
-      <Typography variant="h6" sx={H6_STYLE} textAlign={"center"}>
+      <Typography variant="h6" textAlign={"center"}>
         {buttonText}
       </Typography>
     </Button>
