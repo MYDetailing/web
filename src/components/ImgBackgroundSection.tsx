@@ -25,7 +25,6 @@ const defaultContentContainerStyle = {
   padding: {
     xs: "1rem",
     md: "3rem",
-    lg: "3rem",
   },
 };
 
