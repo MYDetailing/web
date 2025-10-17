@@ -60,7 +60,7 @@ export default function DetailingServiceSection() {
           </Typography>
         </div>
         <Stack style={descriptionStyle}>
-          <Typography variant="h6">{DETAILING_SERVICE_CARD_TEXT.DETAILING_DESCRIPTION}</Typography>
+          <Typography variant="h6">{DETAILING_SERVICE_CARD_TEXT.DESCRIPTION}</Typography>
           <MyButton buttonText={DETAILING_SERVICE_CARD_TEXT.BUTTON_TEXT} />
         </Stack>
       </Stack>
