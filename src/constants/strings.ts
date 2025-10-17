@@ -25,7 +25,7 @@ export const CUSTOM_PKG_DESCRIPTION =
 export const ALL_SERVICES_BTN_TXT = "view services and add-ons";
 export const COMPARE_PKG_BTN_TXT = "compare packages";
 
-export const DETAILING_SERVICE_CARD_TEXT = {
+export const DETAILING_CARD_TEXT = {
   TITLE: ["premium", "auto detailing"],
   DESCRIPTION:
     "Our professional detailing not only enhances your car’s shine but also adds a protective layer against dirt, UV rays, and daily wear. By keeping your interior and exterior in top condition, we help your vehicle feel like new while preserving its resale value for years to come.",
