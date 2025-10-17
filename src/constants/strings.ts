@@ -38,6 +38,12 @@ export const TINT_CARD_TEXT = {
   BUTTON_TEXT: "explore window tint",
 };
 
+export const EXTERIOR_GLOSS_CARD_TEXT = {
+  TITLE: ["exterior", "gloss & shield"],
+  DESCRIPTION: "polishing, ceramics, and more.",
+  BUTTON_TEXT: "learn more",
+};
+
 export const FALL_PROMO = {
   HEADING: ["FALL PROMO", "ANTI-RAIN PROTECTION"],
   COST_OG: "$550",
