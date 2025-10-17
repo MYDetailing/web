@@ -53,15 +53,15 @@ export default function DetailingServiceSection() {
       <Stack sx={stackStyle}>
         <div style={titleStyle}>
           <Typography variant="h2" sx={headingStyle}>
-            {DETAILING_SERVICE_CARD_TEXT.DETAILING_TITLE[0]}
+            {DETAILING_SERVICE_CARD_TEXT.TITLE[0]}
           </Typography>
           <Typography variant="h1" sx={headingStyle}>
-            {DETAILING_SERVICE_CARD_TEXT.DETAILING_TITLE[1]}
+            {DETAILING_SERVICE_CARD_TEXT.TITLE[1]}
           </Typography>
         </div>
         <Stack style={descriptionStyle}>
           <Typography variant="h6">{DETAILING_SERVICE_CARD_TEXT.DETAILING_DESCRIPTION}</Typography>
-          <MyButton buttonText={DETAILING_SERVICE_CARD_TEXT.DETAILING_BTN_TXT} />
+          <MyButton buttonText={DETAILING_SERVICE_CARD_TEXT.BUTTON_TEXT} />
         </Stack>
       </Stack>
     </ImgBackgroundSection>

@@ -26,10 +26,10 @@ export const ALL_SERVICES_BTN_TXT = "view services and add-ons";
 export const COMPARE_PKG_BTN_TXT = "compare packages";
 
 export const DETAILING_SERVICE_CARD_TEXT = {
-  DETAILING_TITLE: ["premium", "auto detailing"],
-  DETAILING_DESCRIPTION:
+  TITLE: ["premium", "auto detailing"],
+  DESCRIPTION:
     "Our professional detailing not only enhances your car’s shine but also adds a protective layer against dirt, UV rays, and daily wear. By keeping your interior and exterior in top condition, we help your vehicle feel like new while preserving its resale value for years to come.",
-  DETAILING_BTN_TXT: "view packages",
+  BUTTON_TEXT: "view packages",
 };
 
 export const FALL_PROMO = {
