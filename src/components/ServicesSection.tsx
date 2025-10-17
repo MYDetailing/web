@@ -3,7 +3,7 @@
 import { Grid } from "@mui/material";
 import { CSSProperties } from "react";
 
-import DetailingServiceSection from "./DetailingServiceSection";
+import DetailingServiceSection from "./DetailingCard";
 
 const gridContainerStyle: CSSProperties = {};
 
@@ -14,7 +14,7 @@ const gridBoxStyle: CSSProperties = {
   borderRadius: "15px",
 };
 
-/*
+
 const otherBoxStyle = {
   height: {
     xs: "200px",
@@ -22,7 +22,7 @@ const otherBoxStyle = {
     md: "200px",
   },
 };
-*/
+
 
 export default function ServicesSection() {
   return (
@@ -31,10 +31,10 @@ export default function ServicesSection() {
         <Grid sx={gridBoxStyle} size={12}>
           <DetailingServiceSection />
         </Grid>
-        {/** 
+        
         <Grid sx={{ background: "blue", ...gridBoxStyle, ...otherBoxStyle }} size={{xs:12, md: 6}}></Grid>
         <Grid sx={{ background: "yellow", ...gridBoxStyle, ...otherBoxStyle }} size={{xs:12, md: 6}}></Grid>
-        */}
+        
       </Grid>
     </>
   );
