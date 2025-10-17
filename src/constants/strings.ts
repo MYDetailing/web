@@ -32,6 +32,12 @@ export const DETAILING_CARD_TEXT = {
   BUTTON_TEXT: "view packages",
 };
 
+export const TINT_CARD_TEXT = {
+  TITLE: ["professional", "window tint"],
+  DESCRIPTION: "privacy, protection, and style.",
+  BUTTON_TEXT: "explore window tint",
+};
+
 export const FALL_PROMO = {
   HEADING: ["FALL PROMO", "ANTI-RAIN PROTECTION"],
   COST_OG: "$550",
