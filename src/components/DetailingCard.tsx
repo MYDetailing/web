@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { DETAILINGBG_JPG, ROUTES } from "../constants/resourceLocations";
 
-import { DETAILING_TITLE, DETAILING_DESCRIPTION, DETAILING_BTN_TXT } from "../constants/strings";
+import { DETAILING_SERVICE_CARD_TEXT } from "../constants/strings";
 
 import MyButton from "./MyButton";
 import ImgBackgroundSection from "./ImgBackgroundSection";
@@ -53,15 +53,15 @@ export default function DetailingServiceSection() {
       <Stack sx={stackStyle}>
         <div style={titleStyle}>
           <Typography variant="h2" sx={headingStyle}>
-            {DETAILING_TITLE[0]}
+            {DETAILING_SERVICE_CARD_TEXT.DETAILING_TITLE[0]}
           </Typography>
           <Typography variant="h1" sx={headingStyle}>
-            {DETAILING_TITLE[1]}
+            {DETAILING_SERVICE_CARD_TEXT.DETAILING_TITLE[1]}
           </Typography>
         </div>
         <Stack style={descriptionStyle}>
-          <Typography variant="h6">{DETAILING_DESCRIPTION}</Typography>
-          <MyButton buttonText={DETAILING_BTN_TXT} />
+          <Typography variant="h6">{DETAILING_SERVICE_CARD_TEXT.DETAILING_DESCRIPTION}</Typography>
+          <MyButton buttonText={DETAILING_SERVICE_CARD_TEXT.DETAILING_BTN_TXT} />
         </Stack>
       </Stack>
     </ImgBackgroundSection>
