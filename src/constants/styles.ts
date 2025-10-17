@@ -77,9 +77,19 @@ export default createTheme({
       fontSize: "4.5rem",
       textAlign: "left",
     },
+    h1_sm: {
+      fontFamily: "FuturaBold",
+      fontSize: "2.7rem",
+      textAlign: "left",
+    },
     h2: {
       fontFamily: "Futura",
       fontSize: "4.5rem",
+      textAlign: "left",
+    },
+     h2_sm: {
+      fontFamily: "Futura",
+      fontSize: "2.7rem",
       textAlign: "left",
     },
     h3: {
@@ -98,6 +108,11 @@ export default createTheme({
       fontStyle: "italic",
     },
     h6: {
+      fontFamily: "Futura",
+      textAlign: "justify",
+      textTransform: "uppercase",
+    },
+    h6_sm: {
       fontFamily: "Futura",
       textAlign: "justify",
       textTransform: "uppercase",
@@ -138,3 +153,25 @@ export default createTheme({
     },
   },
 });
+
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    h1_sm: React.CSSProperties;
+    h2_sm: React.CSSProperties;
+    h6_sm: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    h1_sm?: React.CSSProperties;
+    h2_sm?: React.CSSProperties;
+    h6_sm?: React.CSSProperties;
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    h1_sm: true;
+    h2_sm: true;
+    h6_sm: true;
+  }
+}
