@@ -45,7 +45,6 @@ export default createTheme({
     },
     h1: {
       fontFamily: "FuturaBold",
-      fontSize: "4.5rem",
       textAlign: "left",
       [baseTheme.breakpoints.between("xs", "sm")]: {
         fontSize: "2.3rem",
@@ -62,12 +61,19 @@ export default createTheme({
     },
     h1_sm: {
       fontFamily: "FuturaBold",
-      fontSize: "2.7rem",
       textAlign: "left",
+      [baseTheme.breakpoints.between("xs", "sm")]: {
+        fontSize: "2.3rem",
+      },
+      [baseTheme.breakpoints.between("sm", "md")]: {
+        fontSize: "2.6rem",
+      },
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: "2.7rem",
+      },
     },
     h2: {
       fontFamily: "Futura",
-      fontSize: "4.5rem",
       textAlign: "left",
       [baseTheme.breakpoints.between("xs", "sm")]: {
         fontSize: "2.3rem",
@@ -82,10 +88,18 @@ export default createTheme({
         fontSize: "4.1rem",
       },
     },
-     h2_sm: {
+    h2_sm: {
       fontFamily: "Futura",
-      fontSize: "2.7rem",
       textAlign: "left",
+      [baseTheme.breakpoints.between("xs", "sm")]: {
+        fontSize: "2.3rem",
+      },
+      [baseTheme.breakpoints.between("sm", "md")]: {
+        fontSize: "2.6rem",
+      },
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: "2.7rem",
+      },
     },
     h3: {
       fontFamily: "Futura",
@@ -132,6 +146,7 @@ export default createTheme({
       fontFamily: "Futura",
       textAlign: "justify",
       textTransform: "uppercase",
+      fontSize: "1rem"
     },
     subtitle1: {
       fontFamily: "Futura",
@@ -170,7 +185,7 @@ export default createTheme({
   },
 });
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface TypographyVariants {
     h1_sm: React.CSSProperties;
     h2_sm: React.CSSProperties;
@@ -184,7 +199,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-declare module '@mui/material/Typography' {
+declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     h1_sm: true;
     h2_sm: true;
