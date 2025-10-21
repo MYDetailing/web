@@ -1,6 +1,23 @@
 // strings that are displayed somewhere on the site or used in the code
 
-export const NAV_BAR_SECTIONS = ["detailing", "contact"];
+export const NAV_BAR_SECTIONS = [
+  {
+    TITLE: "detailing",
+    PATH: "/detailing",
+  },
+  {
+    TITLE: "window tint",
+    PATH: "/window_tint",
+  },
+  {
+    TITLE: "exterior gloss",
+    PATH: "/exterior_gloss",
+  },
+  {
+    TITLE: "contact",
+    PATH: "/#contact",
+  },
+];
 export const SERVICE_CATEGORIES = ["Interior", "Exterior", "Restoration", "Add Ons"];
 
 export const VISION =

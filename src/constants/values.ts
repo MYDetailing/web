@@ -13,7 +13,7 @@ export const SM_SECTION_APPEAR_THRESHOLD = 0.25;
 export const LG_SECTION_APPEAR_THRESHOLD = 0.05;
 
 // corresponds with strings/NAV_BAR_SECTIONS
-export const CONTACT_SECTION_ID = 1;
+export const CONTACT_SECTION_ID = 3;
 
 // map
 export const MAP_CENTER_COORDS = {
