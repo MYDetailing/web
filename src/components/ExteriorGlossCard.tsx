@@ -1,11 +1,12 @@
 // exterior gloss and shield card on the home page
 
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import ImgBackgroundSection from "./ImgBackgroundSection";
 import MyButton from "./MyButton";
 
-import { EXTERIORBG_JPG } from "../constants/resourceLocations";
+import { EXTERIORBG_JPG, ROUTES } from "../constants/resourceLocations";
 import { EXTERIOR_GLOSS_CARD_TEXT } from "../constants/strings";
 
 const containerBoxStyle = {
@@ -37,9 +38,13 @@ const headingStyle = {
   textTransform: "uppercase",
 };
 
-function handleSectionClick() {}
-
 export default function ExteriorGlossCard() {
+  const navigate = useNavigate();
+
+  function handleSectionClick() {
+    navigate(ROUTES.EXTERIOR_GLOSS);
+  }
+
   return (
     <ImgBackgroundSection
       imgSrc={EXTERIORBG_JPG}

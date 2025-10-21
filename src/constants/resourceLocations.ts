@@ -19,4 +19,6 @@ export const ROUTES = {
   DETAILING: "/detailing",
   PRIVACY_POLICY: "/privacy_policy",
   LINKS: "/links",
+  WINDOW_TINT: "/window_tint",
+  EXTERIOR_GLOSS: "/exterior_gloss",
 };

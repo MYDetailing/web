@@ -1,11 +1,12 @@
 // window tint card on the home page
 
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import ImgBackgroundSection from "./ImgBackgroundSection";
 import MyButton from "./MyButton";
 
-import { WINDOWTINTBG_JPG } from "../constants/resourceLocations";
+import { ROUTES, WINDOWTINTBG_JPG } from "../constants/resourceLocations";
 import { TINT_CARD_TEXT } from "../constants/strings";
 
 const containerBoxStyle = {
@@ -37,9 +38,13 @@ const headingStyle = {
   textTransform: "uppercase",
 };
 
-function handleSectionClick() {}
-
 export default function WindowTintCard() {
+  const navigate = useNavigate();
+
+  function handleSectionClick() {
+    navigate(ROUTES.WINDOW_TINT)
+  }
+
   return (
     <ImgBackgroundSection
       imgSrc={WINDOWTINTBG_JPG}
