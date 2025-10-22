@@ -169,7 +169,7 @@
             "name": "Headlight Polishing",
             "description": "Restores clarity and brightness to foggy or yellowed headlights.",
             "category": "Restoration",
-            "prices": [69, 69, 69]
+            "prices": [80, 80, 80]
 
         },
         {
@@ -402,6 +402,13 @@
             "description": "Apply a layer of liquid wax to protect the paint and make your the vehicle shine.",
             "category": "Add Ons",
             "prices": [39, 49, 59]
+        },
+        {
+            "id": 58,
+            "name": "Headlight Polishing + Clear Coat",
+            "description": "Restores clarity and brightness to foggy or yellowed headlights and adds a fresh layer of clear coat for lasting protection.",
+            "category": "Restoration",
+            "prices": [150, 150, 150]   
         }
     ]
 }
