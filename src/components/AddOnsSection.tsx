@@ -144,7 +144,7 @@ export default function ServicesPage({ vehicleType }: Props) {
                                 {service.description}
                               </TableCell>
                               <TableCell sx={descriptionCellStyleMobile}>
-                                <InfoToolTip tip={service.name + ": " + service.description} />
+                                <InfoToolTip tip={service.description} />
                               </TableCell>
                               <TableCell sx={tableCellStyle} align="right">
                                 {service.prices?.[vehicleType] ?? ""}
