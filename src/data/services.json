@@ -167,7 +167,7 @@
         {
             "id": 24,
             "name": "Headlight Polishing",
-            "description": "Restores clarity and brightness to foggy or yellowed headlights.",
+            "description": "Restores clarity and brightness to foggy or yellowed headlights and protects with a ceramic coat.",
             "category": "Restoration",
             "prices": [80, 80, 80]
 
@@ -380,7 +380,7 @@
             "name": "Headlight Restoration",
             "description": "Restores headlight looks and clarity through sanding and applying a protective clear coat.",
             "category": "Restoration",
-            "prices": [110, 110, 110]
+            "prices": [150, 150, 150]
         },
         {
             "id": 55,
