@@ -4,18 +4,22 @@ export const NAV_BAR_SECTIONS = [
   {
     TITLE: "detailing",
     PATH: "/detailing",
+    MOBILE: false,
   },
   {
     TITLE: "window tint",
     PATH: "/window_tint",
+    MOBILE: false,
   },
   {
     TITLE: "exterior gloss",
     PATH: "/exterior_gloss",
+    MOBILE: false,
   },
   {
     TITLE: "contact",
     PATH: "/#contact",
+    MOBILE: true,
   },
 ];
 export const SERVICE_CATEGORIES = ["Interior", "Exterior", "Restoration", "Add Ons"];
