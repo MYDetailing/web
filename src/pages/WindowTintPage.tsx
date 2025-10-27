@@ -14,10 +14,10 @@ const imageContainerStyle = {
 
 const carImageStyle = {
   width: {
-    xs: "auto",
+    xs: "100%",
     lg: "100%",
   },
-  height: "100vh",
+  //height: "100vh",
   objectFit: "cover",
   objectPosition: "left",
 };
