@@ -1,407 +1,388 @@
 {
-    "services": [
-        {
-            "id": 0,
-            "name": "3 Phase Hand Wash",
-            "description": "A thorough three-step cleaning process that removes dirt, grime, and light contaminants from the vehicle's exterior.",
-            "category": "Exterior",
-            "prices": [34, 39, 44]
-        },
-        {
-            "id": 1,
-            "name": "Wheel and Tire Hand Wash",
-            "description": "Removes brake dust, road grime, and restores the shine of wheels and tires (no removal).",
-            "category": "Exterior",
-            "prices": [19, 19, 19]
+  "services": [
+    {
+      "id": 0,
+      "name": "3 Phase Hand Wash",
+      "description": "A thorough three-step cleaning process that removes dirt, grime, and light contaminants from the vehicle's exterior.",
+      "category": "Exterior",
+      "prices": [34, 39, 44]
+    },
+    {
+      "id": 1,
+      "name": "Wheel and Tire Hand Wash",
+      "description": "Removes brake dust, road grime, and restores the shine of wheels and tires (no removal).",
+      "category": "Exterior",
+      "prices": [19, 19, 19]
+    },
+    {
+      "id": 2,
+      "name": "Hydrophobic Coating",
+      "description": "Applies a water-repellent coating to exterior surfaces to protect against water, dirt, and contaminants."
+    },
+    {
+      "id": 3,
+      "name": "Glass Cleaning Inside and Out",
+      "description": "Clean all windows and mirrors inside and out with specialized glass cleaners for a streak-free finish."
+    },
+    {
+      "id": 4,
+      "name": "Delicate Air Dry",
+      "description": "Gently dries the vehicle's exterior using filtered dry air to prevent water spots."
+    },
+    {
+      "id": 5,
+      "name": "Control Panel Cleaning",
+      "description": "Cleans buttons, knobs, and screen areas using compressed air and gentle detailing tools to remove dust safely."
+    },
+    {
+      "id": 6,
+      "name": "Door Jamb Cleaning",
+      "description": "Detailed cleaning of the inner door frames to remove dirt buildup and enhance appearance."
+    },
+    {
+      "id": 7,
+      "name": "Door Panel Cleaning",
+      "description": "Cleans door panels using a Tornador to remove dust and buildup from textured surfaces and crevices."
+    },
+    {
+      "id": 8,
+      "name": "Deep Mat Shampoo",
+      "description": "Deep cleans fabric floor mats using an extractor to remove stains, odors, and embedded dirt.",
+      "category": "Interior",
+      "prices": [19, 19, 19]
+    },
+    {
+      "id": 9,
+      "name": "Tornador Vacuuming",
+      "description": "Vacuums carpets, seats, and the trunk, using a Tornador to remove deep dirt and debris.",
+      "category": "Interior",
+      "prices": [29, 39, 49]
+    },
 
-        },
-        { 
-            "id": 2,
-            "name": "Hydrophobic Coating",
-            "description": "Applies a water-repellent coating to exterior surfaces to protect against water, dirt, and contaminants."
-        },
-        { 
-            "id": 3,
-            "name": "Glass Cleaning Inside and Out",
-            "description": "Clean all windows and mirrors inside and out with specialized glass cleaners for a streak-free finish."
-        },
-        { 
-            "id": 4,
-            "name": "Delicate Air Dry",
-            "description": "Gently dries the vehicle's exterior using filtered dry air to prevent water spots."
-        },
-        {
-            "id": 5,
-            "name": "Control Panel Cleaning",
-            "description": "Cleans buttons, knobs, and screen areas using compressed air and gentle detailing tools to remove dust safely."
-        },
-        {
-            "id": 6,
-            "name": "Door Jamb Cleaning",
-            "description": "Detailed cleaning of the inner door frames to remove dirt buildup and enhance appearance."
-        },
-        {
-            "id": 7,
-            "name": "Door Panel Cleaning",
-            "description": "Cleans door panels using a Tornador to remove dust and buildup from textured surfaces and crevices."
-        },
-        {
-            "id": 8,
-            "name": "Deep Mat Shampoo",
-            "description": "Deep cleans fabric floor mats using an extractor to remove stains, odors, and embedded dirt.",
-            "category": "Interior",
-            "prices": [19, 19, 19]
+    {
+      "id": 10,
+      "name": "4 Phase Hand Wash",
+      "description": "An enhanced wash that includes four cleaning stages for a deeper, more comprehensive exterior cleanse.",
+      "category": "Exterior",
+      "prices": [39, 34, 49]
+    },
+    {
+      "id": 11,
+      "name": "Iron Decontamination",
+      "description": "Dissolves embedded iron particles from brake dust on paint and wheels using a specialized solution — removing them prevents long-term paint damage.",
+      "category": "Exterior",
+      "prices": [10, 10, 10]
+    },
+    {
+      "id": 12,
+      "name": "Tar Removal",
+      "description": "Safely eliminates stubborn tar spots from the vehicle's body.",
+      "category": "Exterior",
+      "prices": [10, 10, 10]
+    },
+    {
+      "id": 13,
+      "name": "Calcium Spot Removal",
+      "description": "Removes stubborn calcium and mineral deposits from glass surfaces to restore clarity and improve visibility.",
+      "category": "Interior",
+      "prices": [29, 29, 29]
+    },
+    {
+      "id": 14,
+      "name": "Dashboard and Interior Trim Cleaning",
+      "description": "Gently removes dust and buildup from the dashboard and interior trim, leaving surfaces clean and refreshed."
+    },
+    {
+      "id": 15,
+      "name": "Wheel and Tire Wax Treatment",
+      "description": "Adds a protective wax layer to wheels and tires for longer-lasting shine and durability.",
+      "category": "Add Ons",
+      "prices": [24, 24, 24]
+    },
+    {
+      "id": 16,
+      "name": "Exhaust Tip Cleaning",
+      "description": "Removes soot and buildup from exhaust tips for a polished look."
+    },
 
-        },
-        {
-            "id": 9,
-            "name": "Tornador Vacuuming",
-            "description": "Vacuums carpets, seats, and the trunk, using a Tornador to remove dirt and debris.",
-            "category": "Interior",
-            "prices": [29, 39, 49]
-        },
-        
-        {
-            "id": 10,
-            "name": "4 Phase Hand Wash",
-            "description": "An enhanced wash that includes four cleaning stages for a deeper, more comprehensive exterior cleanse.",
-            "category": "Exterior",
-            "prices": [39, 34, 49]
-        },
-        {
-            "id": 11,
-            "name": "Iron Decontamination",
-            "description": "Dissolves embedded iron particles from brake dust on paint and wheels using a specialized solution — removing them prevents long-term paint damage.",
-            "category": "Exterior",
-            "prices": [10, 10, 10]
+    {
+      "id": 17,
+      "name": "Control Panel Deep Shampoo",
+      "description": " Deep clean buttons and surfaces in the center console and dashboard area.",
+      "category": "Interior",
+      "prices": [29, 29, 29]
+    },
+    {
+      "id": 18,
+      "name": "Steering Wheel Deep Clean and Protection",
+      "description": "Sanitize and protect the steering wheel with specialized cleaning products.",
+      "category": "Interior",
+      "prices": [19, 19, 19]
+    },
+    {
+      "id": 19,
+      "name": "Interior Plastic Conditioning",
+      "description": "Applies protectant to plastic interior components to restore shine and prevent fading.",
+      "category": "Add Ons",
+      "prices": [29, 29, 29]
+    },
+    {
+      "id": 20,
+      "name": "Seat Shampoo",
+      "description": "Deep clean cloth seats to remove stains, odors, and dirt.",
+      "category": "Interior",
+      "prices": [24, 24, 24]
+    },
+    {
+      "id": 21,
+      "name": "Seat Conditioning",
+      "description": "Nourish and protect leather or cloth seats and surfaces to maintain softness and prevent cracking.",
+      "category": "Add Ons",
+      "prices": [10, 10, 10]
+    },
+    {
+      "id": 22,
+      "name": "Trunk Shampoo",
+      "description": "Deep clean trunk carpeting to remove stains, odors, and debris using specialized shampoo.",
+      "category": "Interior",
+      "prices": [39, 39, 39]
+    },
+    {
+      "id": 23,
+      "name": "Antibacterial Ozonization",
+      "description": "Disinfects your vehicle’s interior and freshens the air by neutralizing odors at the molecular level."
+    },
 
-        },
-        {
-            "id": 12,
-            "name": "Tar Removal",
-            "description": "Safely eliminates stubborn tar spots from the vehicle's body.",
-            "category": "Exterior",
-            "prices": [10, 10, 10]
+    {
+      "id": 24,
+      "name": "Headlight Polishing",
+      "description": "Restores clarity and brightness to foggy or yellowed headlights and protects with a ceramic coat.",
+      "category": "Restoration",
+      "prices": [80, 80, 80]
+    },
+    {
+      "id": 25,
+      "name": "Wheel Arch and Suspension Wash",
+      "description": "By removing the wheels, cleans hard-to-reach areas around the wheel arches and suspension components.",
+      "category": "Exterior",
+      "prices": [69, 69, 69]
+    },
+    {
+      "id": 26,
+      "name": "Clay Bar Treatment",
+      "description": "Removes embedded contaminants from paint for a smooth, glass-like exterior surface.",
+      "category": "Exterior",
+      "prices": [29, 29, 29]
+    },
+    {
+      "id": 27,
+      "name": "Door Panel Deep Shampoo",
+      "description": "Cleans door panels using a Tornador and shampoo to remove dust, grime, and buildup from textured surfaces and crevices.",
+      "category": "Interior",
+      "prices": [15, 15, 15]
+    },
+    {
+      "id": 28,
+      "name": "Seat Shampoo with Removal",
+      "description": "Remove and shampoo cloth seats for an ultra-deep clean and complete odor removal.",
+      "category": "Interior",
+      "prices": [39, 39, 39]
+    },
+    {
+      "id": 29,
+      "name": "Carpet Shampoo",
+      "description": "Deep cleans carpets to eliminate embedded dirt and refresh fibers.",
+      "category": "Interior",
+      "prices": [49, 69, 89]
+    },
+    {
+      "id": 30,
+      "name": "Glove Box Shampoo",
+      "description": "Clean and sanitize the inside and outside of the glove compartment.",
+      "category": "Interior",
+      "prices": [39, 39, 39]
+    },
+    {
+      "id": 31,
+      "name": "AC Disinfection and Ozonization",
+      "description": "Combines ozone treatment with AC system disinfection to eliminate odors and bacteria from both the cabin and ventilation system.",
+      "category": "Interior",
+      "prices": [49, 49, 49]
+    },
 
-        },
-        {
-            "id": 13,
-            "name": "Calcium Spot Removal",
-            "description": "Removes stubborn calcium and mineral deposits from glass surfaces to restore clarity and improve visibility.",
-            "category": "Interior",
-            "prices": [29, 29, 29]
+    {
+      "id": 32,
+      "name": "Hard Wax",
+      "description": "Apply a durable layer of wax by hand to protect the paint and make your vehicle shine. Hard wax lasts longer than liquid wax",
+      "category": "Add Ons",
+      "prices": [39, 49, 59]
+    },
+    {
+      "id": 33,
+      "name": "Rain-Repellent Treatment on Windshield",
+      "description": "A hydrophobic layer to the windshield for improved visibility during rain."
+    },
+    {
+      "id": 34,
+      "name": "UV Protection for Exterior Plastic",
+      "description": "Apply a UV-resistant treatment to prevent fading and cracking of exterior plastic trims."
+    },
+    {
+      "id": 35,
+      "name": "Engine Bay Cleaning",
+      "description": "Safely clean the engine compartment to remove dust, oil, and grease buildup.",
+      "category": "Exterior",
+      "prices": [120, 120, 120]
+    },
+    {
+      "id": 36,
+      "name": "Dust and Oil Repellent for Underhood Plastics",
+      "description": "Applies a specialized coating to underhood plastic components that prevents dust and oil from sticking."
+    },
 
-        },
-        {
-            "id": 14,
-            "name": "Dashboard and Interior Trim Cleaning",
-            "description": "Gently removes dust and buildup from the dashboard and interior trim, leaving surfaces clean and refreshed."
-        },
-        {
-            "id": 15,
-            "name": "Wheel and Tire Wax Treatment",
-            "description": "Adds a protective wax layer to wheels and tires for longer-lasting shine and durability.",
-            "category": "Add Ons",
-            "prices": [24, 24, 24]
+    {
+      "id": 37,
+      "name": "Ceramic Coating",
+      "description": "Offers triple-layer ceramic protection for maximum gloss, resistance to environmental damage and water resistance.",
+      "category": "Add Ons",
+      "prices": [250, 300, 350]
+    },
+    {
+      "id": 38,
+      "name": "3-Step Paint Polishing",
+      "description": "Three-step polishing enhances your car's appearance with a deep, eye-catching shine. We carefully inspect the paint beforehand and use the least aggressive method possible to remove defects while preserving the clear coat.",
+      "category": "Restoration",
+      "prices": [499, 599, 699]
+    },
+    {
+      "id": 39,
+      "name": "Rain-Repellent Treatment on Windshield and Front Windows",
+      "description": "A hydrophobic layer to glass and windows for improved visibility during rain.",
+      "category": "Add Ons",
+      "prices": [200, 200, 200]
+    },
+    {
+      "id": 40,
+      "name": "Seat Belt Shampoo",
+      "description": "Deep clean seat belts to remove stains, odors, and grime.",
+      "category": "Interior",
+      "prices": [15, 15, 15]
+    },
 
-        },
-        {
-            "id": 16,
-            "name": "Exhaust Tip Cleaning",
-            "description": "Removes soot and buildup from exhaust tips for a polished look."
-        },
+    {
+      "id": 41,
+      "name": "3-in-1 Paint Polishing",
+      "description": "Paint correction to remove swirls, scratches, and restore paint clarity.",
+      "category": "Restoration",
+      "prices": [199, 299, 399]
+    },
+    {
+      "id": 42,
+      "name": "Odor Removal with Dry Fog",
+      "description": "Eliminate persistent odors using a dry fog treatment that penetrates fabric and vents.",
+      "category": "Interior",
+      "prices": [69, 69, 69]
+    },
+    {
+      "id": 43,
+      "name": "Professional Photo Shoot for Sale",
+      "description": "High-quality photography service to showcase your car for online listings or resale."
+    },
 
-        {
-            "id": 17,
-            "name": "Control Panel Deep Shampoo",
-            "description": " Deep clean buttons and surfaces in the center console and dashboard area.",
-            "category": "Interior",
-            "prices": [29, 29, 29]
+    {
+      "id": 44,
+      "name": "Sleeping Area Deep Clean",
+      "description": "Performs a thorough extraction-based cleaning of mattresses and bedding areas to remove stains, odors, and allergens."
+    },
+    {
+      "id": 45,
+      "name": "Cabinet and Shelf Cleaning",
+      "description": "Wipes down and sanitizes all interior cabinets and shelves to remove dust, spills, and buildup for a fresh, tidy space."
+    },
+    {
+      "id": 46,
+      "name": "Appliance Cleaning",
+      "description": "Cleans and sanitizes interior appliances such as fridges, microwaves, and stovetops to remove grease, crumbs, and odors."
+    },
+    {
+      "id": 47,
+      "name": "Control Panel Plastic Conditioning",
+      "description": "Applies protectant to plastic control panel components to restore shine and prevent fading."
+    },
 
-        },
-        {
-            "id": 18,
-            "name": "Steering Wheel Deep Clean and Protection",
-            "description": "Sanitize and protect the steering wheel with specialized cleaning products.",
-            "category": "Interior",
-            "prices": [19, 19, 19]
+    {
+      "id": 48,
+      "name": "Curtain Cleaning",
+      "description": "Deep cleans curtains to remove dust, stains, and odors, leaving them fresh and revitalized."
+    },
 
-        },
-        {
-            "id": 19,
-            "name": "Interior Plastic Conditioning",
-            "description": "Applies protectant to plastic interior components to restore shine and prevent fading.",
-            "category": "Add Ons",
-            "prices": [29, 29, 29]
-
-        },
-        {
-            "id": 20,
-            "name": "Seat Shampoo",
-            "description": "Deep clean cloth seats to remove stains, odors, and dirt.",
-            "category": "Interior",
-            "prices": [24, 24, 24]
-        },
-        {
-            "id": 21,
-            "name": "Seat Conditioning",
-            "description": "Nourish and protect leather or cloth seats and surfaces to maintain softness and prevent cracking.",
-            "category": "Add Ons",
-            "prices": [10, 10, 10]
-
-        },
-        {
-            "id": 22,
-            "name": "Trunk Shampoo",
-            "description": "Deep clean trunk carpeting to remove stains, odors, and debris using specialized shampoo.",
-            "category": "Interior",
-            "prices": [39, 39, 39]
-
-        },
-        {
-            "id": 23,
-            "name": "Antibacterial Ozonization",
-            "description": "Disinfects your vehicle’s interior and freshens the air by neutralizing odors at the molecular level."
-        },
-
-        {
-            "id": 24,
-            "name": "Headlight Polishing",
-            "description": "Restores clarity and brightness to foggy or yellowed headlights and protects with a ceramic coat.",
-            "category": "Restoration",
-            "prices": [80, 80, 80]
-
-        },
-        {
-            "id": 25,
-            "name": "Wheel Arch and Suspension Wash",
-            "description": "By removing the wheels, cleans hard-to-reach areas around the wheel arches and suspension components.",
-            "category": "Exterior",
-            "prices": [69, 69, 69]
-
-        },
-        {
-            "id": 26,
-            "name": "Clay Bar Treatment",
-            "description": "Removes embedded contaminants from paint for a smooth, glass-like exterior surface.",
-            "category": "Exterior",
-            "prices": [29, 29, 29]
-
-        },
-        {
-            "id": 27,
-            "name": "Door Panel Deep Shampoo",
-            "description": "Cleans door panels using a Tornador and shampoo to remove dust, grime, and buildup from textured surfaces and crevices.",
-            "category": "Interior",
-            "prices": [15, 15, 15]
-
-        },
-        {
-            "id": 28,
-            "name": "Seat Shampoo with Removal",
-            "description": "Remove and shampoo cloth seats for an ultra-deep clean and complete odor removal.",
-            "category": "Interior",
-            "prices": [39, 39, 39]
-
-        },
-        {
-            "id": 29,
-            "name": "Carpet Shampoo",
-            "description": "Deep cleans carpets to eliminate embedded dirt and refresh fibers.",
-            "category": "Interior",
-            "prices": [49, 69, 89]
-        },
-        {
-            "id": 30,
-            "name": "Glove Box Shampoo",
-            "description": "Clean and sanitize the inside and outside of the glove compartment.",
-            "category": "Interior",
-            "prices": [39, 39, 39]
-
-        },
-        {
-            "id": 31,
-            "name": "AC Disinfection and Ozonization",
-            "description": "Combines ozone treatment with AC system disinfection to eliminate odors and bacteria from both the cabin and ventilation system.",
-            "category": "Interior",
-            "prices": [49, 49, 49]
-
-        },
-
-        {
-            "id": 32,
-            "name": "Hard Wax",
-            "description": "Apply a durable layer of wax by hand to protect the paint and make your vehicle shine. Hard wax lasts longer than liquid wax",
-            "category": "Add Ons",
-            "prices": [39, 49, 59]
-        },
-        {
-            "id": 33,
-            "name": "Rain-Repellent Treatment on Windshield",
-            "description": "A hydrophobic layer to the windshield for improved visibility during rain."
-        },
-        {
-            "id": 34,
-            "name": "UV Protection for Exterior Plastic",
-            "description": "Apply a UV-resistant treatment to prevent fading and cracking of exterior plastic trims."
-        },
-        {
-            "id": 35,
-            "name": "Engine Bay Cleaning",
-            "description": "Safely clean the engine compartment to remove dust, oil, and grease buildup.",
-            "category": "Exterior",
-            "prices": [120, 120, 120]
-
-        },
-        {
-            "id": 36,
-            "name": "Dust and Oil Repellent for Underhood Plastics",
-            "description": "Applies a specialized coating to underhood plastic components that prevents dust and oil from sticking."
-        },
-
-        {
-            "id": 37,
-            "name": "Ceramic Coating",
-            "description": "Offers triple-layer ceramic protection for maximum gloss, resistance to environmental damage and water resistance.",
-            "category": "Add Ons",
-            "prices": [250, 300, 350]
-        },
-        {
-            "id": 38,
-            "name": "3-Step Paint Polishing",
-            "description": "Three-step polishing enhances your car's appearance with a deep, eye-catching shine. We carefully inspect the paint beforehand and use the least aggressive method possible to remove defects while preserving the clear coat.",
-            "category": "Restoration",
-            "prices": [499, 599, 699]
-        },
-        {
-            "id": 39,
-            "name": "Rain-Repellent Treatment on Windshield and Front Windows",
-            "description": "A hydrophobic layer to glass and windows for improved visibility during rain.",
-            "category": "Add Ons",
-            "prices": [200, 200, 200]
-
-        },
-        {
-            "id": 40,
-            "name": "Seat Belt Shampoo",
-            "description": "Deep clean seat belts to remove stains, odors, and grime.",
-            "category": "Interior",
-            "prices": [15, 15, 15]
-
-        },
-
-        {
-            "id": 41,
-            "name": "3-in-1 Paint Polishing",
-            "description": "Paint correction to remove swirls, scratches, and restore paint clarity.",
-            "category": "Restoration",
-            "prices": [199, 299, 399]
-        },
-        {
-            "id": 42,
-            "name": "Odor Removal with Dry Fog",
-            "description": "Eliminate persistent odors using a dry fog treatment that penetrates fabric and vents.",
-            "category": "Interior",
-            "prices": [69, 69, 69]
-
-        },
-        {
-            "id": 43,
-            "name": "Professional Photo Shoot for Sale",
-            "description": "High-quality photography service to showcase your car for online listings or resale."
-        },
-        
-        {
-            "id": 44,
-            "name": "Sleeping Area Deep Clean",
-            "description": "Performs a thorough extraction-based cleaning of mattresses and bedding areas to remove stains, odors, and allergens."
-        },
-        {
-            "id": 45,
-            "name": "Cabinet and Shelf Cleaning",
-            "description": "Wipes down and sanitizes all interior cabinets and shelves to remove dust, spills, and buildup for a fresh, tidy space."
-        },
-        {
-            "id": 46,
-            "name": "Appliance Cleaning",
-            "description": "Cleans and sanitizes interior appliances such as fridges, microwaves, and stovetops to remove grease, crumbs, and odors."
-        },
-        {
-            "id": 47,
-            "name": "Control Panel Plastic Conditioning",
-            "description": "Applies protectant to plastic control panel components to restore shine and prevent fading."
-        },
-        
-        {
-            "id": 48,
-            "name": "Curtain Cleaning",
-            "description": "Deep cleans curtains to remove dust, stains, and odors, leaving them fresh and revitalized."
-        },
-
-        {
-            "id": 49,
-            "name": "2 Phase Hand Wash",
-            "description": "Special hand wash for vehicles with wax or ceramic coatings.",
-            "category": "Exterior",
-            "prices": [19, 24, 29]
-        },
-        {
-             "id": 50,
-            "name": "Motorcycle Wash",
-            "description": "Includes a hand wash with shampoo, iron decontamination, tar removal, exhaust pipe cleaning, wheel and tire cleaning.",
-            "category": "Exterior",
-            "prices": [49, 49, 49]
-
-        },
-        {
-             "id": 51,
-            "name": "Ceiling Deep Shampoo",
-            "description": "Involves thorough vacuuming to remove dust, followed by gentle cleaning with the right shampoo and soft brush—tailored to each vehicle using appropriate methods and chemicals.",
-            "category": "Interior",
-            "prices": [99, 99, 99]
-
-        },
-        {
-            "id": 52,
-            "name": "Child Seat Shampoo",
-            "description": "Cleans cloth parts with an extractor and steam, plastic parts with a soft brush and shampoo.",
-            "category": "Interior",
-            "prices": [49, 49, 49]
-        },
-        {
-            "id": 53,
-            "name": "Interior Trim Polishing",
-            "description": "Spot polish of all interior decorative trim to restore shine and remove minor scratches.",
-            "category": "Interior",
-            "prices": [50, 50, 50]
-        },
-        {
-            "id": 54,
-            "name": "Headlight Restoration",
-            "description": "Restores headlight looks and clarity through sanding and applying a protective clear coat.",
-            "category": "Restoration",
-            "prices": [150, 150, 150]
-        },
-        {
-            "id": 55,
-            "name": "Tail Light Polishing",
-            "description": "Restores clarity and appearance of foggy or yellowed tail lights.",
-            "category": "Restoration",
-            "prices": [29, 29, 29]
-        },
-        {
-            "id": 56,
-            "name": "Windshield Restoration",
-            "description": "Removes scratches from a windshield by sanding and polishing. Makes the windshield look new again.",
-            "category": "Restoration",
-            "prices": [199, 199, 199]
-        },
-        {
-            "id": 57,
-            "name": "Liquid Wax",
-            "description": "Apply a layer of liquid wax to protect the paint and make your the vehicle shine.",
-            "category": "Add Ons",
-            "prices": [39, 49, 59]
-        }
-    ]
+    {
+      "id": 49,
+      "name": "2 Phase Hand Wash",
+      "description": "Special hand wash for vehicles with wax or ceramic coatings.",
+      "category": "Exterior",
+      "prices": [19, 24, 29]
+    },
+    {
+      "id": 50,
+      "name": "Motorcycle Wash",
+      "description": "Includes a hand wash with shampoo, iron decontamination, tar removal, exhaust pipe cleaning, wheel and tire cleaning.",
+      "category": "Exterior",
+      "prices": [49, 49, 49]
+    },
+    {
+      "id": 51,
+      "name": "Ceiling Deep Shampoo",
+      "description": "Involves thorough vacuuming to remove dust, followed by gentle cleaning with the right shampoo and soft brush—tailored to each vehicle using appropriate methods and chemicals.",
+      "category": "Interior",
+      "prices": [99, 99, 99]
+    },
+    {
+      "id": 52,
+      "name": "Child Seat Shampoo",
+      "description": "Cleans cloth parts with an extractor and steam, plastic parts with a soft brush and shampoo.",
+      "category": "Interior",
+      "prices": [49, 49, 49]
+    },
+    {
+      "id": 53,
+      "name": "Interior Trim Polishing",
+      "description": "Spot polish of all interior decorative trim to restore shine and remove minor scratches.",
+      "category": "Interior",
+      "prices": [50, 50, 50]
+    },
+    {
+      "id": 54,
+      "name": "Headlight Restoration",
+      "description": "Restores headlight looks and clarity through sanding and applying a protective clear coat.",
+      "category": "Restoration",
+      "prices": [150, 150, 150]
+    },
+    {
+      "id": 55,
+      "name": "Tail Light Polishing",
+      "description": "Restores clarity and appearance of foggy or yellowed tail lights.",
+      "category": "Restoration",
+      "prices": [29, 29, 29]
+    },
+    {
+      "id": 56,
+      "name": "Windshield Restoration",
+      "description": "Removes scratches from a windshield by sanding and polishing. Makes the windshield look new again.",
+      "category": "Restoration",
+      "prices": [199, 199, 199]
+    },
+    {
+      "id": 57,
+      "name": "Liquid Wax",
+      "description": "Apply a layer of liquid wax to protect the paint and make your the vehicle shine.",
+      "category": "Add Ons",
+      "prices": [39, 49, 59]
+    },
+    {
+      "id": 58,
+      "name": "Vacuuming",
+      "description": "Vacuums carpets, seats, and the trunk to remove dirt and debris."
+    }
+  ]
 }
