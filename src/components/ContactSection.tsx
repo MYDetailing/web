@@ -33,7 +33,7 @@ import { GOOGLE_MAPS_LINK, INSTA_LINK, ROUTES } from "../constants/resourceLocat
 import { MAP_CENTER_COORDS, MAP_PIN_COORDS, MAP_ZOOM, MAP_KEYS } from "../constants/values";
 import { PURE_BLACK, PIN_COL } from "../constants/colors";
 
-import LinkField from "./LinkFiled";
+import LinkField from "./LinkField";
 import { SIDE_MARGIN } from "../constants/styles";
 
 const textContainer: CSSProperties = {
