@@ -76,6 +76,11 @@ export const FALL_PROMO = {
 
 export const DETAILING_PACKAGES_HEADING = "Full Detailing Packages";
 
+export const TINT_PAGE = {
+  HEADING1: "Professional Window Tint",
+  SUBHEADING1: "official Llumar dealer",
+};
+
 // Contact section
 export const BOOK = "Book with us";
 export const EMAIL = "info@mydetailing.ca";

@@ -1,9 +1,9 @@
-import { useRef } from "react";
 import { Box, Typography } from "@mui/material";
 
 import NavBar from "../components/NavBar";
 
-import { TINT_CAR_PNG } from "../constants/resourceLocations";
+import { TINT_CAR_PNG, TINT_CAR_SM_PNG } from "../constants/resourceLocations";
+import { TINT_PAGE } from "../constants/strings";
 
 const pageContentContainerStyle = {
   paddingTop: "5rem",
@@ -12,44 +12,35 @@ const pageContentContainerStyle = {
   alignItems: "center",
 };
 
-const imageContainerStyle = {
+const carImageStyle = {
+  display: {
+    xs: "none",
+    sm: "inline",
+  },
   width: "100%",
-  //height: "100vh",
-  //scrollBehavior: "smooth",
-  //overflowX: "scroll",
+  objectFit: "cover",
+  objectPosition: "center",
 };
 
-const carImageStyle = {
-  width: {
-    xs: "100%",
-    lg: "100%",
+const carImageStyleXs = {
+  display: {
+    xs: "inline",
+    sm: "none",
   },
-  //height: "100vh",
+  width: "100%",
   objectFit: "cover",
   objectPosition: "center",
 };
 
 export default function WindowTintPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  function handleWheel(e: React.WheelEvent) {
-    const container = containerRef.current;
-    if (container) {
-      e.preventDefault();
-
-      container.scrollLeft += e.deltaY * 15;
-    }
-  }
-
   return (
     <Box>
       <NavBar />
       <Box sx={pageContentContainerStyle}>
-        <Typography variant="h2">Professional Window Tint</Typography>
-        <Typography variant="subtitle1">OFFICIAl LLUMAR DEALER </Typography>
-        <Box sx={imageContainerStyle} ref={containerRef} onWheel={handleWheel}>
-          <Box sx={carImageStyle} component="img" src={TINT_CAR_PNG}></Box>
-        </Box>
+        <Typography variant="h2">{TINT_PAGE.HEADING1}</Typography>
+        <Typography variant="subtitle1">{TINT_PAGE.SUBHEADING1}</Typography>
+        <Box sx={carImageStyleXs} component="img" src={TINT_CAR_SM_PNG}></Box>
+        <Box sx={carImageStyle} component="img" src={TINT_CAR_PNG}></Box>
       </Box>
     </Box>
   );
