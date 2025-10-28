@@ -1,15 +1,22 @@
 import { useRef } from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import NavBar from "../components/NavBar";
 
 import { TINT_CAR_PNG } from "../constants/resourceLocations";
 
+const pageContentContainerStyle = {
+  paddingTop: "5rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
+
 const imageContainerStyle = {
   width: "100%",
-  height: "100vh",
-  scrollBehavior: "smooth",
-  overflowX: "scroll",
+  //height: "100vh",
+  //scrollBehavior: "smooth",
+  //overflowX: "scroll",
 };
 
 const carImageStyle = {
@@ -19,7 +26,7 @@ const carImageStyle = {
   },
   //height: "100vh",
   objectFit: "cover",
-  objectPosition: "left",
+  objectPosition: "center",
 };
 
 export default function WindowTintPage() {
@@ -30,15 +37,19 @@ export default function WindowTintPage() {
     if (container) {
       e.preventDefault();
 
-      container.scrollLeft += e.deltaY * 25;
+      container.scrollLeft += e.deltaY * 15;
     }
   }
 
   return (
     <Box>
       <NavBar />
-      <Box sx={imageContainerStyle} ref={containerRef} onWheel={handleWheel}>
-        <Box sx={carImageStyle} component="img" src={TINT_CAR_PNG}></Box>
+      <Box sx={pageContentContainerStyle}>
+        <Typography variant="h2">Professional Window Tint</Typography>
+        <Typography variant="subtitle1">OFFICIAl LLUMAR DEALER </Typography>
+        <Box sx={imageContainerStyle} ref={containerRef} onWheel={handleWheel}>
+          <Box sx={carImageStyle} component="img" src={TINT_CAR_PNG}></Box>
+        </Box>
       </Box>
     </Box>
   );

@@ -12,7 +12,7 @@ export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/wULyaj4xL5Cpwtpt5";
 export const INSTA_LINK = "https://www.instagram.com/mydetailingca/#";
 export const WEBSITE_LINK = "https://mydetailing.ca";
 export const CONTACT_SECTION = "/#Contact";
-export const TINT_CAR_PNG = "/tintcar.png";
+export const TINT_CAR_PNG = "/TintCarSm.png";
 
 // routes
 export const ROUTES = {
