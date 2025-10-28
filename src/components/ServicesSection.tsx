@@ -3,7 +3,7 @@
 import { Grid } from "@mui/material";
 import { CSSProperties } from "react";
 
-import DetailingServiceSection from "./DetailingCard";
+import DetailingCard from "./DetailingCard";
 import WindowTintCard from "./WindowTintCard";
 import ExteriorGlossCard from "./ExteriorGlossCard";
 
@@ -21,7 +21,7 @@ export default function ServicesSection() {
     <>
       <Grid container spacing={5} sx={gridContainerStyle}>
         <Grid sx={gridBoxStyle} size={12}>
-          <DetailingServiceSection />
+          <DetailingCard />
         </Grid>
 
         <Grid sx={gridBoxStyle} size={{ xs: 12, md: 6 }}>

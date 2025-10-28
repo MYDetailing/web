@@ -41,7 +41,7 @@ const descriptionStyle: CSSProperties = {
   gap: "2rem",
 };
 
-export default function DetailingServiceSection() {
+export default function DetailingCard() {
   const navigate = useNavigate();
 
   const handleSectionClick = () => {
