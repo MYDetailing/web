@@ -78,8 +78,35 @@ export const DETAILING_PACKAGES_HEADING = "Full Detailing Packages";
 
 export const TINT_PAGE = {
   HEADING1: "Professional Window Tint",
-  SUBHEADING1: "official Llumar dealer",
+  SUBHEADING1: "At MY Detailing, quality is our top priority. ",
+  SUBHEADING2: "That is why we exclusively use Llumar Ceramic Window Film - one of the highest-quality tints on the market. It delivers exceptional heat rejection, UV protection, and optical clarity - without interfering with electronics or signal reception.",
+
+  FAQ_HEADING: "Window Tint FAQ:",
+  FAQ: [
+    {
+      Q: "What are the benefits of ceramic tint?",
+      A: "Ceramic tint blocks up to 99% of UV rays and significantly reduces heat inside your vehicle, improving comfort and protecting your interior. It also minimizes glare and enhances privacy, while maintaining a sleek look.",
+    },
+    {
+      Q: "What is the legal tint limit in Manitoba?",
+      A: "By law in Manitoba, the front side windows must allow at least 50% of light through, while there are no restrictions on the rear windows or back windshield. A 25% strip (up to 127 mm or 5 inches) is permitted at the top of the windshield. At MY Detailing, we always inform our clients of the legal standards, but ultimately, the shade you choose is up to you.",
+    },
+    {
+      Q: "How long will my tint last?",
+      A: "Llumar Ceramic Tint is built to last. With proper care, it can perform beautifully for 10 years or more. It won’t fade, bubble, or peel over time.",
+    },
+    {
+      Q: "Do you offer a warranty?",
+      A: "Yes! All our Llumar Ceramic films come with a lifetime manufacturer warranty against fading, bubbling, and peeling, giving you long-term confidence in your investment.",
+    },
+    {
+      Q: "Can I roll my windows down right after tinting?",
+      A: "We recommend waiting 3 to 5 days before rolling your windows down. This allows the film to fully cure and ensures a strong bond.",
+    }
+  ],
 };
+
+export const CONTACT_US_BTN_TXT = "contact us";
 
 // Contact section
 export const BOOK = "Book with us";

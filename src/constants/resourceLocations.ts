@@ -11,7 +11,7 @@ export const PRIVACY_POLICY_TXT = "/privacypolicy.txt";
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/wULyaj4xL5Cpwtpt5";
 export const INSTA_LINK = "https://www.instagram.com/mydetailingca/#";
 export const WEBSITE_LINK = "https://mydetailing.ca";
-export const CONTACT_SECTION = "/#Contact";
+export const CONTACT_SECTION = "/#contact";
 export const TINT_CAR_PNG = "/tintcar.png";
 export const TINT_CAR_SM_PNG = "/tintcarsm.png";
 

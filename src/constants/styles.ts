@@ -126,7 +126,12 @@ export default createTheme({
       },
     },
     h5: {
-      fontStyle: "italic",
+      [baseTheme.breakpoints.between("xs", "md")]: {
+        fontSize: "1.3rem",
+      },
+      [baseTheme.breakpoints.up("md")]: {
+        fontSize: "1.5rem",
+      },
     },
     h6: {
       fontFamily: "Futura",
@@ -146,7 +151,7 @@ export default createTheme({
       fontFamily: "Futura",
       textAlign: "justify",
       textTransform: "uppercase",
-      fontSize: "1rem"
+      fontSize: "1rem",
     },
     subtitle1: {
       fontFamily: "Futura",
