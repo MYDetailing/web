@@ -16,7 +16,7 @@
             "prices": ["169","179","199"],
             "time": "Completed in 5 hours",
             "previousServiceLabel": true,
-            "services": [4, 6, 8, 9, 10, 14, 15, 16]
+            "services": [4, 6, 8, 9, 14, 15, 16]
         },
         {
             "id": 2,
@@ -25,7 +25,7 @@
             "prices": ["279","299","329"],
             "time": "Completed in 7 hours",
             "previousServiceLabel": true,
-            "services": [11, 12, 13, 17, 18, 19, 20, 21, 22]
+            "services": [10, 11, 12, 13, 17, 18, 19, 20, 21, 22]
         },
         {
             "id": 3,
