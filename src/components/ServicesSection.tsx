@@ -5,7 +5,7 @@ import { CSSProperties } from "react";
 
 import DetailingCard from "./DetailingCard";
 import WindowTintCard from "./WindowTintCard";
-import ExteriorGlossCard from "./ExteriorGlossCard";
+// import ExteriorGlossCard from "./ExteriorGlossCard";
 
 const gridContainerStyle: CSSProperties = {};
 
@@ -27,9 +27,11 @@ export default function ServicesSection() {
         <Grid sx={gridBoxStyle} size={{ xs: 12, md: 6 }}>
           <WindowTintCard />
         </Grid>
+        {/*
         <Grid sx={gridBoxStyle} size={{ xs: 12, md: 6 }}>
           <ExteriorGlossCard />
         </Grid>
+        */}
       </Grid>
     </>
   );

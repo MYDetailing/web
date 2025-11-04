@@ -11,11 +11,13 @@ export const NAV_BAR_SECTIONS = [
     PATH: "/window_tint",
     MOBILE: false,
   },
+  /*
   {
     TITLE: "exterior gloss",
     PATH: "/exterior_gloss",
     MOBILE: false,
   },
+  */
   {
     TITLE: "contact",
     PATH: "/#contact",
