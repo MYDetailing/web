@@ -8,7 +8,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import NavBar from "../components/NavBar";
 import ContactSection from "../components/ContactSection";
 
-import { TINT_CAR_PNG, TINT_CAR_SM_PNG } from "../constants/resourceLocations";
+import { TINT_PRICE_PNG, TINT_PRICE_SM_PNG } from "../constants/resourceLocations";
 import { TINT_PAGE } from "../constants/strings";
 import { SIDE_MARGIN } from "../constants/styles";
 
@@ -82,8 +82,8 @@ export default function WindowTintPage() {
         </Typography>
       </Box>
 
-      <Box sx={carImageStyleXs} component="img" src={TINT_CAR_SM_PNG}></Box>
-      <Box sx={carImageStyle} component="img" src={TINT_CAR_PNG}></Box>
+      <Box sx={carImageStyleXs} component="img" src={TINT_PRICE_SM_PNG}></Box>
+      <Box sx={carImageStyle} component="img" src={TINT_PRICE_PNG}></Box>
 
       <Box sx={textContainerStyle}>
         <Typography variant="h2">{TINT_PAGE.FAQ_HEADING}</Typography>
