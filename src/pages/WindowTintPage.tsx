@@ -46,13 +46,6 @@ const headingTextStyle = {
   textAlign: "center",
 };
 
-const textContainerStyle = {
-  padding: `0 ${SIDE_MARGIN}`,
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
 const contactSectionWrapper = {
   width: "100%",
 };
@@ -67,13 +60,21 @@ const faqQuestionStyle = {
   width: "100%",
 };
 
-export default function WindowTintPage() {
+const accordionContainerStyle = {
+  padding: `2rem ${SIDE_MARGIN}`,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
 
+export default function WindowTintPage() {
   return (
     <Box>
       <NavBar />
       <Box sx={headingStyle}>
-        <Typography variant="h2" sx={headingTextStyle}>{TINT_PAGE.HEADING1}</Typography>
+        <Typography variant="h2" sx={headingTextStyle}>
+          {TINT_PAGE.HEADING1}
+        </Typography>
         <Typography variant="h6" sx={headingTextStyle}>
           {TINT_PAGE.SUBHEADING1}
         </Typography>
@@ -85,7 +86,7 @@ export default function WindowTintPage() {
       <Box sx={carImageStyleXs} component="img" src={TINT_PRICE_SM_PNG}></Box>
       <Box sx={carImageStyle} component="img" src={TINT_PRICE_PNG}></Box>
 
-      <Box sx={textContainerStyle}>
+      <Box sx={accordionContainerStyle}>
         <Typography variant="h2">{TINT_PAGE.FAQ_HEADING}</Typography>
 
         {TINT_PAGE.FAQ.map((faq) => {
