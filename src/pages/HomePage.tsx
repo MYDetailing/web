@@ -139,7 +139,7 @@ export default function LandingPage() {
       {/* services section */}
       <motion.section
         ref={servicesRef}
-        id={NAV_BAR_SECTIONS[0]}
+        id={NAV_BAR_SECTIONS[0].TITLE}
         {...motionSectionProps}
         animate={{ opacity: servicesInView ? 1 : 0, y: servicesInView ? 0 : 50 }}
         style={servicesSectionStyle}
@@ -150,7 +150,7 @@ export default function LandingPage() {
       {/* contact section */}
       <motion.section
         ref={contactRef}
-        id={NAV_BAR_SECTIONS[CONTACT_SECTION_ID]}
+        id={NAV_BAR_SECTIONS[CONTACT_SECTION_ID].TITLE}
         {...motionSectionProps}
         animate={{ opacity: contactInView ? 1 : 0, y: contactInView ? 0 : 50 }}
         style={contactSectionStyle}

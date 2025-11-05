@@ -17,7 +17,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 import { SERVICE_CATEGORIES } from "../constants/strings.ts";
-import { H4_STYLE, H6_STYLE, SECTION_PADDING } from "../constants/styles.ts";
+import { SECTION_PADDING } from "../constants/styles.ts";
 
 import InfoToolTip from "./InfoToolTipText.tsx";
 
@@ -43,7 +43,7 @@ const iconStyle: CSSProperties = {
 };
 
 const tableCellStyle = {
-  color: "transparent"
+  color: "transparent",
 };
 
 const collapsableCellStyle: CSSProperties = { borderBottom: 0 };
@@ -87,10 +87,8 @@ export default function ServicesPage({ vehicleType }: Props) {
 
   return (
     <Box sx={containerBoxStyle}>
-      <Typography variant="h4" sx={H4_STYLE}>
-        Add-Ons
-      </Typography>
-      <Typography variant="h6" sx={H6_STYLE}>
+      <Typography variant="h4">Add-Ons</Typography>
+      <Typography variant="h6">
         Add these options to any package—or combine them to build your own.
       </Typography>
 
@@ -132,7 +130,9 @@ export default function ServicesPage({ vehicleType }: Props) {
                             <TableCell sx={tableCellStyle}>Service</TableCell>
                             <TableCell sx={descriptionCellStyleDesktop}>Description</TableCell>
                             <TableCell sx={descriptionCellStyleMobile}></TableCell>
-                            <TableCell sx={tableCellStyle} align="right">Price</TableCell>
+                            <TableCell sx={tableCellStyle} align="right">
+                              Price
+                            </TableCell>
                           </TableRow>
                         </TableHead>
 
@@ -144,7 +144,7 @@ export default function ServicesPage({ vehicleType }: Props) {
                                 {service.description}
                               </TableCell>
                               <TableCell sx={descriptionCellStyleMobile}>
-                                <InfoToolTip tip={service.description} />
+                                <InfoToolTip tip={service.name + ": " + service.description} />
                               </TableCell>
                               <TableCell sx={tableCellStyle} align="right">
                                 {service.prices?.[vehicleType] ?? ""}

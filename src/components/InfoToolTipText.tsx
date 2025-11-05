@@ -33,8 +33,6 @@ export default function InfoToolTipText({ tip, text }: Props) {
     setOpen(false);
   }
 
-  const displayText = text ? text + ": " + tip : tip;
-
   return (
     <ClickAwayListener onClickAway={handleCloseTooltip}>
       <Tooltip
@@ -43,7 +41,7 @@ export default function InfoToolTipText({ tip, text }: Props) {
         disableFocusListener
         disableHoverListener
         disableTouchListener
-        title={displayText}
+        title={text + ": " + tip}
         arrow
         placement="bottom"
         enterDelay={500}

@@ -18,7 +18,7 @@ import {
   FIRST_DETAILING_PACKAGE,
   LAST_DETAILING_PACKAGE,
 } from "../constants/values.ts";
-import { H1_H2_STYLE, SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
+import { SIDE_MARGIN, TOP_MARGIN, SECTION_PADDING } from "../constants/styles.ts";
 import { CARD_BORDER_COL } from "../constants/colors.ts";
 
 import { Service, Package } from "../types.ts";
@@ -28,9 +28,9 @@ import NavBar from "../components/NavBar.tsx";
 import FallPromoSection from "../components/FallPromoSection.tsx";
 import PreSalePreparationSection from "../components/PreSalePreparationSection.tsx";
 import ServicesPage from "../components/AddOnsSection.tsx";
+import ContactSection from "../components/ContactSection.tsx";
 
 const detailingPackagesHeadingStyle = {
-  ...H1_H2_STYLE,
   textAlign: "center",
   marginBottom: "3rem",
 };
@@ -156,6 +156,7 @@ export default function DetailingPage() {
         <PreSalePreparationSection vehicleType={vehicleType} />
         <ServicesPage vehicleType={vehicleType} />
       </Box>
+      <ContactSection />
     </Box>
   );
 }

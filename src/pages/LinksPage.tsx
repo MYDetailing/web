@@ -13,7 +13,6 @@ import {
 import { SITE_TXT_COL } from "../constants/colors";
 import { Button, Typography } from "@mui/material";
 import { SLOGAN, TITLE } from "../constants/strings";
-import { H6_STYLE } from "../constants/styles";
 
 const videoStyle: CSSProperties = {
   width: "100%",
@@ -54,21 +53,18 @@ const buttonsWrapperStyle: CSSProperties = {
 };
 
 export default function LinksPage() {
-
   // the query string is passed on to the website
   const [queryString, setQueryString] = useState("");
   useEffect(() => {
     setQueryString(window.location.search);
-  }, [])
+  }, []);
 
   return (
     <>
       <video autoPlay loop muted playsInline preload="auto" style={videoStyle} src={VIDEO_MP4} />
       <div style={videoOverlayStyle}>
         <img src={LOGO_TEXT_PNG} alt={TITLE} style={logoTextStyle} />
-        <Typography variant="h6" sx={H6_STYLE}>
-          {SLOGAN}
-        </Typography>
+        <Typography variant="h6">{SLOGAN}</Typography>
         <div style={buttonsWrapperStyle}>
           <Button variant="outlined" style={buttonStyle} href={WEBSITE_LINK + queryString}>
             website
