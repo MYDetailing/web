@@ -28,6 +28,7 @@ import NavBar from "../components/NavBar.tsx";
 import FallPromoSection from "../components/FallPromoSection.tsx";
 import PreSalePreparationSection from "../components/PreSalePreparationSection.tsx";
 import ServicesPage from "../components/AddOnsSection.tsx";
+import ContactSection from "../components/ContactSection.tsx";
 
 const detailingPackagesHeadingStyle = {
   textAlign: "center",
@@ -155,6 +156,7 @@ export default function DetailingPage() {
         <PreSalePreparationSection vehicleType={vehicleType} />
         <ServicesPage vehicleType={vehicleType} />
       </Box>
+      <ContactSection />
     </Box>
   );
 }
