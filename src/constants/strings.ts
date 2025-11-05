@@ -87,7 +87,7 @@ export const TINT_PAGE = {
   FAQ: [
     {
       Q: "What are the benefits of ceramic tint?",
-      A: "Ceramic tint blocks up to 99% of UV rays and significantly reduces heat inside your vehicle, improving comfort and protecting your interior. It also minimizes glare and enhances privacy, while maintaining a sleek look.",
+      A: "Ceramic film is superior to the alternatives. It is better than dyed film because it blocks far more heat, doesn’t fade over time, and still looks clear and rich in color; it’s better than metallic film because it offers the same or greater heat rejection without interfering with GPS, radio, or phone signals.",
     },
     {
       Q: "What is the legal tint limit in Manitoba?",
@@ -95,7 +95,7 @@ export const TINT_PAGE = {
     },
     {
       Q: "How long will my tint last?",
-      A: "Llumar Ceramic Tint is built to last. With proper care, it can perform beautifully for 10 years or more. It won’t fade, bubble, or peel over time.",
+      A: "Llumar Ceramic Tint is built to last. With proper care, it can perform beautifully for 10 years or more. It won’t fade, bubble, or peel over time. And if anything ever does go wrong, we’ve got you covered with a lifetime warranty.",
     },
     {
       Q: "Do you offer a warranty?",
