@@ -60,6 +60,7 @@ const gridStyle: CSSProperties = {
 
 const promoStyle = {
   marginBottom: SECTION_PADDING,
+  display: "none"
 };
 
 const allServices: Service[] = serviceData.services;
