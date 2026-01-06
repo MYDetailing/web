@@ -58,7 +58,7 @@ const gridStyle: CSSProperties = {
   borderRadius: "5px",
 };
 
-const fallPromoStyle = {
+const promoStyle = {
   marginBottom: SECTION_PADDING,
 };
 
@@ -117,7 +117,7 @@ export default function DetailingPage() {
     <Box>
       <NavBar />
       <Box sx={contentBox}>
-        <Box sx={fallPromoStyle}>
+        <Box sx={promoStyle}>
           <FallPromoSection />
         </Box>
         <SelectorTabs
