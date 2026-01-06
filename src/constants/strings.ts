@@ -33,7 +33,7 @@ export const VISION =
   "METICULOUS CARE, WE DELIVER RESULTS THAT EMBODY TRUE CRAFTSMANSHIP.";
 export const SLOGAN = "We Clean You Shine";
 export const TITLE = "MY Detailing";
-export const SUBTITLE = "Premium Car Detailing and Certified Window Tint in Winkler!";
+export const SUBTITLE = "Premium Car Detailing and Certified Window Tint in Morden!";
 
 export const CARS_AND_TRUCKS_SELECTOR_LABEL = "select vehicle size";
 export const CARS_AND_TRUCKS_SIZES = ["SEDAN", "SUV", "MINIVAN OR PICKUP"];

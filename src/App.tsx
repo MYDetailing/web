@@ -43,7 +43,7 @@ const App: React.FC = () => {
       <meta name="description" content={VISION} />
       <meta
         name="keywords"
-        content="car detailing, clean, shine, polish, Winkler, window tint, car tint, tint, ppf"
+        content="car detailing, clean, shine, polish, Winkler, Morden, window tint, car tint, tint, ppf"
       />
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
