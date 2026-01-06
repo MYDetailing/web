@@ -17,12 +17,12 @@ export const CONTACT_SECTION_ID = 2;
 
 // map
 export const MAP_CENTER_COORDS = {
-  lat: 49.18658013916143,
-  lng: -97.90660958222898,
+  lat: 49.18267753898586,
+  lng: -98.10692182376211,
 };
 export const MAP_PIN_COORDS = {
-  lat: 49.18641181597199,
-  lng: -97.90053704988956,
+  lat: 49.1794550135688,
+  lng: -98.1069074086694,
 };
 export const MAP_ZOOM = 14.5;
 export const MAP_KEYS = {
