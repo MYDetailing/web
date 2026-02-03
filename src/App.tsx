@@ -3,7 +3,6 @@ import { Box, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 import { SITE_BG_COL, SITE_TXT_COL } from "./constants/colors";
-import { VISION, TITLE, SUBTITLE } from "./constants/strings";
 import theme from "./constants/styles";
 import { ROUTES } from "./constants/resourceLocations";
 import LandingPage from "./pages/HomePage";
@@ -37,16 +36,7 @@ function ScrollToTop() {
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <title>
-        {TITLE} - {SUBTITLE}
-      </title>
-      <meta name="description" content={VISION} />
-      <meta
-        name="keywords"
-        content="car detailing, clean, shine, polish, Winkler, Morden, window tint, car tint, tint, ppf"
-      />
-      <meta name="robots" content="index, follow" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       <Box style={wrapperBoxStyle}>
         <Router>
           <ScrollToTop />
