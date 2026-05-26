@@ -4,7 +4,7 @@
             "id": 0,
             "name": "Basic",
             "description": "An efficient exterior and light interior detail that restores a clean, fresh look—ideal for routine maintenance at an affordable price.",
-            "prices": ["79","89","99"],
+            "prices": ["179","189","199"],
             "time": "Completed in 3 hours",
             "previousServiceLabel": false,
             "services": [0, 1, 2, 3, 5, 7, 58]
@@ -13,7 +13,7 @@
             "id": 1,
             "name": "Standard",
             "description": "A well-rounded package combining exterior shine and interior freshness—perfect for monthly upkeep or after a long trip.",
-            "prices": ["169","179","199"],
+            "prices": ["239","249","279"],
             "time": "Completed in 5 hours",
             "previousServiceLabel": true,
             "services": [4, 6, 8, 9, 14, 15, 16]
@@ -22,7 +22,7 @@
             "id": 2,
             "name": "Premium",
             "description": "A full-service detailing experience that revives your car’s exterior and rejuvenates your cabin—great for seasonal deep cleaning.",
-            "prices": ["279","299","329"],
+            "prices": ["379","399","429"],            
             "time": "Completed in 7 hours",
             "previousServiceLabel": true,
             "services": [10, 11, 12, 13, 17, 18, 19, 20, 21, 22]
@@ -31,7 +31,7 @@
             "id": 3,
             "name": "Luxury",
             "description": "A premium-tier detailing experience designed to restore, protect, and elevate—perfect for vehicles that deserve exceptional care and a refined finish.",
-            "prices": ["470","500","550"],
+            "prices": ["570","600","650"],
             "time": "Completed in 10 hours",
             "previousServiceLabel": true,
             "services": [24, 25, 26, 27, 28, 29, 30, 31]
@@ -40,7 +40,7 @@
             "id": 4,
             "name": "Exclusive",
             "description": "Top-tier detailing with professional waxing, engine bay cleaning, and complete interior attention—crafted for vehicles that deserve flawless presentation.",
-            "prices": ["650","700","750"],
+            "prices": ["750","800","850"],
             "time": "Completed in 12 hours",
             "previousServiceLabel": true,
             "services": [32, 33, 34, 35, 36]
@@ -49,7 +49,7 @@
             "id": 5,
             "name": "VIP",
             "description": "A two-day transformation for your car, including polishing, multi-layer ceramic, and full interior restoration—our most luxurious and protective package.",
-            "prices": ["1000","1250","1450"],
+            "prices": ["1150","1400","1600"],
             "time": "Completed in 2 days",
             "previousServiceLabel": true,
             "services": [37, 38, 39, 40]
