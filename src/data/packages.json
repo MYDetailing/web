@@ -58,7 +58,7 @@
             "id": 6,
             "name": "Pre-Sale Preparation",
             "description": "Designed to maximize resale value—this package restores your vehicle’s shine, refreshes the interior, and includes a pro photo shoot to help it sell faster.",
-            "prices": ["500","550","600"],
+            "prices": ["600","650","700"],
             "time": "Completed in 1 day",
             "previousServiceLabel": false,
             "services": [10, 1, 25, 12, 11, 26, 4, 41, 32, 34, 35, 36, 24, 3, 29, 20, 17, 22, 42, 31, 23, 43]
