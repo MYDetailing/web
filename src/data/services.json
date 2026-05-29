@@ -245,7 +245,7 @@
       "name": "Ceramic Coating",
       "description": "Offers triple-layer ceramic protection for maximum gloss, resistance to environmental damage and water resistance.",
       "category": "Add Ons",
-      "prices": [250, 300, 350]
+      "prices": [450, 500, 550]
     },
     {
       "id": 38,
@@ -383,6 +383,13 @@
       "id": 58,
       "name": "Vacuuming",
       "description": "Vacuums carpets, seats, and the trunk to remove dirt and debris."
+    },
+    {
+      "id": 59,
+      "name": "Polishing + Ceramic Coating",
+      "description": "Removes swirl marks and applies a ceramic coat, giving the car a new-like finish, stunning shine and outstanding water repellence.",
+      "category": "Restoration",
+      "prices": [700, 750, 800]
     }
   ]
 }
